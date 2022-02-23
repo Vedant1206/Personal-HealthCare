@@ -26,6 +26,10 @@ This app will allow its users to get probable causes of their symptoms from repu
 
 This app will be considered a success if it achieves at least a four-star rating on the app store, has at least one hundred doctors signed up with an account, and at least seventy percent of users report that the results were helpful. 
 
+# Branching Strategy
+
+GitHub Flow consists of a main branch, and developers create branches directly from main and merge back into main. We chose GitHub Flow because it is simple. It differs from Git Flow in that it does not have a development branch. We decided that we do not need a develop branch because we will review each other’s code thoroughly before merging it into the main branch. 
+
 # Contributors
 - Kien Mai
 - Vedant Pulahru
