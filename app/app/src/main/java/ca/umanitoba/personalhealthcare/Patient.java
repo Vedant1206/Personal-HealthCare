@@ -67,7 +67,7 @@ public class Patient extends Member{
 
 
 
-
+    // CHECKING
     private class Profile{
         private long profile_num;
         private String name;
