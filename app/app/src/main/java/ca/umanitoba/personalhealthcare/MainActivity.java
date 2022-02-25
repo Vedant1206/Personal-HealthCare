@@ -18,4 +18,15 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, CreateAccountActivity.class);
         startActivity(i);
     }
+
+    public void openLogIn(View view) {
+        Intent i = new Intent(this, LogInActivity.class);
+        startActivity(i);
+    }
+
+    public void openGuestMode (View view) {
+        //TODO: move on to next mode as guest
+        System.out.println("Move on to next page as guest");
+
+    }
 }
