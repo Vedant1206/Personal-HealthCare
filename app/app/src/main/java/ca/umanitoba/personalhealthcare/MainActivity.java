@@ -1,4 +1,4 @@
-package com.example.personal_health_care;
+package ca.umanitoba.personalhealthcare;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void createAccount(View view){
-        Intent i = new Intent(this, Create_Account.class);
+        Intent i = new Intent(this, CreateAccountActivity.class);
         startActivity(i);
     }
 }
