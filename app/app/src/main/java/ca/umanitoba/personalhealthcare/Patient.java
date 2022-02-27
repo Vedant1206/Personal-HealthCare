@@ -6,14 +6,14 @@ import java.util.*;
 
 
 public class Patient extends Member{
-    long num_profile = 0;
+    private long num_profile = 0;
     ArrayList<Profile> profiles;
     Profile selected_profile;
-    public Patient(String ID, String name, String address, int height,
+    public Patient(String ID, String name, String address, int height, int weight,
                    int year, int month, int day,
                    char sex){
         super(ID);
-        Profile new_profile = new Profile(name, address, height, year, month, day, sex)
+        Profile new_profile = new Profile(name, address, height , weight, year, month, day, sex);
         profiles = new ArrayList<Profile>();
         profiles.add(new_profile);
         selected_profile = new_profile;
@@ -23,13 +23,15 @@ public class Patient extends Member{
     // ID handling
     protected String getID(){return super.getID();}
     protected void setID(String ID){super.setID(ID);}
-
+    
     // Name handling
     protected String getName(){return selected_profile.getName();}
     protected void setName(String name){selected_profile.setName(name);}
+
     // Address handling
     protected String getAddress(){return selected_profile.getAddress();}
     protected void setAddress(String address){selected_profile.setAddress(address);}
+
     // DOB handling
     protected int getYear(){return selected_profile.getYears();}
     protected int getMonth(){return selected_profile.getMonth();}
@@ -39,14 +41,26 @@ public class Patient extends Member{
     protected void setMonth(int month){selected_profile.setMonth(month);}
     protected void setDay(int day){selected_profile.setDay(day);}
 
+    // height handling
+    protected int getHeight(){return selected_profile.getHeight();}
+    protected void setHeight(int height){selected_profile.setHeight(height);}
 
-    // PROFILE HANDLING
-    protected void add_profile(String name, String address, int height,
+    // sex handling
+    protected char getSex(){return selected_profile.getSex();}
+    protected void setSex(char sex){selected_profile.setSex(sex);}
+
+    // weight handling
+    protected int getWeight(){return selected_profile.getWeight();}
+    protected void setWeight(int weight){selected_profile.setWeight(weight);}
+
+    // profile handling
+    protected void add_profile(String name, String address, int height, int weight,
                                int year, int month, int day, char sex){
         //TODO: FINISH add profile
-        Profile new_profile = new Profile(name, address, height, year, month, day, sex);
+        Profile new_profile = new Profile(name, address, height, weight, year, month, day, sex);
         profiles.add(new_profile);
         selected_profile = new_profile;
+        num_profile++;
     }
     protected void delete_profile(Profile delete){
         //TODO: FINISH delete profile
@@ -54,20 +68,20 @@ public class Patient extends Member{
     }
     protected void select_profile(long profile_num){
 
-        boolean found = false;
+       
         //TODO FINISHTHIS
-        for(Profile checking : profiles || !found){
+        for(Profile checking : profiles){
             if(checking.isIT(profile_num)){
-                found = true;
                 selected_profile = checking;
+                break;
             }
 
         }
     }
+    protected long getNumProfiles(){return this.num_profile;}
 
 
-
-    // CHECKING
+    
     private class Profile{
         private long profile_num;
         private String name;
@@ -79,12 +93,14 @@ public class Patient extends Member{
         private int weight;
         private int age;
         private char sex;
-        Profile(String name, String address, int height, int weight,
-                int year, int month, int day, char sex){
+        
+        Profile(String name, String address, int height, 
+                int weight, int year, int month, int day, char sex){
             this.name = name;
             this.address = address;
             this.height = height;
             this.weight = weight;
+            this.year = year;
             this.month = month;
             this.day = day;
             this.sex = sex;
