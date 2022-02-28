@@ -26,12 +26,36 @@ class Test{
         assert(user1.getSex() == sex);
         assert(user1.getNumProfiles() == 1);
         System.out.println("Checked Finished");
-<<<<<<< HEAD
         System.out.println("Checking for the Profile creation and deletion");
+        String name1 = "Jame";
+        String address1 = "33 Wall St";
+        int height1 = 180;
+        int weight1 = 70;
+        int year1 = 2001;
+        int month1 = 11;
+        int day1 = 10;
+        char sex1 = 'M';
+        user1.add_profile(name1, address1, height1, weight1, year1, month1, day1, sex1);
+        assert(user1.getNumProfiles() == 2);
+        boolean testing = user1.select_profile(name1);
+        assert(testing);
+        testing = user1.select_profile(name);
+        assert(testing);
+        String name2 = "Mike";
+        testing = user1.select_profile(name2);
+        assert(!testing);
+        testing = user1.delete_profile(name);
+        assert(testing);
+        testing = user1.delete_profile(name);
+        assert(!testing);
+        testing = user1.delete_profile(name1);
+        assert(testing);
+        assert(user1.getNumProfiles() == 0);
+        System.out.println("checking control");
+        Control controls = new Control();
+        controls.to_String();
+        System.out.println("Done");
         
-=======
-        System.out.println("Checking for the ")
->>>>>>> origin/main
     }
 }
 
