@@ -26,8 +26,12 @@ class Test{
         assert(user1.getSex() == sex);
         assert(user1.getNumProfiles() == 1);
         System.out.println("Checked Finished");
+<<<<<<< HEAD
         System.out.println("Checking for the Profile creation and deletion");
         
+=======
+        System.out.println("Checking for the ")
+>>>>>>> origin/main
     }
 }
 
