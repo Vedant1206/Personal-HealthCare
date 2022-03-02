@@ -8,8 +8,8 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="133dp"
-        android:layout_height="82dp"
+        android:layout_width="130dp"
+        android:layout_height="86dp"
         android:text="Head"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

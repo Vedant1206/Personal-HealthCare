@@ -1,4 +1,4 @@
-package main.java.ca.umanitoba.personalhealthcare;
+package ca.umanitoba.personalhealthcare;
 
 public class Control {
     private Member selected_member = null;
@@ -12,13 +12,15 @@ public class Control {
             System.out.println("Select member first");
             
         }
+        return null;
     }
     public boolean check_password(String password){
         if(selected_member == null){
             // case the none of the member is selected.
             System.out.println("Select member first");
         }
-        if()
+        //if()
+        return false;
     }
 
 }

@@ -1,4 +1,4 @@
-package com.example.personal_health_care;
+package ca.umanitoba.personalhealthcare;
 
 public class Guest extends User{
     
