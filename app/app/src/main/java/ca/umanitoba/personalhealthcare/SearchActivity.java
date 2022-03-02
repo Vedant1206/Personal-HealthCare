@@ -20,7 +20,7 @@ public class SearchActivity extends AppCompatActivity {
 
     ListView listView;
     LinearLayout linearL;
-    String[] name = {"Headache","Nausea","Fever, flue, Cold,"};
+    String[] name = {"Headache","Nausea","Fever, flue, Cold"};
 
     //"Headache","Nausea","Stiff Neck","Muscle Pain","Fever, flue, Cold,", "Vomiting"
     ArrayAdapter<String> arrayAdapter;
@@ -42,10 +42,19 @@ public class SearchActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 //Toast.makeText(SearchActivity.this, ""+arrayAdapter.getPosition(position),
                 //      Toast.LENGTH_SHORT).show();
+
                 if(position == 0){
-                    Intent i = new Intent(SearchActivity.this, HeadacheActivity.class);
+                    Intent i = new Intent(SearchActivity.this, Headache_Activity.class);
                     startActivity(i);
                 }
+                else if(position == 1){
+                    Intent i = new Intent(SearchActivity.this, Nausea_Activity.class);
+                    startActivity(i);
+                }else if(position == 2){
+                    Intent i = new Intent(SearchActivity.this, Cold_Activity.class);
+                    startActivity(i);
+                }
+
             }
         });
     }

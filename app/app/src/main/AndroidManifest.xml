@@ -10,9 +10,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PersonalHealthcare">
         <activity
+            android:name=".Cold_Activity"
+            android:exported="false"
+            android:parentActivityName=".SearchActivity" />
+        <activity
+            android:name=".Nausea_Activity"
+            android:exported="false"
+            android:parentActivityName=".SearchActivity" />
+        <activity
+            android:name=".Headache_Activity"
+            android:exported="false"
+            android:parentActivityName=".SearchActivity" />
+        <activity
             android:name=".bodyPartsActivity"
-            android:exported="true" />
-        <activity android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SearchActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Create_Account"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -18,4 +18,8 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, Create_Account.class);
         startActivity(i);
     }
+    public void searchSymptom(View v){
+        Intent i = new Intent(this, SearchActivity.class);
+        startActivity(i);
+    }
 }

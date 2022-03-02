@@ -1,5 +1,9 @@
 package ca.umanitoba.personalhealthcare;
 
+/**
+=======
+
+>>>>>>> 77999061a3db5a87a5bc5bf7fb7d34641374c807
 public class Control {
     private Member selected_member = null;
     public Control(){}
@@ -23,4 +27,4 @@ public class Control {
         return false;
     }
 
-}
+}*/

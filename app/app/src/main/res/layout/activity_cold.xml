@@ -12,7 +12,7 @@
         android:fillViewport="true">
 
         <TextView
-            android:id="@+id/headacheTextView"
+            android:id="@+id/coldTextView"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1.0"/>
