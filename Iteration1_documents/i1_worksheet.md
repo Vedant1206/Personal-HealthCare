@@ -37,7 +37,7 @@ Branching
 SOLID
 -----
 
-We could not find a SOLID violation in the project of group 2 because their code is clean and their project is well structured.
+[Link to the SOLID violation](winter-2022-a01/group-2/student-study-stats#45)
 
 Agile Planning
 --------------
@@ -48,13 +48,14 @@ of any Features or User Stories? Have links to any changed or pushed Features
 or User Stories.
 
 We had to push a few User stories to the next iteration. Namely,
-- [As a user who wants to have access to extra features, I want to create an account with a default/primary profile.]()
-- [Sample empty link]()
-- [Sample empty link]()
-- [Sample empty link]()
+- [As a user who wants to have access to extra features, I want to create an account with a default/primary profile.](winter-2022-a01/group-1/personal_healthcare#14)
+- [As a user, I want to report/add new symptoms if I could not find my symptoms in the list.](winter-2022-a01/group-1/personal_healthcare#16)
+- [As a user who wants to use the app with my family members, I want to add extra profiles for my family.](winter-2022-a01/group-1/personal_healthcare#17)
+- [As a user, I want to search for the details of the disease to get more information.](winter-2022-a01/group-1/personal_healthcare#15)
+- [As a user, I get all the probable causes based on the provided symptoms.](winter-2022-a01/group-1/personal_healthcare#13)
 
 We also brought a User story up from Iteration 2 and implemented now because along the way, the assigned group member thought that it would be better implemented.
--  [Sample empty link]()
+-  [Search from the list of common conditions (I.e., cough, cold, headache)](winter-2022-a01/group-1/personal_healthcare#11)
 
 Documenting our code well and setting standard Git workflow for the group took longer than expected. Which resulted in having lesser time to code. 
 We also overestimated the scale of our Features. Initially, we expected that we would have features implemented with scaleable logic/database, and a nice looking UI. But realistically, coding in Android studio took longer and we had to stop at making the UI only functional to give the attention to other aspects 
