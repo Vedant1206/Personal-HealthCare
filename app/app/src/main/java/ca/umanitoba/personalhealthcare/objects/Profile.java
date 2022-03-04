@@ -14,7 +14,7 @@ public class Profile{
     private int year;
     private int age;
 
-    Profile(String name, String address,
+    protected Profile(String name, String address,
             int height, int weight,
             int year, int month, int day,
             char sex){
@@ -39,23 +39,23 @@ public class Profile{
     }
 
     // Getting methods for the fields of this class:
-    String getName(){return this.name;}
-    String getAddress(){return  this.address;}
-    int getHeight(){return this.height;}
-    int getYear(){return this.year;}
-    int getMonth(){return this.month;}
-    int getDay(){return this.day;}
-    int getAge(){return this.age;}
-    int getWeight(){return this.weight;}
+    protected String getName(){return this.name;}
+    protected String getAddress(){return  this.address;}
+    protected int getHeight(){return this.height;}
+    protected int getYear(){return this.year;}
+    protected int getMonth(){return this.month;}
+    protected int getDay(){return this.day;}
+    protected int getAge(){return this.age;}
+    protected int getWeight(){return this.weight;}
 
     // Setting methods for the fields of this class:
-    void setName(String name){this.name = name;}
-    void setAddress(String address){this.address = address;}
-    void setHeight(int height){this.height = height;}
-    void setYear(int year){this.year = year;}
-    void setMonth(int month){this.month = month;}
-    void setDay(int day){this.day = day;}
-    void setSex(char sex){this.sex = sex;}
-    void setAge(int age){this.age = age;}
-    void setWeight(int weight){this.weight = weight;}
+    protected void setName(String name){this.name = name;}
+    protected void setAddress(String address){this.address = address;}
+    protected void setHeight(int height){this.height = height;}
+    protected void setYear(int year){this.year = year;}
+    protected void setMonth(int month){this.month = month;}
+    protected void setDay(int day){this.day = day;}
+    protected void setSex(char sex){this.sex = sex;}
+    protected void setAge(int age){this.age = age;}
+    protected void setWeight(int weight){this.weight = weight;}
 }
