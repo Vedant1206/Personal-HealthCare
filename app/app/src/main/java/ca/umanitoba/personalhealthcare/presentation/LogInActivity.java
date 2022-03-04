@@ -1,4 +1,4 @@
-package ca.umanitoba.personalhealthcare;
+package ca.umanitoba.personalhealthcare.presentation;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -6,6 +6,8 @@ import androidx.appcompat.widget.AppCompatButton;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+
+import ca.umanitoba.personalhealthcare.R;
 
 public class LogInActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package ca.umanitoba.personalhealthcare;
+package ca.umanitoba.personalhealthcare.presentation;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,7 +9,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class Create_Account extends AppCompatActivity {
+import ca.umanitoba.personalhealthcare.R;
+
+public class CreateAccountActivity extends AppCompatActivity {
 
     ArrayList<String> emails = new ArrayList<String>();
     ArrayList<String> passwords = new ArrayList<String>();

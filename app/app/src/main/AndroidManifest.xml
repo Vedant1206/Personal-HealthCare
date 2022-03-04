@@ -10,38 +10,38 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PersonalHealthcare">
         <activity
-            android:name=".LogInActivity"
+            android:name=".presentation.LogInActivity"
             android:exported="false" />
             <activity
-            android:name=".Stomach_Activity"
+            android:name=".presentation.StomachActivity"
             android:exported="false"
-            android:parentActivityName=".bodyPartsActivity"/>
+            android:parentActivityName=".presentation.BodyPartsActivity"/>
         <activity
-            android:name=".Head_Activity"
+            android:name=".presentation.HeadActivity"
             android:exported="false"
-            android:parentActivityName=".bodyPartsActivity"/>
+            android:parentActivityName=".presentation.BodyPartsActivity"/>
         <activity
-            android:name=".Cold_Activity"
+            android:name=".presentation.ColdActivity"
             android:exported="false"
-            android:parentActivityName=".SearchActivity" />
+            android:parentActivityName=".presentation.SearchActivity" />
         <activity
-            android:name=".Nausea_Activity"
+            android:name=".presentation.NauseaActivity"
             android:exported="false"
-            android:parentActivityName=".SearchActivity" />
+            android:parentActivityName=".presentation.SearchActivity" />
         <activity
-            android:name=".Headache_Activity"
+            android:name=".presentation.HeadacheActivity"
             android:exported="false"
-            android:parentActivityName=".SearchActivity" />
+            android:parentActivityName=".presentation.SearchActivity" />
         <activity
-            android:name=".bodyPartsActivity"
+            android:name=".presentation.BodyPartsActivity"
             android:exported="false"
-            android:parentActivityName=".SearchActivity"/>
+            android:parentActivityName=".presentation.SearchActivity"/>
         <activity
-            android:name=".SearchActivity"
+            android:name=".presentation.SearchActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".Create_Account"
+            android:name=".presentation.CreateAccountActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity

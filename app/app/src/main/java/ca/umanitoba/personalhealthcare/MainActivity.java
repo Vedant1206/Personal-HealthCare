@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import ca.umanitoba.personalhealthcare.presentation.CreateAccountActivity;
+import ca.umanitoba.personalhealthcare.presentation.LogInActivity;
+import ca.umanitoba.personalhealthcare.presentation.SearchActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     Button loginButton;
@@ -20,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void createAccount(View view){
-        Intent i = new Intent(this, Create_Account.class);
+        Intent i = new Intent(this, CreateAccountActivity.class);
         startActivity(i);
     }
     public void searchSymptom(View v){

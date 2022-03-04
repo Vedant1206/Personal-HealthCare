@@ -1,10 +1,9 @@
-package ca.umanitoba.personalhealthcare;
+package ca.umanitoba.personalhealthcare.objects;
 
 import java.util.ArrayList;
-import java.util.*;
 
 
-public class Patient extends Member{
+public class Patient extends Member {
     private long num_profile = 0;
     ArrayList<Profile> profiles;
     Profile selected_profile;
