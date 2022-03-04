@@ -10,5 +10,5 @@ public abstract class Member extends User{
         super(id);
     }
     protected String getID(){return super.getID();}
-    protected void setID(String id){super.setID(ID);}
+    protected void setID(String id){super.setID(id);}
 }
