@@ -59,6 +59,10 @@ public class SearchActivity extends AppCompatActivity {
         });
     }
 
+    public void searchByPicture(View v){
+        Intent i = new Intent(this, bodyPartsActivity.class);
+        startActivity(i);
+    }
 
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu, menu);
