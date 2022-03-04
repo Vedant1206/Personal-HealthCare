@@ -55,7 +55,7 @@ We had to push a few User stories to the next iteration. Namely,
 - [As a user, I get all the probable causes based on the provided symptoms.](winter-2022-a01/group-1/personal_healthcare#13)
 
 We also brought a User story up from Iteration 2 and implemented now because along the way, the assigned group member thought that it would be better implemented.
--  [Sample empty link]()
+-  [Search from the list of common conditions (I.e., cough, cold, headache)](winter-2022-a01/group-1/personal_healthcare#11)
 
 Documenting our code well and setting standard Git workflow for the group took longer than expected. Which resulted in having lesser time to code. 
 We also overestimated the scale of our Features. Initially, we expected that we would have features implemented with scaleable logic/database, and a nice looking UI. But realistically, coding in Android studio took longer and we had to stop at making the UI only functional to give the attention to other aspects 
