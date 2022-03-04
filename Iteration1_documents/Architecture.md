@@ -31,3 +31,5 @@ personalhealthcare
     └── StomachActivity.java
 ```
 # Iteration 1 Diagram
+
+[Diagram link](Iteration1_documents/ArchitectureDiagram.png)
