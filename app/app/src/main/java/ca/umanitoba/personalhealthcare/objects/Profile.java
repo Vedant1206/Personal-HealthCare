@@ -1,4 +1,4 @@
-package ca.umanitoba.personalhealthcare;
+package ca.umanitoba.personalhealthcare.objects;
 
 import java.time.*;
 import java.util.*;

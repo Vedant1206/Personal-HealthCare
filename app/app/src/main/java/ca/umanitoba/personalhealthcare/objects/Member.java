@@ -1,11 +1,9 @@
 
-package ca.umanitoba.personalhealthcare;
+package ca.umanitoba.personalhealthcare.objects;
 
-import java.util.ArrayList;
-import java.time.*;
-import java.util.*;
+import ca.umanitoba.personalhealthcare.objects.User;
 
-public abstract class Member extends User{
+public abstract class Member extends User {
     public Member(String id){
         super(id);
     }

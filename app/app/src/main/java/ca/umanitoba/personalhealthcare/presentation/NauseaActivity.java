@@ -1,11 +1,13 @@
-package ca.umanitoba.personalhealthcare;
+package ca.umanitoba.personalhealthcare.presentation;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class Nausea_Activity extends AppCompatActivity {
+import ca.umanitoba.personalhealthcare.R;
+
+public class NauseaActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

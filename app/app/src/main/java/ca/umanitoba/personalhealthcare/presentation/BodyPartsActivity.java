@@ -1,4 +1,4 @@
-package ca.umanitoba.personalhealthcare;
+package ca.umanitoba.personalhealthcare.presentation;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class bodyPartsActivity extends AppCompatActivity {
+import ca.umanitoba.personalhealthcare.R;
+
+public class BodyPartsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,12 +17,12 @@ public class bodyPartsActivity extends AppCompatActivity {
     }
 
     public void clickHead(View v){
-        Intent i = new Intent(this, Head_Activity.class);
+        Intent i = new Intent(this, HeadActivity.class);
         startActivity(i);
     }
 
     public void clickStomach(View v){
-        Intent i = new Intent(this, Stomach_Activity.class);
+        Intent i = new Intent(this, StomachActivity.class);
         startActivity(i);
     }
 

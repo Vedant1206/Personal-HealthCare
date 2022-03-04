@@ -1,8 +1,7 @@
-package ca.umanitoba.personalhealthcare;
+package ca.umanitoba.personalhealthcare.presentation;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,9 +11,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.appcompat.widget.SearchView;
+
+import ca.umanitoba.personalhealthcare.R;
 
 public class SearchActivity extends AppCompatActivity {
 
@@ -44,14 +44,14 @@ public class SearchActivity extends AppCompatActivity {
                 //      Toast.LENGTH_SHORT).show();
 
                 if(position == 0){
-                    Intent i = new Intent(SearchActivity.this, Headache_Activity.class);
+                    Intent i = new Intent(SearchActivity.this, HeadacheActivity.class);
                     startActivity(i);
                 }
                 else if(position == 1){
-                    Intent i = new Intent(SearchActivity.this, Nausea_Activity.class);
+                    Intent i = new Intent(SearchActivity.this, NauseaActivity.class);
                     startActivity(i);
                 }else if(position == 2){
-                    Intent i = new Intent(SearchActivity.this, Cold_Activity.class);
+                    Intent i = new Intent(SearchActivity.this, ColdActivity.class);
                     startActivity(i);
                 }
 
@@ -60,7 +60,7 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     public void searchByPicture(View v){
-        Intent i = new Intent(this, bodyPartsActivity.class);
+        Intent i = new Intent(this, BodyPartsActivity.class);
         startActivity(i);
     }
 
