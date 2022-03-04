@@ -37,7 +37,7 @@ Branching
 SOLID
 -----
 
-We could not find a SOLID violation in the project of group 2 because their code is clean and their project is well structured.
+[Link to the SOLID violation](winter-2022-a01/group-2/student-study-stats#45)
 
 Agile Planning
 --------------
