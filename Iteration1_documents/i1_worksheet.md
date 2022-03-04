@@ -48,10 +48,11 @@ of any Features or User Stories? Have links to any changed or pushed Features
 or User Stories.
 
 We had to push a few User stories to the next iteration. Namely,
-- [As a user who wants to have access to extra features, I want to create an account with a default/primary profile.]()
-- [Sample empty link]()
-- [Sample empty link]()
-- [Sample empty link]()
+- [As a user who wants to have access to extra features, I want to create an account with a default/primary profile.](winter-2022-a01/group-1/personal_healthcare#14)
+- [As a user, I want to report/add new symptoms if I could not find my symptoms in the list.](winter-2022-a01/group-1/personal_healthcare#16)
+- [As a user who wants to use the app with my family members, I want to add extra profiles for my family.](winter-2022-a01/group-1/personal_healthcare#17)
+- [As a user, I want to search for the details of the disease to get more information.](winter-2022-a01/group-1/personal_healthcare#15)
+- [As a user, I get all the probable causes based on the provided symptoms.](winter-2022-a01/group-1/personal_healthcare#13)
 
 We also brought a User story up from Iteration 2 and implemented now because along the way, the assigned group member thought that it would be better implemented.
 -  [Sample empty link]()
