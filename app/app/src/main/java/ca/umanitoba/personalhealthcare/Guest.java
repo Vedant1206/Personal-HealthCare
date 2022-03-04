@@ -3,10 +3,10 @@ package ca.umanitoba.personalhealthcare;
 
 public class Guest extends User{
     
-    public Guest(String ID) {
-        super(ID);        
+    public Guest(String id) {
+        super(id);        
     }
     
-    protected String getID(){return this.ID;}
-    protected void setID(String ID){this.ID = ID;}
+    protected String getID(){return super.getID();}
+    protected void setID(String id){super.setID(id);}
 }
