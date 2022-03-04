@@ -4,6 +4,8 @@ The UI layer consists of all the activity files in our project. The activity fil
 
 The domain specific objects include the Guest, Patient, Member, Profile, and User classes.
 
+The persistence layer consists of hard-coded data inside the activity classes for now.
+
 # File structure
 ```
 personalhealthcare
