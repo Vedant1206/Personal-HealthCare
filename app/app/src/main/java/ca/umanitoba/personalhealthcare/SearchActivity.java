@@ -20,12 +20,17 @@ public class SearchActivity extends AppCompatActivity {
 
     ListView listView;
     LinearLayout linearL;
+
+    //names of the symptoms and signs that will be displayed on the screen
     String[] name = {"Headache","Nausea","Fever, flue, Cold"};
 
     //"Headache","Nausea","Stiff Neck","Muscle Pain","Fever, flue, Cold,", "Vomiting"
     ArrayAdapter<String> arrayAdapter;
 
     @Override
+    // This will access the activity_search xml file
+    // This function has an On.item click override methodwhich will determine
+    // what the signs and symptoms are accodring to the position of the list and then access different activities for the result
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
@@ -59,11 +64,13 @@ public class SearchActivity extends AppCompatActivity {
         });
     }
 
+    // Accessing bodyPartsActivity through this method using Intent()
     public void searchByPicture(View v){
         Intent i = new Intent(this, bodyPartsActivity.class);
         startActivity(i);
     }
 
+    // Accessing menu resource to have a sorted list of Signs and symptoms
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu, menu);
         MenuItem menuItem = menu.findItem(R.id.action_search);
