@@ -37,12 +37,7 @@ Branching
 SOLID
 -----
 
-Find a SOLID violation in the project of group `(n%16)+1` (group 16 does group 1).
-Open an issue in their project with the violation,
-clearly explaining the SOLID violation - specifying the type, provide a link to that issue. Be sure
-your links in the issues are to **specific commits** (not to `main`, or `develop` as those will be changed).
-
-Provide a link to the issue you created here.
+We could not find a SOLID violation in the project of group 2 because their code is clean and their project is well structured.
 
 Agile Planning
 --------------
