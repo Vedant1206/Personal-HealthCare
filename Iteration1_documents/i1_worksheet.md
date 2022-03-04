@@ -21,9 +21,11 @@ in the code you are testing.
 Branching
 ----------
 
-[Link to our branching strategy](Iteration1_documents/branching_strategy.md)
+Provide a link to where you describe your branching strategy.
 
-![Branching strategy screenshot](Iteration1_documents/BranchingStrategyPic.PNG)
+Provide screen shot of a feature being added using your branching strategy
+successfully. The [GitLab Graph tool can do this](https://code.cs.umanitoba.ca/comp3350-summer2019/cook-eBook/-/network/develop),
+as well as using `git log --graph`.
 
 SOLID
 -----
