@@ -1,10 +1,10 @@
 package ca.umanitoba.personalhealthcare;
 
 public abstract class User {
-    protected String ID;
-    public User(String ID){
-        this.ID = ID;
+    protected String id;
+    public User(String id){
+        this.id = id;
     }
-    protected String getID(){return this.ID;}
-    protected void setID(String ID){this.ID = ID;}
+    protected String getID(){return this.id;}
+    protected void setID(String ID){this.id = id;}
 }
