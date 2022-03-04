@@ -30,9 +30,15 @@ in the code you are testing.
 Branching
 ----------
 
+<<<<<<< HEAD
 [Link to our Branching Strategy](Iteration1_documents/branching_strategy.md)
 
 [Link to Branching Strategy screenshot](Iteration1_documents/branching_strategy_screenshot.png)
+=======
+[Link to our branching strategy](Iteration1_documents/branching_strategy.md)
+
+![Branching strategy screenshot](Iteration1_documents/BranchingStrategyPic.PNG)
+>>>>>>> main
 
 SOLID
 -----
