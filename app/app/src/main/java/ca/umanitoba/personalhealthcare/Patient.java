@@ -11,11 +11,11 @@ public class Patient extends Member{
     private String email;
     private String password;
 
-    public Patient(String ID, String email, String password,
+    public Patient(String id, String email, String password,
                    String name, String address, int height, int weight,
                    int year, int month, int day,
                    char sex){
-        super(ID);
+        super(id);
         Profile new_profile = new Profile(name, address, height , weight, year, month, day, sex);
         profiles = new ArrayList<Profile>();
         profiles.add(new_profile);
@@ -31,7 +31,7 @@ public class Patient extends Member{
     protected String getPassword(){return this.password;}
 
     // Set methods for the fields of the Patient class
-    protected void setID(String ID){super.setID(ID);}
+    protected void setID(String id){super.setID(id);}
     protected void setEmail(String email){this.email = email;}
     protected void setPassword(String password){
         // method to change the password
