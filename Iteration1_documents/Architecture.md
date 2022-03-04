@@ -21,4 +21,5 @@ personalhealthcare
     ├── SearchActivity.java
     └── StomachActivity.java
 
-# Iteration 1 Diagram
+
+Note: Implementation of Persistence layer is left for the next iteration, and to replicate its functionality, some Strings have been hardcoded in several UI classes which reflect symptoms.

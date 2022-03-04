@@ -4,7 +4,6 @@ Iteration 1 Worksheet
 Adding a feature
 -----------------
 
-Tell the story of how one of your features was added to the project.
 Our feature was [Create user accounts/profile(s)](winter-2022-a01/group-1/personal_healthcare#1) which had 2 User stories linked within it. Each user story had its own linked set of Developer Tasks.
 
 Our group initially got together to loosely plan out all parts of the Iteration planning. We used the first few meetings to:
@@ -16,16 +15,13 @@ Whiteboard pictures of our initial plan are linked [here](Iteration1_documents/R
 
 Two of our Group members were assigned to the Account creation feature. They decided amongst themselves to individually take up the UI layer (ie making all the Android activities) and the Data layer (making hirearchy of classes that stores Guest/Registered Users and Profiles). They continuously communicated with each other and informed the group when changes were made. And during the group meetings, they worked with the rest of us in combining their Android activities with ours to complete the UI navigation flow of the app. 
 
-[Link to our Associated tests]()
 [Link to our final Merge request](winter-2022-a01/group-1/personal_healthcare!35)
-[Link to our Final merge commit](b2c852df69320b8bcb04b2eb2038fe68d6c45cb7)
+[Link to our Final merge commit](58a597d57c4bbc2ecc9c05309cb29644c8c33f5c)
 
 Exceptional code
 ----------------
 
-Provide a link to a test of exceptional code. In a few sentences,
-provide an explanation of why the exception is handled or thrown
-in the code you are testing.
+We do not have many tests as our in current iteration, we mainly worked on building UI activities and creating the skeleton classes structure for future Iterations. The java DSO classes have mainly getters and setters so they also don't have tests to go along.  
 
 Branching
 ----------
@@ -41,11 +37,6 @@ SOLID
 
 Agile Planning
 --------------
-
-Write a paragraph about any plans that were changed. Did you
-'push' any features to iteration 2? Did you change the description
-of any Features or User Stories? Have links to any changed or pushed Features
-or User Stories.
 
 We had to push a few User stories to the next iteration. Namely,
 - [As a user who wants to have access to extra features, I want to create an account with a default/primary profile.](winter-2022-a01/group-1/personal_healthcare#14)
