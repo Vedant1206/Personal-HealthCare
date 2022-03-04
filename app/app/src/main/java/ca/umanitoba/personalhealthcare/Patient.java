@@ -82,7 +82,7 @@ public class Patient extends Member{
     // password Checking
     protected boolean checkPassword(String password){
         boolean checked = true;
-        if(this.password.equal(password)){
+        if(this.password.equals(password)){
             return checked;
         }else{
             return !checked;

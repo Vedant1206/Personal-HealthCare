@@ -6,21 +6,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class bodyPartsActivity extends AppCompatActivity {
+public class Head_Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_body_parts);
+        setContentView(R.layout.activity_head);
     }
 
-    public void clickHead(View v){
-        Intent i = new Intent(this, Head_Activity.class);
+    public void clickHeadache(View v){
+        Intent i = new Intent(this, Headache_Activity.class);
         startActivity(i);
     }
 
-    public void clickStomach(View v){
-        Intent i = new Intent(this, Stomach_Activity.class);
+    public void clickCongestion(View v){
+        Intent i = new Intent(this, Cold_Activity.class);
         startActivity(i);
     }
 

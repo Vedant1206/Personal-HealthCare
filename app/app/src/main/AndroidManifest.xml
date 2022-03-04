@@ -10,6 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PersonalHealthcare">
         <activity
+            android:name=".Stomach_Activity"
+            android:exported="false"
+            android:parentActivityName=".bodyPartsActivity"/>
+        <activity
+            android:name=".Head_Activity"
+            android:exported="false"
+            android:parentActivityName=".bodyPartsActivity"/>
+        <activity
             android:name=".Cold_Activity"
             android:exported="false"
             android:parentActivityName=".SearchActivity" />
@@ -23,7 +31,8 @@
             android:parentActivityName=".SearchActivity" />
         <activity
             android:name=".bodyPartsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".SearchActivity"/>
         <activity
             android:name=".SearchActivity"
             android:exported="false"

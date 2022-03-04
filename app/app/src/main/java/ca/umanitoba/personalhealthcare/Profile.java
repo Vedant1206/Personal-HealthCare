@@ -3,7 +3,7 @@ package ca.umanitoba.personalhealthcare;
 import java.time.*;
 import java.util.*;
 
-protected class Profile{
+public class Profile{
     private String name;
     private String address;
     private char sex;
