@@ -5,6 +5,7 @@ The UI layer consists of all the activity files in our project. The activity fil
 The domain specific objects include the Guest, Patient, Member, Profile, and User classes.
 
 # File structure
+```
 personalhealthcare
 ├── MainActivity.java                           -- Launch activity
 ├── business                                    -- Logic layer 
@@ -26,5 +27,5 @@ personalhealthcare
     ├── NauseaActivity.java
     ├── SearchActivity.java
     └── StomachActivity.java
-
+```
 # Iteration 1 Diagram
