@@ -32,7 +32,7 @@ Branching
 
 [Link to our Branching Strategy](Iteration1_documents/branching_strategy.md)
 
-[Link to Branching Strategy screenshot](Iteration1_documents/branching_strategy_screenshot.png)
+[Link to Branching Strategy screenshot](Iteration1_documents/BranchingStrategyPic.PNG)
 
 SOLID
 -----
