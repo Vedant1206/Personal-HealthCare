@@ -28,7 +28,7 @@ This app will be considered a success if it achieves at least a four-star rating
 
 # Branching Strategy
 
-GitHub Flow is our branching strategy. We create branches directly from the main branch and when we are done working we merge our branches back into the main branch. It differs from Git Flow in that it does not have a development branch. We chose GitHub Flow because it is simple. We decided that we do not need a development branch because we will review each other’s code thoroughly before merging it into the main branch.
+[Link to our Branching Strategy](Iteration1_documents/branching_strategy.md)
 
 # Worksheet
 

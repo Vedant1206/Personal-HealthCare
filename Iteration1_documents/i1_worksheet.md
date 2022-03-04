@@ -42,3 +42,6 @@ Write a paragraph about any plans that were changed. Did you
 'push' any features to iteration 2? Did you change the description
 of any Features or User Stories? Have links to any changed or pushed Features
 or User Stories.
+
+Our convention to name the issues now includes the type of the artifact in [square brackets] the titles as along with the tags. This way, the titles becomes strikingly apparent, which helps in distinguishing things when we are dealing with a lot of open issues at once.
+
