@@ -23,7 +23,7 @@ Branching
 
 [Link to our branching strategy](Iteration1_documents/branching_strategy.md)
 
-![Branching strategy screenshot](Iteration1_documents/BranchingStrategyPic.png)
+![Branching strategy screenshot](Iteration1_documents/BranchingStrategyPic.PNG)
 
 SOLID
 -----
