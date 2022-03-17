@@ -43,6 +43,8 @@ public class FakeMemberPersistence implements MemberPersistence {
 
         this.members.add(newMember);
 
+        newMember.setID(this.members.size()+"");
+
         return null;
     }
 }
