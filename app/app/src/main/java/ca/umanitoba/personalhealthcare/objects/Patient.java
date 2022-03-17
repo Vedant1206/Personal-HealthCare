@@ -13,10 +13,8 @@ public class Patient extends Member {
      * @param email
      * @param password
      */
-    public Patient(String id, String email, String password) {
-        super(id);
-        this.email = email;
-        this.password = password;
+    public Patient(String id, String email, String password) throws EmailInvalidException, PasswordInvalidException {
+        super(id, email, password);
     }
 
 
@@ -28,10 +26,8 @@ public class Patient extends Member {
      * @param   password
      * @param   profiles
      */
-    public Patient(String id, String email, String password, Profile... profiles) {
-        super(id);
-        this.email = email;
-        this.password = password;
+    public Patient(String id, String email, String password, Profile... profiles) throws EmailInvalidException, PasswordInvalidException {
+        super(id, email, password);
         this.profiles = new ArrayList<Profile>();
         for (Profile profile : profiles) {
             addProfile(profile);
