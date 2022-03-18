@@ -4,91 +4,90 @@ import java.util.ArrayList;
 
 
 public class Patient extends Member {
-    private long num_profile = 0;
     ArrayList<Profile> profiles;
-    Profile selected_profile;
-    private String email;
-    private String password;
 
-    public Patient(String id, String email, String password,
-                   String name, String address, int height, int weight,
-                   int year, int month, int day,
-                   char sex){
-        super(id);
-        Profile new_profile = new Profile(name, address, height , weight, year, month, day, sex);
-        profiles = new ArrayList<Profile>();
-        profiles.add(new_profile);
-        selected_profile = new_profile;
-        this.email = email;
-        this.password = password;
-        num_profile++;
+    /**
+     * This is default constructor for Patient where you create Patient
+     *
+     * @param id
+     * @param email
+     * @param password
+     */
+    public Patient(String id, String email, String password) throws EmailInvalidException, PasswordInvalidException {
+        super(id, email, password);
     }
 
-    // Get methods for the fields of the Patient class
-    protected String getID(){return super.getID();}
-    protected String getEmail(){return this.email;}
-    protected String getPassword(){return this.password;}
 
-    // Set methods for the fields of the Patient class
-    protected void setID(String id){super.setID(id);}
-    protected void setEmail(String email){this.email = email;}
-    protected void setPassword(String password){
-        // method to change the password
-
-        this.password = password;}
-
-
-    // profile handling
-    protected void add_profile(String name, String address, int height, int weight,
-                               int year, int month, int day, char sex){
-        // Method to add new profile to the list (profiles).
-        Profile new_profile = new Profile(name, address, height, weight, year, month, day, sex);
-        profiles.add(new_profile);
-        selected_profile = new_profile;
-        num_profile++;
-    }
-
-    protected boolean delete_profile(String profile_name){
-        // method to delete the profile with given name.
-        boolean deleted = true;
-        if(selected_profile == null || num_profile == 0){return !deleted;}
-        if(select_profile(profile_name)){
-            profiles.remove(selected_profile);
-            num_profile--;
-            return deleted;
-        }else{
-            return !deleted;
+    /**
+     * Constructor: default constructor + a set of profiles to be added
+     *
+     * @param   id
+     * @param   email
+     * @param   password
+     * @param   profiles
+     */
+    public Patient(String id, String email, String password, Profile... profiles) throws EmailInvalidException, PasswordInvalidException {
+        super(id, email, password);
+        this.profiles = new ArrayList<Profile>();
+        for (Profile profile : profiles) {
+            addProfile(profile);
         }
-
     }
 
-    protected boolean select_profile(String profile_name){
-        // method to select the profile with given name.
-        boolean select = true;
-        for(Profile checking : profiles){
-            if(checking.getName().equals(profile_name)){
-                selected_profile = checking;
-                return select;
+
+    /**
+     * Add profile into the profile list
+     * The new profile must have a unique name compare to other profile in the list
+     *
+     * @param   profile {Profile}
+     * @return  true if the profile has a unique name
+     * @return  false if the profile has a same name as one in the list, profile is not added
+     */
+    public boolean addProfile(Profile profile) {
+        // Checking if any profile has the same name
+        for (Profile existingProfile : this.profiles) {
+            if (existingProfile.getName().equals(profile.getName())) {
+                return false;
             }
-
         }
-        return !select;
+        // Profile is good to be added now
+        this.profiles.add(profile);
+        return true;
     }
 
-    protected long getNumProfiles(){return this.num_profile;}
-    // method to return the number of profile created under this Patient.
-
-    // password Checking
-    protected boolean checkPassword(String password){
-        boolean checked = true;
-        if(this.password.equals(password)){
-            return checked;
-        }else{
-            return !checked;
+    /**
+     * Search and get the profile with the given profile name in parameter
+     *
+     * @param   profileName
+     * @return  Profile if there is a profile with a given name
+     * @return  null    if there is no profile we need
+     */
+    public Profile getProfile (String profileName) {
+        for (Profile profile: this.profiles) {
+            if (profile.getName().equals(profileName)) {
+                return profile;
+            }
         }
+        return null;
 
     }
 
-    
+    public boolean deleteProfile(String profileName) {
+        Profile profile = getProfile(profileName);
+        if (profile != null) {
+            profiles.remove(profile);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    public long getNumProfiles() {
+        return this.profiles.size();
+    }
+
+
+
 
 }
