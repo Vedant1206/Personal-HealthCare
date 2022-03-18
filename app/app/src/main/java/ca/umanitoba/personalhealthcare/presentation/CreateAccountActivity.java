@@ -61,26 +61,33 @@ public class CreateAccountActivity extends AppCompatActivity {
         } catch (EmailExistException e) {
             notifyEmailExist(e);
         }
-        //TODO: Succeed creating .. do something afterward
+        succeedCreating();
     }
 
-    void feedbackException(Exception e) {
-        createFeedback.setText(e.getMessage());
-        createFeedback.setVisibility(View.VISIBLE);
-        createFeedback.setTextColor(Color.RED);
+    void succeedCreating () {
+        feedbackException("Account is created", Color.GREEN);
+        //TODO: move to login page
+        System.out.println("Move to login page now");
     }
 
     void notifyEmailInvalid(EmailInvalidException e) {
-        feedbackException(e);
+        feedbackException(e.getMessage(), Color.RED);
     }
 
     void notifyPasswordInvalid(PasswordInvalidException e) {
-        feedbackException(e);
+        feedbackException(e.getMessage(), Color.RED);
 
     }
 
     void notifyEmailExist(EmailExistException e) {
-        feedbackException(e);
+        feedbackException(e.getMessage(), Color.RED);
 
+    }
+
+
+    void feedbackException(String message, int color) {
+        createFeedback.setText(message);
+        createFeedback.setVisibility(View.VISIBLE);
+        createFeedback.setTextColor(color);
     }
 }

@@ -15,6 +15,10 @@ public class AccountManagerImp implements  AccountManager {
         memberPersistence = FakeMemberPersistence.getMemberPersistence(); //TODO: create a fake persistence
     }
 
+    public AccountManagerImp(MemberPersistence memberPersistence) {
+        this.memberPersistence = memberPersistence;
+    }
+
     @Override
     public boolean authMemberLogin(String username, String password) {
         //TODO: to be implemented
