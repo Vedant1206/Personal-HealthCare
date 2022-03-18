@@ -1,8 +1,8 @@
 package ca.umanitoba.personalhealthcare.presentation;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+import ca.umanitoba.personalhealthcare.R;
 
 public class AddSymptomActivity extends AppCompatActivity {
 
