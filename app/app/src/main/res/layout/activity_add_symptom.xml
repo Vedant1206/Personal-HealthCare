@@ -55,13 +55,14 @@
         app:layout_constraintVertical_bias="0.0">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/symptomName"
             android:layout_width="305dp"
             android:layout_height="71dp"
             android:hint="Name of the symptom" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/checkHead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="44dp"
@@ -74,7 +75,7 @@
         app:layout_constraintVertical_bias="0.032" />
 
     <CheckBox
-        android:id="@+id/checkBox5"
+        android:id="@+id/checkEverywhere"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Everywhere"
@@ -82,11 +83,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.647"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox7"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintTop_toBottomOf="@+id/checkChest"
+        app:layout_constraintVertical_bias="0.038" />
 
     <CheckBox
-        android:id="@+id/checkBox6"
+        android:id="@+id/checkStomach"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Stomach"
@@ -94,11 +95,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.294"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox"
-        app:layout_constraintVertical_bias="0.042" />
+        app:layout_constraintTop_toBottomOf="@+id/checkHead"
+        app:layout_constraintVertical_bias="0.038" />
 
     <CheckBox
-        android:id="@+id/checkBox7"
+        android:id="@+id/checkChest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Chest"
@@ -163,7 +164,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/submitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Submit"

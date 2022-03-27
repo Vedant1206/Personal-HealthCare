@@ -43,15 +43,26 @@ public class SearchActivity extends AppCompatActivity {
                 //Toast.makeText(SearchActivity.this, ""+arrayAdapter.getPosition(position),
                 //      Toast.LENGTH_SHORT).show();
 
+                DataActivityClass data = new DataActivityClass();
+
+                Intent i = new Intent(SearchActivity.this, HeadacheActivity.class);
                 if(position == 0){
-                    Intent i = new Intent(SearchActivity.this, HeadacheActivity.class);
+
+                    String string = data.getSymptom("Headache");
+                    i.putExtra("description", string);
                     startActivity(i);
                 }
                 else if(position == 1){
-                    Intent i = new Intent(SearchActivity.this, NauseaActivity.class);
+                    //Intent i = new Intent(SearchActivity.this, NauseaActivity.class);
+
+                    String string = data.getSymptom("Nausea");
+                    i.putExtra("description", string);
                     startActivity(i);
                 }else if(position == 2){
-                    Intent i = new Intent(SearchActivity.this, ColdActivity.class);
+                    //Intent i = new Intent(SearchActivity.this, ColdActivity.class);
+
+                    String string = data.getSymptom("Fever, flue, Cold");
+                    i.putExtra("description", string);
                     startActivity(i);
                 }
 
