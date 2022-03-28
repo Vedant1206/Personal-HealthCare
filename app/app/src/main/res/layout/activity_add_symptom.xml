@@ -137,7 +137,7 @@
         android:id="@+id/textView4"
         android:layout_width="308dp"
         android:layout_height="52dp"
-        android:text="If you cannot find your symptom in the list, please provide the following information to add it to the database"
+        android:text="If you cannot find your symptom in the list, please provide the following information to report the missing symptom"
         app:layout_constraintBottom_toTopOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"

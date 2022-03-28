@@ -3,6 +3,7 @@ package ca.umanitoba.personalhealthcare.business;
 import java.util.ArrayList;
 
 import ca.umanitoba.personalhealthcare.objects.Symptom;
+import ca.umanitoba.personalhealthcare.persistence.ReportSymptoms;
 
 public class AddSymptomLogic {
 
@@ -17,6 +18,7 @@ public class AddSymptomLogic {
     Boolean everywhere;
     ArrayList<String> affectedBodyParts;
     ArrayList<String> associatedConditions;
+    ReportSymptoms reportSymptom;
 
     public AddSymptomLogic(String name, String condition1, String condition2, String condition3, Boolean head, Boolean chest, Boolean stomach, Boolean everywhere) {
 
@@ -33,6 +35,8 @@ public class AddSymptomLogic {
         associatedConditions = createConditionsList(condition1, condition2, condition3);
 
         thisSymptom = new Symptom(name, affectedBodyParts, associatedConditions);
+
+        reportSymptom = new ReportSymptoms(thisSymptom);
 
     }
 
