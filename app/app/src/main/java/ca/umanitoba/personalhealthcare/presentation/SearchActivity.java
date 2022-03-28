@@ -44,27 +44,27 @@ public class SearchActivity extends AppCompatActivity {
                 //      Toast.LENGTH_SHORT).show();
 
                 DataActivityClass data = new DataActivityClass();
-
+                String string ="";
                 Intent i = new Intent(SearchActivity.this, HeadacheActivity.class);
                 if(position == 0){
 
-                    String string = data.getSymptom("Headache");
-                    i.putExtra("description", string);
-                    startActivity(i);
+                    string = data.getSymptom("Headache");
+
                 }
                 else if(position == 1){
                     //Intent i = new Intent(SearchActivity.this, NauseaActivity.class);
 
-                    String string = data.getSymptom("Nausea");
-                    i.putExtra("description", string);
-                    startActivity(i);
+                    string = data.getSymptom("Nausea");
+
+
                 }else if(position == 2){
                     //Intent i = new Intent(SearchActivity.this, ColdActivity.class);
 
-                    String string = data.getSymptom("Fever, flue, Cold");
-                    i.putExtra("description", string);
-                    startActivity(i);
+                    string = data.getSymptom("Fever, flue, Cold");
+
                 }
+                i.putExtra("description", string);
+                startActivity(i);
 
             }
         });

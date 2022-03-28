@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PersonalHealthcare">
         <activity
+            android:name=".presentation.SymptomsListActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.AddSymptomActivity"
             android:exported="false" />
         <activity

@@ -18,11 +18,23 @@ public class BodyPartsActivity extends AppCompatActivity {
 
     public void clickHead(View v){
         Intent i = new Intent(this, HeadActivity.class);
+        String name = "Head";
+        String[] stuff = {"a,", "b", "c", "d"}; //menu listr
+
+        i.putExtra("ID", stuff);
+        i.putExtra("Name", name);
         startActivity(i);
     }
 
     public void clickStomach(View v){
-        Intent i = new Intent(this, StomachActivity.class);
+        Intent i = new Intent(this, HeadActivity.class);
+
+        String name = "Head";
+        String[] stuff = {"a,", "b", "c", "d"}; //menu listr
+
+        i.putExtra("ID", stuff);
+        i.putExtra("Name", name);
+
         startActivity(i);
     }
 

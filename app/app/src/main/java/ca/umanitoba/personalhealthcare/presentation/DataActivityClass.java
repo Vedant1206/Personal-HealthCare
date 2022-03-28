@@ -14,7 +14,7 @@ public class DataActivityClass {
     public String getSymptom(String symp){
         //"Headache","Nausea","Fever, flue, Cold"
         if (symp.equals("Headache")){
-            return symptomList.get(0).getDescription();
+            return headacheData();
         }else if (symp.equals("Nausea")){
             return symptomList.get(1).getDescription();
         }else  if (symp.equals("Fever, flue, Cold")){

@@ -5,19 +5,69 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 
 import ca.umanitoba.personalhealthcare.R;
 import ca.umanitoba.personalhealthcare.presentation.ColdActivity;
 import ca.umanitoba.personalhealthcare.presentation.HeadacheActivity;
 
 public class HeadActivity extends AppCompatActivity {
+    ListView listView;
+    LinearLayout linearL;
 
+    //"Headache","Nausea","Stiff Neck","Muscle Pain","Fever, flue, Cold,", "Vomiting"
+    ArrayAdapter<String> arrayAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_head);
+        setTitle("Enter Sign/Symptom");
+
+
+        Bundle b = getIntent().getExtras();
+        String[] name = b.getStringArray("ID");
+
+        linearL = new LinearLayout(this);
+        listView = findViewById(R.id.listview);
+
+        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, name);
+        listView.setAdapter(arrayAdapter);
+
+        if(b.getString("Name").equals("Head")){
+            headList();
+        }
     }
 
+    public void legs(){
+
+    }
+    public void headList(){
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                //Toast.makeText(SearchActivity.this, ""+arrayAdapter.getPosition(position),
+                //      Toast.LENGTH_SHORT).show();
+
+                DataActivityClass data = new DataActivityClass();
+                String string ="";
+                Intent i = new Intent(HeadActivity.this, HeadacheActivity.class);
+                if(position == 0){
+                    string = data.getSymptom("Headache");
+                }
+                else if(position == 1){
+                    string = data.getSymptom("Nausea");
+                }else if(position == 2){
+                    string = data.getSymptom("Fever, flue, Cold");
+                }
+                i.putExtra("description", string);
+                startActivity(i);
+
+            }
+        });
+    }
     public void clickHeadache(View v){
         Intent i = new Intent(this, HeadacheActivity.class);
         startActivity(i);
