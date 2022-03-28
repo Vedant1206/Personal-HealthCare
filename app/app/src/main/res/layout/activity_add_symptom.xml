@@ -7,6 +7,25 @@
     tools:context=".presentation.AddSymptomActivity">
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="305dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="108dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/symptomName"
+            android:layout_width="305dp"
+            android:layout_height="71dp"
+            android:hint="Name of the symptom" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout3"
         android:layout_width="305dp"
         android:layout_height="72dp"
@@ -40,25 +59,6 @@
             android:layout_width="305dp"
             android:layout_height="71dp"
             android:hint="Condition 2" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        android:layout_width="305dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="108dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.481"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/symptomName"
-            android:layout_width="305dp"
-            android:layout_height="71dp"
-            android:hint="Name of the symptom" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <CheckBox
@@ -167,6 +167,7 @@
         android:id="@+id/submitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:clickable="true"
         android:text="Submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

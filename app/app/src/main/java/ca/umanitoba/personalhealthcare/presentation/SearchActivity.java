@@ -75,6 +75,11 @@ public class SearchActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void reportAMissingSymptom(View v){
+        Intent i = new Intent(this, AddSymptomActivity.class);
+        startActivity(i);
+    }
+
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu, menu);
         MenuItem menuItem = menu.findItem(R.id.action_search);
