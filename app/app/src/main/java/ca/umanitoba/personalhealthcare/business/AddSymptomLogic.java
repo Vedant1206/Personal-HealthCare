@@ -38,7 +38,7 @@ public class AddSymptomLogic {
 
     public ArrayList<String> createBodyPartsList(Boolean head, Boolean chest, Boolean stomach, Boolean everywhere){
 
-        ArrayList<String> bodyParts = new ArrayList<String>();
+        ArrayList<String> bodyParts = new ArrayList<>();
         if(everywhere) {
             bodyParts.add("head");
             bodyParts.add("chest");
@@ -61,7 +61,7 @@ public class AddSymptomLogic {
 
     public ArrayList<String> createConditionsList(String C1, String C2, String C3){
 
-        ArrayList<String> conditions = new ArrayList<String>();
+        ArrayList<String> conditions = new ArrayList<>();
         if(!C1.isEmpty()) {
             conditions.add(C1);
         }
