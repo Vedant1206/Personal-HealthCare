@@ -41,10 +41,68 @@ public class HeadActivity extends AppCompatActivity {
         }
     }
 
-    public void legs(){
+    public void stomachList(){
+
+        listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+        listView.setItemsCanFocus(false);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                //Toast.makeText(SearchActivity.this, ""+arrayAdapter.getPosition(position),
+                //      Toast.LENGTH_SHORT).show();
+
+                DataActivityClass data = new DataActivityClass();
+                String string ="";
+                Intent i = new Intent(HeadActivity.this, HeadacheActivity.class);
+                if(position == 0){
+                    string = data.getSymptom("Nausea");
+                }
+                else if(position == 1){
+                    string = data.getSymptom("Stomach pain");
+                }else if(position == 2){
+                    string = data.getSymptom("Bloating");
+                }
+                i.putExtra("description", string);
+                startActivity(i);
+
+            }
+        });
 
     }
+
+    public void chestList(){
+
+        listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+        listView.setItemsCanFocus(false);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                //Toast.makeText(SearchActivity.this, ""+arrayAdapter.getPosition(position),
+                //      Toast.LENGTH_SHORT).show();
+
+                DataActivityClass data = new DataActivityClass();
+                String string ="";
+                Intent i = new Intent(HeadActivity.this, HeadacheActivity.class);
+                if(position == 0){
+                    string = data.getSymptom("Chest pain");
+                }
+                else if(position == 1){
+                    string = data.getSymptom("Itchiness");
+                }else if(position == 2){
+                    string = data.getSymptom("Shortness of breath");
+                }
+                i.putExtra("description", string);
+                startActivity(i);
+
+            }
+        });
+
+    }
+
     public void headList(){
+
+        listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+        listView.setItemsCanFocus(false);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
@@ -58,9 +116,9 @@ public class HeadActivity extends AppCompatActivity {
                     string = data.getSymptom("Headache");
                 }
                 else if(position == 1){
-                    string = data.getSymptom("Nausea");
+                    string = data.getSymptom("Congestion");
                 }else if(position == 2){
-                    string = data.getSymptom("Fever, flue, Cold");
+                    string = data.getSymptom("Sore throat");
                 }
                 i.putExtra("description", string);
                 startActivity(i);

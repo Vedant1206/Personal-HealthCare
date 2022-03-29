@@ -47,21 +47,11 @@ public class SearchActivity extends AppCompatActivity {
                 String string ="";
                 Intent i = new Intent(SearchActivity.this, HeadacheActivity.class);
                 if(position == 0){
-
                     string = data.getSymptom("Headache");
-
-                }
-                else if(position == 1){
-                    //Intent i = new Intent(SearchActivity.this, NauseaActivity.class);
-
+                } else if(position == 1){
                     string = data.getSymptom("Nausea");
-
-
-                }else if(position == 2){
-                    //Intent i = new Intent(SearchActivity.this, ColdActivity.class);
-
+                } else if(position == 2){
                     string = data.getSymptom("Fever, flue, Cold");
-
                 }
                 i.putExtra("description", string);
                 startActivity(i);

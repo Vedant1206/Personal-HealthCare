@@ -19,9 +19,9 @@ public class BodyPartsActivity extends AppCompatActivity {
     public void clickHead(View v){
         Intent i = new Intent(this, HeadActivity.class);
         String name = "Head";
-        String[] stuff = {"a,", "b", "c", "d"}; //menu listr
+        String[] symptoms = {"Headache", "Congestion", "Sore throat"}; //menu listr
 
-        i.putExtra("ID", stuff);
+        i.putExtra("ID", symptoms);
         i.putExtra("Name", name);
         startActivity(i);
     }
@@ -29,10 +29,22 @@ public class BodyPartsActivity extends AppCompatActivity {
     public void clickStomach(View v){
         Intent i = new Intent(this, HeadActivity.class);
 
-        String name = "Head";
-        String[] stuff = {"a,", "b", "c", "d"}; //menu listr
+        String name = "Stomach";
+        String[] symptoms = {"Nausea", "Stomach pain", "Bloating"}; //menu listr
 
-        i.putExtra("ID", stuff);
+        i.putExtra("ID", symptoms);
+        i.putExtra("Name", name);
+
+        startActivity(i);
+    }
+
+    public void clickChest(View v){
+        Intent i = new Intent(this, HeadActivity.class);
+
+        String name = "Chest";
+        String[] symptoms = {"Chest pain", "Shortness of breath", "Itchiness"}; //menu listr
+
+        i.putExtra("ID", symptoms);
         i.putExtra("Name", name);
 
         startActivity(i);
