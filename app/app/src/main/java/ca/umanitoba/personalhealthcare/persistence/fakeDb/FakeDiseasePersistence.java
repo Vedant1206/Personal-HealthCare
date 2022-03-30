@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import ca.umanitoba.personalhealthcare.objects.Condition;
+import ca.umanitoba.personalhealthcare.objects.ConditionSymptoms;
 import ca.umanitoba.personalhealthcare.objects.Symptom;
 import ca.umanitoba.personalhealthcare.persistence.DiseasePersistence;
 
@@ -16,9 +17,19 @@ public class FakeDiseasePersistence implements DiseasePersistence {
 
     //storing the data here
     ArrayList<Symptom> symptomList;
+    ArrayList<ConditionSymptoms> conditionList;
 
     public FakeDiseasePersistence() {
         initializeData();
+    }
+
+    private void initializeData(){
+//        Symptom Headache = new Symptom("Headache", headacheData());
+//        Symptom Nausea = new Symptom("Nausea", nausea());
+//        Symptom Cold = new Symptom("Fever, flue, Cold", cold());
+//        symptomList.add(Headache);
+//        symptomList.add(Nausea);
+//        symptomList.add(Cold);
     }
 
     @Override
@@ -38,14 +49,8 @@ public class FakeDiseasePersistence implements DiseasePersistence {
     }
 
 
-    private void initializeData() {
-        Symptom Headache = new Symptom("Headache", headacheData());
-        Symptom Nausea = new Symptom("Nausea", nausea());
-        Symptom Cold = new Symptom("Fever, flue, Cold", cold());
-        symptomList.add(Headache);
-        symptomList.add(Nausea);
-        symptomList.add(Cold);
-    }
+    // IGNORE THE CODE BELOW FOR NOW. IT IS NON-FUNCTIONAL IN THIS CLASS
+
 
 
     //returns the symptom according to name
