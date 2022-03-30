@@ -19,7 +19,7 @@ public class BodyPartsActivity extends AppCompatActivity {
     public void clickHead(View v){
         Intent i = new Intent(this, HeadActivity.class);
         String name = "Head";
-        String[] symptoms = {"Headache", "Congestion", "Sore throat"}; //menu listr
+        String[] symptoms = getSymptomsByBodyPart("head"); //menu listr
 
         i.putExtra("ID", symptoms);
         i.putExtra("Name", name);
