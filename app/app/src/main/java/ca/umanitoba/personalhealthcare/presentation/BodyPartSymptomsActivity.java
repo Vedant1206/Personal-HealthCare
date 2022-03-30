@@ -1,4 +1,4 @@
-package ca.umanitoba.personalhealthcare.presentation;
+/*package ca.umanitoba.personalhealthcare.presentation;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,12 +12,11 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import ca.umanitoba.personalhealthcare.R;
+import ca.umanitoba.personalhealthcare.business.BodyPartSymptomsLogic;
 
 public class BodyPartSymptomsActivity extends AppCompatActivity {
     ListView listView;
     LinearLayout linearL;
-
-    //"Headache","Nausea","Stiff Neck","Muscle Pain","Fever, flue, Cold,", "Vomiting"
     ArrayAdapter<String> arrayAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,24 +29,31 @@ public class BodyPartSymptomsActivity extends AppCompatActivity {
 
         linearL = new LinearLayout(this);
         listView = findViewById(R.id.listview);
-
         arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, name);
         listView.setAdapter(arrayAdapter);
-
         String bodyPart = b.getString("Name");
+        showList(bodyPart);
 
-        switch (bodyPart) {
-            case "head":
-                headList();
-                break;
-            case "chest":
-                chestList();
-                break;
-            case "stomach":
-                stomachList();
-                break;
-        }
+        BodyPartSymptomsLogic thisLogic = new BodyPartSymptomsLogic(bodyPart);
+    }
 
+    public void showList(String bodyPart){
+
+        listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+        listView.setItemsCanFocus(false);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+
+                Intent i = new Intent(BodyPartSymptomsActivity.this, HeadacheActivity.class);
+
+                i.putExtra("description", thisLogic.);
+                startActivity(i);
+
+            }
+
+
+    });
     }
 
     public void stomachList(){
@@ -57,10 +63,7 @@ public class BodyPartSymptomsActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                //Toast.makeText(SearchActivity.this, ""+arrayAdapter.getPosition(position),
-                //      Toast.LENGTH_SHORT).show();
 
-                DataActivityClass data = new DataActivityClass();
                 String string ="";
                 Intent i = new Intent(BodyPartSymptomsActivity.this, HeadacheActivity.class);
                 if(position == 0){
@@ -112,27 +115,24 @@ public class BodyPartSymptomsActivity extends AppCompatActivity {
 
         listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         listView.setItemsCanFocus(false);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                //Toast.makeText(SearchActivity.this, ""+arrayAdapter.getPosition(position),
-                //      Toast.LENGTH_SHORT).show();
+        listView.setOnItemClickListener((adapterView, view, position, l) -> {
+            //Toast.makeText(SearchActivity.this, ""+arrayAdapter.getPosition(position),
+            //      Toast.LENGTH_SHORT).show();
 
-                DataActivityClass data = new DataActivityClass();
-                String string ="";
-                Intent i = new Intent(BodyPartSymptomsActivity.this, HeadacheActivity.class);
-                if(position == 0){
-                    string = data.getSymptom("Headache");
-                }
-                else if(position == 1){
-                    string = data.getSymptom("Congestion");
-                }else if(position == 2){
-                    string = data.getSymptom("Sore throat");
-                }
-                i.putExtra("description", string);
-                startActivity(i);
-
+            DataActivityClass data = new DataActivityClass();
+            String string ="";
+            Intent i = new Intent(BodyPartSymptomsActivity.this, HeadacheActivity.class);
+            if(position == 0){
+                string = data.getSymptom("Headache");
             }
+            else if(position == 1){
+                string = data.getSymptom("Congestion");
+            }else if(position == 2){
+                string = data.getSymptom("Sore throat");
+            }
+            i.putExtra("description", string);
+            startActivity(i);
+
         });
     }
     public void clickHeadache(View v){
@@ -145,4 +145,4 @@ public class BodyPartSymptomsActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-}
+}*/

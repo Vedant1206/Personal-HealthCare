@@ -38,6 +38,18 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
         setTitle("Enter Sign/Symptom");
 
+        //User may have gotten here via BodyPartsActivity
+        Intent i = getIntent();
+        if(i != null) {
+            Bundle b = i.getExtras();
+            if (b != null && !b.isEmpty()) {
+                String[] stringArray = b.getStringArray("ID");
+                if (stringArray != null && stringArray.length > 0) {
+                    name = stringArray;
+                }
+            }
+        }
+
         //building the layout and getting Id of textView
         linearL = new LinearLayout(this);
         listView = findViewById(R.id.listview);

@@ -36,7 +36,7 @@ public class BodyPartsActivity extends AppCompatActivity {
     }
 
     public void start(BodyPartsLogic thisLogic){
-        Intent i = new Intent(this, BodyPartSymptomsActivity.class);
+        Intent i = new Intent(this, SearchActivity.class);
         i.putExtra("ID", thisLogic.getSymptomStrings());
         i.putExtra("Name", thisLogic.getName());
         startActivity(i);
