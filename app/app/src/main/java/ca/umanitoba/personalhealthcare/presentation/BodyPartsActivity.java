@@ -36,7 +36,7 @@ public class BodyPartsActivity extends AppCompatActivity {
     }
 
     public void start(BodyPartsLogic thisLogic){
-        i.putExtra("ID", thisLogic.getSymptoms());
+        i.putExtra("ID", thisLogic.getSymptomStrings());
         i.putExtra("Name", thisLogic.getName());
         startActivity(i);
     }

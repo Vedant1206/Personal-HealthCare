@@ -10,7 +10,10 @@ import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+
 import ca.umanitoba.personalhealthcare.R;
+import ca.umanitoba.personalhealthcare.objects.Symptom;
 import ca.umanitoba.personalhealthcare.presentation.ColdActivity;
 import ca.umanitoba.personalhealthcare.presentation.HeadacheActivity;
 
@@ -33,11 +36,21 @@ public class HeadActivity extends AppCompatActivity {
         linearL = new LinearLayout(this);
         listView = findViewById(R.id.listview);
 
-        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, name);
+        arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, name);
         listView.setAdapter(arrayAdapter);
 
-        if(b.getString("Name").equals("Head")){
-            headList();
+        String bodyPart = b.getString("Name");
+
+        switch (bodyPart) {
+            case "head":
+                headList();
+                break;
+            case "chest":
+                chestList();
+                break;
+            case "stomach":
+                stomachList();
+                break;
         }
     }
 

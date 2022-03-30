@@ -20,7 +20,7 @@ public class FakeSymptomPersistence implements SymptomPersistence {
         storeData();
     }
 
-    //returns rhe symptom according to name
+    //returns the symptom according to name
     public Symptom getSymptomByName(String name){
         if (name.equals("Headache")){
             return symptomList.get(0);
@@ -30,6 +30,11 @@ public class FakeSymptomPersistence implements SymptomPersistence {
             return symptomList.get(2);
         }
         return new Symptom("", "");
+    }
+
+    //returns the symptom according to body part
+    public ArrayList<Symptom> getSymptomsByBodyPart(String bodyPart){
+        return symptomList;
     }
 
     //storing the data into arraylist
