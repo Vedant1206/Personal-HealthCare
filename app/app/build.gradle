@@ -39,5 +39,4 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     implementation files('libs/hsqldb-2.6.1.jar')
-    implementation files('libs/hsqldb-2.6.1-sources.jar')
 }
