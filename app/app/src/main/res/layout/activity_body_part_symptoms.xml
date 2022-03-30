@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.HeadActivity">
+    tools:context=".presentation.BodyPartSymptomsActivity">
     <ListView
         android:id="@+id/listview"
         android:layout_width="310dp"

@@ -11,15 +11,9 @@ import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import ca.umanitoba.personalhealthcare.R;
-import ca.umanitoba.personalhealthcare.objects.Symptom;
-import ca.umanitoba.personalhealthcare.presentation.ColdActivity;
-import ca.umanitoba.personalhealthcare.presentation.HeadacheActivity;
 
-public class HeadActivity extends AppCompatActivity {
+public class BodyPartSymptomsActivity extends AppCompatActivity {
     ListView listView;
     LinearLayout linearL;
 
@@ -28,7 +22,7 @@ public class HeadActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_head);
+        setContentView(R.layout.activity_body_part_symptoms);
         setTitle("Enter Sign/Symptom");
 
         Bundle b = getIntent().getExtras();
@@ -68,7 +62,7 @@ public class HeadActivity extends AppCompatActivity {
 
                 DataActivityClass data = new DataActivityClass();
                 String string ="";
-                Intent i = new Intent(HeadActivity.this, HeadacheActivity.class);
+                Intent i = new Intent(BodyPartSymptomsActivity.this, HeadacheActivity.class);
                 if(position == 0){
                     string = data.getSymptom("Nausea");
                 }
@@ -97,7 +91,7 @@ public class HeadActivity extends AppCompatActivity {
 
                 DataActivityClass data = new DataActivityClass();
                 String string ="";
-                Intent i = new Intent(HeadActivity.this, HeadacheActivity.class);
+                Intent i = new Intent(BodyPartSymptomsActivity.this, HeadacheActivity.class);
                 if(position == 0){
                     string = data.getSymptom("Chest pain");
                 }
@@ -126,7 +120,7 @@ public class HeadActivity extends AppCompatActivity {
 
                 DataActivityClass data = new DataActivityClass();
                 String string ="";
-                Intent i = new Intent(HeadActivity.this, HeadacheActivity.class);
+                Intent i = new Intent(BodyPartSymptomsActivity.this, HeadacheActivity.class);
                 if(position == 0){
                     string = data.getSymptom("Headache");
                 }

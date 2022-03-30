@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PersonalHealthcare">
         <activity
-            android:name=".presentation.SymptomsListActivity"
-            android:exported="false" />
-        <activity
             android:name=".presentation.AddSymptomActivity"
             android:exported="false" />
         <activity
@@ -23,7 +20,7 @@
             android:exported="false"
             android:parentActivityName=".presentation.BodyPartsActivity" />
         <activity
-            android:name=".presentation.HeadActivity"
+            android:name=".presentation.BodyPartSymptomsActivity"
             android:exported="false"
             android:parentActivityName=".presentation.BodyPartsActivity" />
         <activity
