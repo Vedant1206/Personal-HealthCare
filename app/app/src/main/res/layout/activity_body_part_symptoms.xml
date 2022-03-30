@@ -4,8 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.HeadActivity">
-
+    tools:context=".presentation.BodyPartSymptomsActivity">
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="310dp"
+        android:layout_height="342dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.584"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.308" />
+    <!--
     <TextView
         android:id="@+id/textView"
         android:layout_width="279dp"
@@ -45,4 +56,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.321" />
+    -->
 </androidx.constraintlayout.widget.ConstraintLayout>

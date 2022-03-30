@@ -12,4 +12,9 @@ public class Condition {
         this.sourceName = sourceName;
         this.description = description;
     }
+
+    public String getName() {return name;}
+    public String getSourceLink() {return sourceLink;}
+    public String getSourceName() {return sourceName;}
+    public String getDescription() {return description;}
 }

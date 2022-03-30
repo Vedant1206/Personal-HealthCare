@@ -1,44 +1,44 @@
 package ca.umanitoba.personalhealthcare.persistence.fakeDb;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
+import ca.umanitoba.personalhealthcare.objects.Condition;
 import ca.umanitoba.personalhealthcare.objects.Symptom;
-import ca.umanitoba.personalhealthcare.persistence.SymptomPersistence;
+import ca.umanitoba.personalhealthcare.persistence.DiseasePersistence;
+
 
 /**
  * This is a Fake data set where we are storing the data about each symptom
- * This class implements an instance class called Symptom persistence class
- * */
-public class FakeSymptomPersistence implements SymptomPersistence {
+ * This class implements an instance class called Disease persistence class
+ */
+public class FakeDiseasePersistence implements DiseasePersistence {
 
     //storing the data here
     ArrayList<Symptom> symptomList;
 
-    //constructor
-    public FakeSymptomPersistence(){
-        symptomList = new ArrayList<Symptom>();
-        storeData();
+    public FakeDiseasePersistence() {
+        initializeData();
     }
 
-    //returns the symptom according to name
-    public Symptom getSymptomByName(String name){
-        if (name.equals("Headache")){
-            return symptomList.get(0);
-        }else if (name.equals("Nausea")){
-            return symptomList.get(1);
-        }else  if (name.equals("Fever, flue, Cold")){
-            return symptomList.get(2);
-        }
-        return new Symptom("", "");
+    @Override
+    public ArrayList<Condition> getCommonConditions() {
+        return null;
     }
 
+    @Override
     //returns the symptom according to body part
-    public ArrayList<Symptom> getSymptomsByBodyPart(String bodyPart){
+    public ArrayList<Symptom> getSymptomsByBodyPart(String bodyPart) {
         return symptomList;
     }
 
-    //storing the data into arraylist
-    public void storeData(){
+    @Override
+    public ArrayList<Condition> getConditionsBySymptoms(ArrayList<Symptom> symptoms) {
+        return null;
+    }
+
+
+    private void initializeData() {
         Symptom Headache = new Symptom("Headache", headacheData());
         Symptom Nausea = new Symptom("Nausea", nausea());
         Symptom Cold = new Symptom("Fever, flue, Cold", cold());
@@ -47,10 +47,25 @@ public class FakeSymptomPersistence implements SymptomPersistence {
         symptomList.add(Cold);
     }
 
+
+    //returns the symptom according to name
+    public Symptom getSymptomByName(String name) {
+        if (name.equals("Headache")) {
+            return symptomList.get(0);
+        } else if (name.equals("Nausea")) {
+            return symptomList.get(1);
+        } else if (name.equals("Fever, flue, Cold")) {
+            return symptomList.get(2);
+        }
+        return new Symptom("", "");
+    }
+
+
+
     /**
      * All the data that will be shown in the list
-     * */
-    private String cold(){
+     */
+    private String cold() {
         return "Cough syrups\\n\" +\n" +
                 "                \"Over-the-counter cough and cold medicines are intended to treat the symptoms\" +\n" +
                 "                \" of coughs and colds, not the underlying disease. Research suggests that \" +\n" +
@@ -69,7 +84,8 @@ public class FakeSymptomPersistence implements SymptomPersistence {
                 "                \" use of these medicines for children younger than 12 years old. And it isn't\" +\n" +
                 "                \" typically recommended that you give cough or cold medicines to an older child.";
     }
-    private String nausea(){
+
+    private String nausea() {
         return "Take it easy. Too much activity and not getting enough rest might make \" +\n" +
                 "                \"nausea worse.\\n\" +\n" +
                 "                \"Stay hydrated. Take small sips of cold, clear, carbonated or sour drinks,\" +\n" +
@@ -88,8 +104,9 @@ public class FakeSymptomPersistence implements SymptomPersistence {
                 "                \"such as a cruise, ask your doctor about prescription motion sickness adhesive \" +\n" +
                 "                \"patches, such as scopolamine (Transderm Scop).";
     }
-    private String headacheData(){
-        return  "Tension-type headaches\n" +
+
+    private String headacheData() {
+        return "Tension-type headaches\n" +
                 "Tension-type headaches, the most common variety of headaches:\n" +
                 "\n" +
                 "Might be felt as a tight band of pain around your head, a dull ache or pressure\n" +
@@ -132,4 +149,5 @@ public class FakeSymptomPersistence implements SymptomPersistence {
 
 
     }
+
 }

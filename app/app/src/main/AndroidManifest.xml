@@ -10,16 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PersonalHealthcare">
         <activity
+            android:name=".presentation.AddSymptomActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.LogInActivity"
             android:exported="false" />
-            <activity
+        <activity
             android:name=".presentation.StomachActivity"
             android:exported="false"
-            android:parentActivityName=".presentation.BodyPartsActivity"/>
+            android:parentActivityName=".presentation.BodyPartsActivity" />
         <activity
-            android:name=".presentation.HeadActivity"
+            android:name=".presentation.BodyPartSymptomsActivity"
             android:exported="false"
-            android:parentActivityName=".presentation.BodyPartsActivity"/>
+            android:parentActivityName=".presentation.BodyPartsActivity" />
         <activity
             android:name=".presentation.ColdActivity"
             android:exported="false"
@@ -35,7 +38,7 @@
         <activity
             android:name=".presentation.BodyPartsActivity"
             android:exported="false"
-            android:parentActivityName=".presentation.SearchActivity"/>
+            android:parentActivityName=".presentation.SearchActivity" />
         <activity
             android:name=".presentation.SearchActivity"
             android:exported="false"

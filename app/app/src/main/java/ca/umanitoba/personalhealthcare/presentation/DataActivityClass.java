@@ -1,43 +1,27 @@
-package ca.umanitoba.personalhealthcare.persistence.fakeDb;
+package ca.umanitoba.personalhealthcare.presentation;
 
 import java.util.ArrayList;
 
 import ca.umanitoba.personalhealthcare.objects.Symptom;
-import ca.umanitoba.personalhealthcare.persistence.SymptomPersistence;
 
-/**
- * This is a Fake data set where we are storing the data about each symptom
- * This class implements an instance class called Symptom persistence class
- * */
-public class FakeSymptomPersistence implements SymptomPersistence {
-
-    //storing the data here
+public class DataActivityClass {
     ArrayList<Symptom> symptomList;
 
-    //constructor
-    public FakeSymptomPersistence(){
+    public DataActivityClass(){
         symptomList = new ArrayList<Symptom>();
         storeData();
     }
-
-    //returns the symptom according to name
-    public Symptom getSymptomByName(String name){
-        if (name.equals("Headache")){
-            return symptomList.get(0);
-        }else if (name.equals("Nausea")){
-            return symptomList.get(1);
-        }else  if (name.equals("Fever, flue, Cold")){
-            return symptomList.get(2);
+    public String getSymptom(String symp){
+        //"Headache","Nausea","Fever, flue, Cold"
+        if (symp.equals("Headache")){
+            return headacheData();
+        }else if (symp.equals("Nausea")){
+            return symptomList.get(1).getDescription();
+        }else  if (symp.equals("Fever, flue, Cold")){
+            return symptomList.get(2).getDescription();
         }
-        return new Symptom("", "");
+        return "fuck u";
     }
-
-    //returns the symptom according to body part
-    public ArrayList<Symptom> getSymptomsByBodyPart(String bodyPart){
-        return symptomList;
-    }
-
-    //storing the data into arraylist
     public void storeData(){
         Symptom Headache = new Symptom("Headache", headacheData());
         Symptom Nausea = new Symptom("Nausea", nausea());
@@ -45,6 +29,10 @@ public class FakeSymptomPersistence implements SymptomPersistence {
         symptomList.add(Headache);
         symptomList.add(Nausea);
         symptomList.add(Cold);
+    }
+
+    public void addSymptomExternally(Symptom temp){
+
     }
 
     /**
