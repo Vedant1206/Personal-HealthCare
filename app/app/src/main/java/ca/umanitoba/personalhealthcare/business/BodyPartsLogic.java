@@ -1,5 +1,7 @@
 package ca.umanitoba.personalhealthcare.business;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import ca.umanitoba.personalhealthcare.objects.Symptom;
 import ca.umanitoba.personalhealthcare.persistence.DiseasePersistence;
@@ -19,11 +21,10 @@ public class BodyPartsLogic {
 
     }
 
-    public ArrayList<String> getSymptomStrings(){
-        ArrayList<String> symptomStrings = new ArrayList<>();
-        int i;
-        for (i = 0; i < symptoms.size(); i++) {
-            symptomStrings.add(symptoms.get(i).getSymptomName());
+    public String[] getSymptomStrings(){
+        String[] symptomStrings = new String[symptoms.size()];
+        for (int i = 0; i < symptoms.size(); i++) {
+            symptomStrings[i] = symptoms.get(i).getSymptomName();
         }
         return symptomStrings;
     }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -11,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import ca.umanitoba.personalhealthcare.R;
 import ca.umanitoba.personalhealthcare.objects.Symptom;
@@ -28,7 +30,6 @@ public class HeadActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_head);
         setTitle("Enter Sign/Symptom");
-
 
         Bundle b = getIntent().getExtras();
         String[] name = b.getStringArray("ID");
@@ -52,6 +53,7 @@ public class HeadActivity extends AppCompatActivity {
                 stomachList();
                 break;
         }
+
     }
 
     public void stomachList(){
