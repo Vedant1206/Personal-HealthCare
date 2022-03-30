@@ -20,10 +20,6 @@
             android:exported="false"
             android:parentActivityName=".presentation.BodyPartsActivity" />
         <activity
-            android:name=".presentation.BodyPartSymptomsActivity"
-            android:exported="false"
-            android:parentActivityName=".presentation.BodyPartsActivity" />
-        <activity
             android:name=".presentation.ColdActivity"
             android:exported="false"
             android:parentActivityName=".presentation.SearchActivity" />
