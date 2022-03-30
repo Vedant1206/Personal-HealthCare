@@ -7,8 +7,13 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+
 import ca.umanitoba.personalhealthcare.R;
 import ca.umanitoba.personalhealthcare.business.AddSymptomLogic;
+import ca.umanitoba.personalhealthcare.objects.Symptom;
 
 public class AddSymptomActivity extends AppCompatActivity {
 
@@ -21,6 +26,7 @@ public class AddSymptomActivity extends AppCompatActivity {
     CheckBox checkStomach;
     CheckBox checkEverywhere;
     Button submitButton;
+    AddSymptomLogic thisLogic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +60,27 @@ public class AddSymptomActivity extends AppCompatActivity {
                         } else if(head == false && chest == false && stomach == false && everywhere == false) {
                             Toast.makeText(getApplicationContext(), "Please select the affected body parts", Toast.LENGTH_SHORT).show();
                         } else {
-                            new AddSymptomLogic(sympName, condition1, condition2, condition3, head, chest, stomach, everywhere);
+                            thisLogic = new AddSymptomLogic(sympName, condition1, condition2, condition3, head, chest, stomach, everywhere);
+                            if(reportSymptom(thisLogic.getThisSymptom())) {
+                                Toast.makeText(getApplicationContext(), "Thank you for your submission", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(getApplicationContext(), "oops", Toast.LENGTH_SHORT).show();
+                            }
                         }
+                    }
+                    public Boolean reportSymptom(Symptom thisSymptom){
+                        Boolean returnValue = false;
+                        try {
+                            FileOutputStream fileout=openFileOutput("ReportedSymptoms.txt", MODE_PRIVATE);
+                            OutputStreamWriter outputWriter=new OutputStreamWriter(fileout);
+                            outputWriter.write(thisSymptom.toString() + "\n");
+                            outputWriter.close();
+                            returnValue = true;
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            returnValue = false;
+                        }
+                        return returnValue;
                     }
                 }
         );
