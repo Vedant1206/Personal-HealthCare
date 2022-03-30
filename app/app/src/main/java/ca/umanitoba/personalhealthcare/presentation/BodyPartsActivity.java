@@ -7,8 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 
 import ca.umanitoba.personalhealthcare.R;
+import ca.umanitoba.personalhealthcare.business.BodyPartsLogic;
 
 public class BodyPartsActivity extends AppCompatActivity {
+
+    BodyPartsLogic thisLogic;
+    Intent i = new Intent(this, HeadActivity.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,36 +21,23 @@ public class BodyPartsActivity extends AppCompatActivity {
     }
 
     public void clickHead(View v){
-        Intent i = new Intent(this, HeadActivity.class);
-        String name = "Head";
-        String[] symptoms = getSymptomsByBodyPart("head"); //menu listr
-
-        i.putExtra("ID", symptoms);
-        i.putExtra("Name", name);
-        startActivity(i);
+        thisLogic = new BodyPartsLogic("head");
+        start(thisLogic);
     }
 
     public void clickStomach(View v){
-        Intent i = new Intent(this, HeadActivity.class);
-
-        String name = "Stomach";
-        String[] symptoms = {"Nausea", "Stomach pain", "Bloating"}; //menu listr
-
-        i.putExtra("ID", symptoms);
-        i.putExtra("Name", name);
-
-        startActivity(i);
+        thisLogic = new BodyPartsLogic("stomach");
+        start(thisLogic);
     }
 
     public void clickChest(View v){
-        Intent i = new Intent(this, HeadActivity.class);
+        thisLogic = new BodyPartsLogic("chest");
+        start(thisLogic);
+    }
 
-        String name = "Chest";
-        String[] symptoms = {"Chest pain", "Shortness of breath", "Itchiness"}; //menu listr
-
-        i.putExtra("ID", symptoms);
-        i.putExtra("Name", name);
-
+    public void start(BodyPartsLogic thisLogic){
+        i.putExtra("ID", thisLogic.getSymptoms());
+        i.putExtra("Name", thisLogic.getName());
         startActivity(i);
     }
 
