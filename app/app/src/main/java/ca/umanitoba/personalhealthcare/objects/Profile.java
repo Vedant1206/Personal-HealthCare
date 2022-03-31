@@ -7,7 +7,7 @@ public class Profile{
     private String email;
     private String name;
     private String address;
-    private char sex;
+    private String sex;
     private int weight;
     private int height;
     private int day;
@@ -19,7 +19,7 @@ public class Profile{
     public Profile(String email, String name, String address,
             int height, int weight,
             int year, int month, int day,
-            char sex){
+            String sex){
         this.email = email;
         this.name = name;
         this.address = address;
@@ -35,7 +35,7 @@ public class Profile{
     public Profile(String name, String address,
                    int height, int weight,
                    int year, int month, int day,
-                   char sex){
+                   String sex){
         this.name = name;
         this.address = address;
         this.height = height;
@@ -64,6 +64,7 @@ public class Profile{
     public int getDay(){return this.day;}
     public int getAge(){return this.age;}
     public int getWeight(){return this.weight;}
+    public String getSex(){return this.sex;}
     public String getEmail(){return this.email;}
 
     // Setting methods for the fields of this class:
@@ -74,7 +75,7 @@ public class Profile{
     public void setYear(int year){this.year = year;}
     public void setMonth(int month){this.month = month;}
     public void setDay(int day){this.day = day;}
-    public void setSex(char sex){this.sex = sex;}
+    public void setSex(String sex){this.sex = sex;}
     public void setAge(int age){this.age = age;}
     public void setWeight(int weight){this.weight = weight;}
 }
