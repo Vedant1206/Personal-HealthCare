@@ -1,6 +1,7 @@
 package ca.umanitoba.personalhealthcare.business;
 
 import ca.umanitoba.personalhealthcare.objects.Patient;
+import ca.umanitoba.personalhealthcare.objects.Profile;
 
 public interface ProfileManager {
 

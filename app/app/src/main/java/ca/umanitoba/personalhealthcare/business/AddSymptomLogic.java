@@ -2,11 +2,9 @@ package ca.umanitoba.personalhealthcare.business;
 
 import java.util.ArrayList;
 
-import ca.umanitoba.personalhealthcare.objects.Symptom;
-
 public class AddSymptomLogic {
 
-    Symptom thisSymptom;
+    String symptomString;
     String name;
     String condition1;
     String condition2;
@@ -32,8 +30,16 @@ public class AddSymptomLogic {
         affectedBodyParts = createBodyPartsList(head, chest, stomach, everywhere);
         associatedConditions = createConditionsList(condition1, condition2, condition3);
 
-        thisSymptom = new Symptom(name, affectedBodyParts, associatedConditions);
+        symptomString = createString(name, affectedBodyParts, associatedConditions);
 
+    }
+
+    public String createString(String name, ArrayList<String> bodyParts, ArrayList<String> conditions){
+
+        String result = name + ":\nAffected body parts: " + bodyParts.toString()
+                + "\nAssociated conditions: " + conditions.toString() + "\n";;
+
+        return result;
     }
 
     public ArrayList<String> createBodyPartsList(Boolean head, Boolean chest, Boolean stomach, Boolean everywhere){
@@ -74,7 +80,6 @@ public class AddSymptomLogic {
         return conditions;
 
     }
-
-    public Symptom getThisSymptom(){return thisSymptom;}
+    public String getSymptomString(){return symptomString;}
 
 }

@@ -18,13 +18,5 @@ public class Symptom {
         this.affectedBodyParts = affectedBodyParts;
         this.associatedConditions = associatedConditions;
     }
-
-    public String toString() {return name + ":\nAffected body parts: " + affectedBodyParts.toString()
-            + "\nAssociated conditions: " + associatedConditions.toString() + "\n";}
-    public boolean addAffectedBodyPart(String bodyPart){return affectedBodyParts.add(bodyPart);}
-    public boolean addAssociatedCondition(String condition){return associatedConditions.add(condition);}
-    public String getDescription() {return description;}
-    public String getSymptomName() {return name;}
-    public ArrayList<String> getAffectedBodyParts() {return affectedBodyParts;}
-    public ArrayList<String> getAssociatedConditions() {return associatedConditions;}
 }
+

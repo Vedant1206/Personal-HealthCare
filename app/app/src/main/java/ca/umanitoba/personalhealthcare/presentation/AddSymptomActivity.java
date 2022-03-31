@@ -1,5 +1,6 @@
 package ca.umanitoba.personalhealthcare.presentation;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,7 +14,6 @@ import java.io.OutputStreamWriter;
 
 import ca.umanitoba.personalhealthcare.R;
 import ca.umanitoba.personalhealthcare.business.AddSymptomLogic;
-import ca.umanitoba.personalhealthcare.objects.Symptom;
 
 public class AddSymptomActivity extends AppCompatActivity {
 
@@ -57,23 +57,28 @@ public class AddSymptomActivity extends AppCompatActivity {
                         Boolean everywhere = checkEverywhere.isChecked();
                         if(sympName.isEmpty()) {
                             Toast.makeText(getApplicationContext(), "Please enter the name of the symptom", Toast.LENGTH_SHORT).show();
-                        } else if(head == false && chest == false && stomach == false && everywhere == false) {
+                        } else if(!head && !chest && !stomach && !everywhere) {
                             Toast.makeText(getApplicationContext(), "Please select the affected body parts", Toast.LENGTH_SHORT).show();
                         } else {
                             thisLogic = new AddSymptomLogic(sympName, condition1, condition2, condition3, head, chest, stomach, everywhere);
-                            if(reportSymptom(thisLogic.getThisSymptom())) {
+                            if(reportSymptom(thisLogic.getSymptomString())) {
                                 Toast.makeText(getApplicationContext(), "Thank you for your submission", Toast.LENGTH_SHORT).show();
+                                backToSearch();
                             } else {
                                 Toast.makeText(getApplicationContext(), "oops", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }
-                    public Boolean reportSymptom(Symptom thisSymptom){
+                    public void backToSearch(){
+                        Intent i = new Intent(AddSymptomActivity.this, SearchActivity.class);
+                        startActivity(i);
+                    }
+                    public Boolean reportSymptom(String symptomString){
                         Boolean returnValue = false;
                         try {
                             FileOutputStream fileout=openFileOutput("ReportedSymptoms.txt", MODE_PRIVATE);
                             OutputStreamWriter outputWriter=new OutputStreamWriter(fileout);
-                            outputWriter.write(thisSymptom.toString() + "\n");
+                            outputWriter.write(symptomString + "\n");
                             outputWriter.close();
                             returnValue = true;
                         } catch (Exception e) {
