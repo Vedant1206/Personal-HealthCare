@@ -96,11 +96,6 @@ public class SearchActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void reportAMissingSymptom(View v){
-        Intent i = new Intent(this, AddSymptomActivity.class);
-        startActivity(i);
-    }
-
     /**
      * This method is for accessing the menu and sorting
      * according to what the user types
