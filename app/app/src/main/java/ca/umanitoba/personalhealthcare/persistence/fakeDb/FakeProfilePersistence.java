@@ -1,6 +1,7 @@
 package ca.umanitoba.personalhealthcare.persistence.fakeDb;
 
 import java.util.ArrayList;
+import java.util.List;
 import ca.umanitoba.personalhealthcare.persistence.ProfilePersistence;
 
 import ca.umanitoba.personalhealthcare.objects.Profile;
@@ -9,15 +10,15 @@ import ca.umanitoba.personalhealthcare.objects.NameExistsException;
 
 
 public class FakeProfilePersistence implements ProfilePersistence {
-
+    public static FakeProfilePersistence profilePersistence;
     private ArrayList<Profile> profiles;
     private FakeProfilePersistence(){profiles = new ArrayList<>();}
 
     public static ProfilePersistence getProfilePersistence(){
-        if(profiles == null){
-            profiles = new ArrayList<Profile>();
+        if(profilePersistence == null){
+            profilePersistence = new FakeProfilePersistence();
         }
-        return this.profiles;
+        return profilePersistence;
     }
 
     @Override
@@ -33,21 +34,27 @@ public class FakeProfilePersistence implements ProfilePersistence {
 
     @Override
     public Profile insertProfile(Profile currentProfile){
-        if(insertProfileException(currentProfile)) {
-            profiles.add(currentProfile);
+        try{
+            insertProfileException(currentProfile);
+
+        }catch (NameExistsException exception){
+            exception.printStackTrace();
         }
+
+        return currentProfile;
+
     }
 
-    public boolean isnertProfileException(Profile currentProfile) throws NameExistsException{
+    public boolean insertProfileException(Profile currentProfile) throws NameExistsException{
         for(Profile profile: profiles){
             if(profile.getName().equals(currentProfile.getName()) && profile.getEmail().equals(currentProfile.getEmail())){
-                throws new NameExistsException;
+                throw new NameExistsException();
             }
         }
         return true;
     }
 
-    @Overrride
+    @Override
     public void deleteProfile(Profile currentProfile){
         for(Profile profile: profiles){
             if(profile.getName().equals(currentProfile.getName()) && profile.getEmail().equals(currentProfile.getEmail())){
@@ -56,6 +63,12 @@ public class FakeProfilePersistence implements ProfilePersistence {
             }
         }
     }
+    @Override
+    public Profile updateProfile(Profile currentProfile){
+
+        return currentProfile;
+    }
+
 
 
 }

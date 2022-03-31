@@ -8,7 +8,7 @@ import ca.umanitoba.personalhealthcare.persistence.ProfilePersistence;
 
 
 import ca.umanitoba.personalhealthcare.persistence.MemberPersistence;
-import ca.umanitoba.personalhealthcare.persistence.fakeDb.FakeProfilePersistnece;
+import ca.umanitoba.personalhealthcare.persistence.fakeDb.FakeProfilePersistence;
 import ca.umanitoba.personalhealthcare.persistence.fakeDb.FakeMemberPersistence;
 
 public class ProfileManagerImp implements ProfileManager{
@@ -26,8 +26,9 @@ public class ProfileManagerImp implements ProfileManager{
     public ProfileManagerImp(String email, String password){
         //------------------------------Area maybe need be rework
         if(profiles == null || members == null){
-            profiles = new FakeProfilePersistence();
-            members = new FakeMemberPersistence();
+            profiles = FakeProfilePersistence.getProfilePersistence();
+            members = FakeMemberPersistence.getMemberPersistence();
+
         }
         this.selectedMember = members.getMember(email, password);
         //TODO: create a fake persistence
@@ -39,8 +40,8 @@ public class ProfileManagerImp implements ProfileManager{
 
     public ProfileManagerImp(Member selectedMember){
         if(profiles == null || members == null){
-            profiles = new FakeProfilePersistence();
-            members = new FakeMemberPersistence();
+            profiles = FakeProfilePersistence.getProfilePersistence();
+            members = FakeMemberPersistence.getMemberPersistence();
         }
         this.selectedMember = selectedMember;
 
@@ -53,7 +54,7 @@ public class ProfileManagerImp implements ProfileManager{
 
     @Override
     public void deleteProfile(Profile profileDeleting){
-        profiles(profileDeleting);
+        profiles.deleteProfile(profileDeleting);
     }
 
     @Override
