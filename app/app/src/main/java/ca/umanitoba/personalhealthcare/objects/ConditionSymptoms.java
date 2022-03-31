@@ -16,19 +16,19 @@ import java.util.ArrayList;
 public class ConditionSymptoms {
     private Condition condition;
     private String bodyPart;
-    private ArrayList<Symptom> symptoms;
-    private boolean commonDisease;
+    private ArrayList<Symptom> symptomList;
+    private boolean isCommonDisease;
 
     public ConditionSymptoms(Condition condition, ArrayList<Symptom> symptoms, String bodyPart, boolean isCommon){
         this.condition = condition;
-        this.symptoms = symptoms;
+        this.symptomList = symptoms;
         this.bodyPart = bodyPart;
-        this.commonDisease = isCommon;
+        this.isCommonDisease = isCommon;
     }
 
     public Condition getCondition() {return condition;}
-    public ArrayList<Symptom> getSymptoms() {return symptoms;}
+    public ArrayList<Symptom> getSymptoms() {return symptomList;}
 
     public String getBodyPart() {return bodyPart;}
-    public boolean isCommonDisease() {return commonDisease;}
+    public boolean isCommonDisease() {return isCommonDisease;}
 }
