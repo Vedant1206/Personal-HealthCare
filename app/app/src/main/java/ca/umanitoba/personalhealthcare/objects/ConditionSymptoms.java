@@ -11,7 +11,9 @@ import java.util.ArrayList;
  There is no good hirearchy to put on Conditions or Symptoms, and currently the other classes
  use one or the other object individually, so its a waste to have a containment of Symptoms
  within the Condition because there might be many symptom repeats. So for now, we are just
- linking them both under a superclass
+ linking them both under a superclass.
+ Composition over Inheritance!
+
  */
 public class ConditionSymptoms {
     private Condition condition;

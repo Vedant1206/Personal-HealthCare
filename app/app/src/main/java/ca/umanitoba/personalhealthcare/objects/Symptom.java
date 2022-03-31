@@ -9,5 +9,9 @@ public class Symptom {
 
     public String getSymptomName() {return name;}
 
+    public boolean equals(Symptom other){
+        return other.getSymptomName().equalsIgnoreCase(name);
+    }
+
     public String toString() {return name;}
 }
