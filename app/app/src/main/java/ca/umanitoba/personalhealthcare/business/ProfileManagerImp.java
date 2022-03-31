@@ -1,10 +1,14 @@
 package ca.umanitoba.personalhealthcare.business;
 
+import ca.umanitoba.personalhealthcare.objects.NameExistsException;
 import ca.umanitoba.personalhealthcare.objects.Patient;
 import ca.umanitoba.personalhealthcare.objects.Profile;
 import ca.umanitoba.personalhealthcare.objects.Member;
 import ca.umanitoba.personalhealthcare.objects.EmailExistException;
-import ca.umanitoba.personalhealthcare.fakeDb.FakeMemberPersistence;
+import ca.umanitoba.personalhealthcare.persistence.MemberPersistence;
+import ca.umanitoba.personalhealthcare.persistence.ProfilePersistence;
+import ca.umanitoba.personalhealthcare.persistence.fakeDb.FakeMemberPersistence;
+import ca.umanitoba.personalhealthcare.persistence.fakeDb.FakeProfilePersistence;
 
 public class ProfileManagerImp implements ProfileManager{
     //TODO: Refactor after loginsession add
@@ -35,7 +39,7 @@ public class ProfileManagerImp implements ProfileManager{
 
     @Override
     public Profile createProfile(Profile newProfile) {
-        if(newprofile.getEmail() == null){
+        if(newProfile.getEmail() == null){
             newProfile.setEmail(selectedPatient.getEmail());
             //TODO: Need to be fix when we add the LoginSession.
         }
@@ -43,8 +47,12 @@ public class ProfileManagerImp implements ProfileManager{
         if(checking = true){
             return null;
         }
-        profiles.createProfile(newProfile);
-        return createdProfile;
+        try {
+            profiles.createProfile(newProfile);
+        } catch (NameExistsException | EmailExistException e) {
+            e.printStackTrace();
+        }
+        return newProfile;
 
     }
 

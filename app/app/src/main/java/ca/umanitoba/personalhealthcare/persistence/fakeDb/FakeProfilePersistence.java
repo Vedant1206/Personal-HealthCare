@@ -6,12 +6,13 @@ import ca.umanitoba.personalhealthcare.persistence.MemberPersistence;
 import ca.umanitoba.personalhealthcare.objects.Profile;
 import ca.umanitoba.personalhealthcare.objects.EmailExistException;
 import ca.umanitoba.personalhealthcare.objects.NameExistsException;
+import ca.umanitoba.personalhealthcare.persistence.ProfilePersistence;
 
 
-public class FakeProfilePersistence implements ProfilePersistence{
+public class FakeProfilePersistence implements ProfilePersistence {
     public static ProfilePersistence profilePersistence;
     private ArrayList<Profile> profiles;
-    private FakeProfilePersistence(){profiles = new ArrayList<>;}
+    private FakeProfilePersistence(){profiles = new ArrayList<>();}
 
     public static ProfilePersistence getProfilePersistence(){
         if(profilePersistence == null){
@@ -23,7 +24,7 @@ public class FakeProfilePersistence implements ProfilePersistence{
     @Override
     public Profile getProfile(String email, String profileName){
         for(Profile profile : profiles){
-            if(profile.getEmail().equals(email) && profile.getName.equals(profileName)){
+            if(profile.getEmail().equals(email) && profile.getName().equals(profileName)){
                 return profile;
             }
         }
@@ -31,10 +32,10 @@ public class FakeProfilePersistence implements ProfilePersistence{
     }
 
     @Override
-    public boolean createProfile(Profile newProfile) throws NameExistsException{
+    public boolean createProfile(Profile newProfile) throws NameExistsException, EmailExistException {
         String name = newProfile.getName();
         String email = newProfile.getEmail();
-        boolean check = checkProfile();
+        boolean check = checkProfile(email, name);
         boolean created = true;
         if(check){
             for (Profile profile: profiles){
@@ -50,7 +51,7 @@ public class FakeProfilePersistence implements ProfilePersistence{
         return created;
     }
 
-    @Overrride
+    @Override
     public boolean deleteProfile(String email, String profileName){
         boolean check = checkProfile(email, profileName);
         boolean deleted = true;
@@ -63,14 +64,15 @@ public class FakeProfilePersistence implements ProfilePersistence{
     }
 
     @Override
-    boolean checkProfile(String email, String profileName){
+    public boolean checkProfile(String email, String profileName){
         boolean checked = true;
         for(Profile profile: profiles){
-            if(profile.getEmail().equals(email) && profile.getName.equals(profileName)){
+            if(profile.getEmail().equals(email) && profile.getName().equals(profileName)){
                 return checked;
             }
         }
         return !checked;
 
     }
+
 }
