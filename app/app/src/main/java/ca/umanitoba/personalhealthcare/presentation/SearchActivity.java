@@ -34,23 +34,28 @@ public class SearchActivity extends AppCompatActivity {
     SearchActivityLogic thisLogic;
     String[] name;
     ArrayAdapter<String> arrayAdapter;
+    String title;
+    String bodyPart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-        setTitle("Enter Sign/Symptom");
 
         Intent i = getIntent();
         Bundle b = i.getExtras();
 
         thisLogic = new SearchActivityLogicImp();
+        title = "Enter Sign/Symptom";
 
         if(b == null) {
             name = thisLogic.getCommonConditions();
         } else {
             name = b.getStringArray("ID");
+            title = b.getString("name") + " symptoms";
         }
+
+        setTitle(title);
 
         //building the layout and getting Id of textView
         linearL = new LinearLayout(this);

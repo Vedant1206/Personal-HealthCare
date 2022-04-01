@@ -1,6 +1,7 @@
 package ca.umanitoba.personalhealthcare.business;
 
 import ca.umanitoba.personalhealthcare.objects.Member;
+import ca.umanitoba.personalhealthcare.objects.NameExistsException;
 import ca.umanitoba.personalhealthcare.objects.Profile;
 import java.util.List;
 import java.util.ArrayList;
@@ -42,7 +43,7 @@ public class ProfileManagerImp implements ProfileManager{
     }
 
     @Override
-    public Profile insertProfile(Profile newProfile) {
+    public Profile insertProfile(Profile newProfile) throws NameExistsException {
         return profiles.insertProfile(newProfile);
     }
 

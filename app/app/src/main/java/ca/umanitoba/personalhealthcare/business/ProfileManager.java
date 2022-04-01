@@ -1,6 +1,7 @@
 package ca.umanitoba.personalhealthcare.business;
 
 import ca.umanitoba.personalhealthcare.objects.Member;
+import ca.umanitoba.personalhealthcare.objects.NameExistsException;
 import ca.umanitoba.personalhealthcare.objects.Profile;
 import java.util.List;
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ public interface ProfileManager {
      * @param   newProfile the new profile been created.
      * @return  Profile object
      */
-    public Profile insertProfile(Profile newProfile);
+    public Profile insertProfile(Profile newProfile) throws NameExistsException;
 
     /**
      * Delete the profile with the given profile
