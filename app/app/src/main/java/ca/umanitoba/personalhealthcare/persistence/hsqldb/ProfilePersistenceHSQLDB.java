@@ -65,8 +65,9 @@ public class ProfilePersistenceHSQLDB implements ProfilePersistence{
             return currentProfile;
 
         } catch(final SQLException exception){
-            PersistenceException(exception);
+            System.err.println(exception.getMessage());
         }
+        return currentProfile;
     }
 
     @Override
@@ -86,8 +87,9 @@ public class ProfilePersistenceHSQLDB implements ProfilePersistence{
             preparedStatement.executeUpdate(); // executeQuery will close the preparedStatement.
             return currentProfile;
         } catch (SQLException exception){
-            PersistenceException(exception);
+            System.err.println(exception.getMessage());
         }
+        return currentProfile;
     }
 
     @Override
@@ -98,8 +100,9 @@ public class ProfilePersistenceHSQLDB implements ProfilePersistence{
             preparedStatement.setString(2, currentProfile.getName());
             preparedStatement.executeUpdate(); // executeQuery will close the preparedStatement.
         } catch (SQLException exception){
-            PersistenceException(exception);
+            System.err.println(exception.getMessage());
         }
+
     }
 
     @Override
@@ -116,7 +119,8 @@ public class ProfilePersistenceHSQLDB implements ProfilePersistence{
             resultSet.close();
 
         } catch(SQLException exception){
-            PersistenceException(exception);
+            System.err.println(exception.getMessage());
         }
+        return profiles;
     }
 }
