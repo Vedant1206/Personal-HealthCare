@@ -1,13 +1,19 @@
 package ca.umanitoba.personalhealthcare.objects;
 
 public class Symptom {
-    private String name;
+    String name;
+    String description;
 
-    public Symptom(String name){
+    public Symptom(String name, String description){
         this.name = name;
+        this.description = description;
     }
-
-    public String getSymptomName() {return name;}
+    public String getDescription() {
+        return description;
+    }
+    public String getSymptomName() {
+        return name;
+    }
 
     public boolean equals(Symptom other){
         return other.getSymptomName().equalsIgnoreCase(name);

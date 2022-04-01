@@ -12,7 +12,8 @@ import java.util.ArrayList;
  use one or the other object individually, so its a waste to have a containment of Symptoms
  within the Condition because there might be many symptom repeats. So for now, we are just
  linking them both under a superclass.
- Composition over Inheritance!
+
+    This is Aggregation of Condition and relating Symptom objects!
 
  */
 public class ConditionSymptoms {
