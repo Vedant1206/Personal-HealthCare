@@ -1,8 +1,9 @@
 package ca.umanitoba.personalhealthcare.persistence.hsqldb;
 
+import java.sql.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PerparedStatement;
+//import java.sql.PerparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
