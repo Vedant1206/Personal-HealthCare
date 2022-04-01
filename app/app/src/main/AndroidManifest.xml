@@ -11,7 +11,12 @@
         android:theme="@style/Theme.PersonalHealthcare">
         <activity
             android:name=".presentation.AddSymptomActivity"
+<<<<<<< HEAD
             android:exported="false" />
+=======
+            android:exported="false"
+            android:parentActivityName=".presentation.SearchActivity" />
+>>>>>>> main
         <activity
             android:name=".presentation.LogInActivity"
             android:exported="false" />

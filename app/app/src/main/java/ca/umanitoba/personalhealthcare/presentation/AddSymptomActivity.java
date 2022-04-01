@@ -1,5 +1,9 @@
 package ca.umanitoba.personalhealthcare.presentation;
 
+<<<<<<< HEAD
+=======
+import android.content.Intent;
+>>>>>>> main
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -7,8 +11,18 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+<<<<<<< HEAD
 import ca.umanitoba.personalhealthcare.R;
 import ca.umanitoba.personalhealthcare.business.AddSymptomLogic;
+=======
+
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+
+import ca.umanitoba.personalhealthcare.R;
+import ca.umanitoba.personalhealthcare.business.AddSymptomLogic;
+import ca.umanitoba.personalhealthcare.business.AddSymptomLogicImp;
+>>>>>>> main
 
 public class AddSymptomActivity extends AppCompatActivity {
 
@@ -21,6 +35,10 @@ public class AddSymptomActivity extends AppCompatActivity {
     CheckBox checkStomach;
     CheckBox checkEverywhere;
     Button submitButton;
+<<<<<<< HEAD
+=======
+    AddSymptomLogic thisLogic;
+>>>>>>> main
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,12 +69,45 @@ public class AddSymptomActivity extends AppCompatActivity {
                         Boolean everywhere = checkEverywhere.isChecked();
                         if(sympName.isEmpty()) {
                             Toast.makeText(getApplicationContext(), "Please enter the name of the symptom", Toast.LENGTH_SHORT).show();
+<<<<<<< HEAD
                         } else if(head == false && chest == false && stomach == false && everywhere == false) {
                             Toast.makeText(getApplicationContext(), "Please select the affected body parts", Toast.LENGTH_SHORT).show();
                         } else {
                             new AddSymptomLogic(sympName, condition1, condition2, condition3, head, chest, stomach, everywhere);
                         }
                     }
+=======
+                        } else if(!head && !chest && !stomach && !everywhere) {
+                            Toast.makeText(getApplicationContext(), "Please select the affected body parts", Toast.LENGTH_SHORT).show();
+                        } else {
+                            thisLogic = new AddSymptomLogicImp(sympName, condition1, condition2, condition3, head, chest, stomach, everywhere);
+                            if(reportSymptom(thisLogic.getSymptomString())) {
+                                Toast.makeText(getApplicationContext(), "Thank you for your submission", Toast.LENGTH_SHORT).show();
+                                backToSearch();
+                            } else {
+                                Toast.makeText(getApplicationContext(), "oops", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    }
+                    public void backToSearch(){
+                        Intent i = new Intent(AddSymptomActivity.this, SearchActivity.class);
+                        startActivity(i);
+                    }
+                    public Boolean reportSymptom(String symptomString){
+                        Boolean returnValue = false;
+                        try {
+                            FileOutputStream fileout=openFileOutput("ReportedSymptoms.txt", MODE_PRIVATE);
+                            OutputStreamWriter outputWriter=new OutputStreamWriter(fileout);
+                            outputWriter.write(symptomString + "\n");
+                            outputWriter.close();
+                            returnValue = true;
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            returnValue = false;
+                        }
+                        return returnValue;
+                    }
+>>>>>>> main
                 }
         );
 

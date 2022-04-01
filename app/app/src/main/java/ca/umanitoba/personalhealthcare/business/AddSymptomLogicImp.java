@@ -1,14 +1,10 @@
 package ca.umanitoba.personalhealthcare.business;
 
-<<<<<<< HEAD
 import java.util.ArrayList;
 
-import ca.umanitoba.personalhealthcare.objects.Symptom;
-import ca.umanitoba.personalhealthcare.persistence.ReportSymptoms;
+public class AddSymptomLogicImp implements AddSymptomLogic {
 
-public class AddSymptomLogic {
-
-    Symptom thisSymptom;
+    String symptomString;
     String name;
     String condition1;
     String condition2;
@@ -19,9 +15,8 @@ public class AddSymptomLogic {
     Boolean everywhere;
     ArrayList<String> affectedBodyParts;
     ArrayList<String> associatedConditions;
-    ReportSymptoms reportSymptom;
 
-    public AddSymptomLogic(String name, String condition1, String condition2, String condition3, Boolean head, Boolean chest, Boolean stomach, Boolean everywhere) {
+    public AddSymptomLogicImp(String name, String condition1, String condition2, String condition3, Boolean head, Boolean chest, Boolean stomach, Boolean everywhere) {
 
         this.name=name;
         this.condition1=condition1;
@@ -35,10 +30,16 @@ public class AddSymptomLogic {
         affectedBodyParts = createBodyPartsList(head, chest, stomach, everywhere);
         associatedConditions = createConditionsList(condition1, condition2, condition3);
 
-        thisSymptom = new Symptom(name, affectedBodyParts, associatedConditions);
+        symptomString = createString(name, affectedBodyParts, associatedConditions);
 
-        reportSymptom = new ReportSymptoms(thisSymptom);
+    }
 
+    public String createString(String name, ArrayList<String> bodyParts, ArrayList<String> conditions){
+
+        String result = name + ":\nAffected body parts: " + bodyParts.toString()
+                + "\nAssociated conditions: " + conditions.toString() + "\n";
+
+        return result;
     }
 
     public ArrayList<String> createBodyPartsList(Boolean head, Boolean chest, Boolean stomach, Boolean everywhere){
@@ -79,10 +80,7 @@ public class AddSymptomLogic {
         return conditions;
 
     }
-=======
-public interface AddSymptomLogic {
 
-    String getSymptomString();
->>>>>>> main
+    public String getSymptomString(){return symptomString;}
 
 }
