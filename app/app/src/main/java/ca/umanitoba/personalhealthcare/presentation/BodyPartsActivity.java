@@ -18,6 +18,7 @@ public class BodyPartsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_body_parts);
+        setTitle("Search By Picture");
     }
 
     public void clickHead(View v){
