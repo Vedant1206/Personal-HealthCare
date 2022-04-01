@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,15 +14,9 @@ import android.widget.ListView;
 
 import androidx.appcompat.widget.SearchView;
 
-import java.util.ArrayList;
-
 import ca.umanitoba.personalhealthcare.R;
-import ca.umanitoba.personalhealthcare.business.DataActivityClass;
 import ca.umanitoba.personalhealthcare.business.SearchActivityLogic;
 import ca.umanitoba.personalhealthcare.business.SearchActivityLogicImp;
-import ca.umanitoba.personalhealthcare.objects.Symptom;
-import ca.umanitoba.personalhealthcare.persistence.SymptomPersistence;
-import ca.umanitoba.personalhealthcare.persistence.fakeDb.FakeSymptomPersistence;
 
 /**
  * SearchActivity has a list of symptoms
@@ -37,7 +30,7 @@ public class SearchActivity extends AppCompatActivity {
     ListView listView;
     LinearLayout linearL;
 
-    SearchActivityLogic thisLogic = new SearchActivityLogicImp();
+    SearchActivityLogic thisLogic;
     String[] name;
     ArrayAdapter<String> arrayAdapter;
 
@@ -50,8 +43,10 @@ public class SearchActivity extends AppCompatActivity {
         Intent i = getIntent();
         Bundle b = i.getExtras();
 
+        thisLogic = new SearchActivityLogicImp();
+
         if(b == null) {
-            name = thisLogic.getCommonSymptoms();
+            name = thisLogic.getCommonConditions();
         } else {
             name = b.getStringArray("ID");
         }

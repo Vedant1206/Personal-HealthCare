@@ -34,7 +34,7 @@ public class AddSymptomLogicImp implements AddSymptomLogic {
 
     }
 
-    public String createString(String name, ArrayList<String> bodyParts, ArrayList<String> conditions){
+    private String createString(String name, ArrayList<String> bodyParts, ArrayList<String> conditions){
 
         String result = name + ":\nAffected body parts: " + bodyParts.toString()
                 + "\nAssociated conditions: " + conditions.toString() + "\n";
@@ -42,7 +42,7 @@ public class AddSymptomLogicImp implements AddSymptomLogic {
         return result;
     }
 
-    public ArrayList<String> createBodyPartsList(Boolean head, Boolean chest, Boolean stomach, Boolean everywhere){
+    private ArrayList<String> createBodyPartsList(Boolean head, Boolean chest, Boolean stomach, Boolean everywhere){
 
         ArrayList<String> bodyParts = new ArrayList<>();
         if(everywhere) {
@@ -65,7 +65,7 @@ public class AddSymptomLogicImp implements AddSymptomLogic {
 
     }
 
-    public ArrayList<String> createConditionsList(String C1, String C2, String C3){
+    private ArrayList<String> createConditionsList(String C1, String C2, String C3){
 
         ArrayList<String> conditions = new ArrayList<>();
         if(!C1.isEmpty()) {
