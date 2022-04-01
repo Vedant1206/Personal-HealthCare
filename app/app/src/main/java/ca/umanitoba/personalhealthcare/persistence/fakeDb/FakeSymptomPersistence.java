@@ -92,9 +92,9 @@ public class FakeSymptomPersistence implements SymptomPersistence {
 
     //storing the data into arraylist
     public void storeData(){
-        Symptom Headache = new Symptom("Headache");
-        Symptom Nausea = new Symptom("Nausea");
-        Symptom Cold = new Symptom("Fever, flue, Cold");
+        Symptom Headache = new Symptom("Headache", "head");
+        Symptom Nausea = new Symptom("Nausea", "stomach");
+        Symptom Cold = new Symptom("Fever, flue, Cold", "head");
         symptomList.add(Headache);
         symptomList.add(Nausea);
         symptomList.add(Cold);
