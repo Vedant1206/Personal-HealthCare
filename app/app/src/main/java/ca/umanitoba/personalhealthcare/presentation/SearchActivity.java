@@ -19,6 +19,7 @@ import java.util.ArrayList;
 
 import ca.umanitoba.personalhealthcare.R;
 import ca.umanitoba.personalhealthcare.business.DataActivityClass;
+import ca.umanitoba.personalhealthcare.business.SearchActivityLogic;
 import ca.umanitoba.personalhealthcare.objects.Symptom;
 import ca.umanitoba.personalhealthcare.persistence.SymptomPersistence;
 import ca.umanitoba.personalhealthcare.persistence.fakeDb.FakeSymptomPersistence;
@@ -60,6 +61,8 @@ public class SearchActivity extends AppCompatActivity {
                 }
             }
         }
+
+
 
         //building the layout and getting Id of textView
         linearL = new LinearLayout(this);
