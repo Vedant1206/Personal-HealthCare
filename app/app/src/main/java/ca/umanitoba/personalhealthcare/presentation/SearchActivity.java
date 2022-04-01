@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import ca.umanitoba.personalhealthcare.R;
 import ca.umanitoba.personalhealthcare.business.DataActivityClass;
 import ca.umanitoba.personalhealthcare.business.SearchActivityLogic;
+import ca.umanitoba.personalhealthcare.business.SearchActivityLogicImp;
 import ca.umanitoba.personalhealthcare.objects.Symptom;
 import ca.umanitoba.personalhealthcare.persistence.SymptomPersistence;
 import ca.umanitoba.personalhealthcare.persistence.fakeDb.FakeSymptomPersistence;
@@ -35,9 +36,9 @@ public class SearchActivity extends AppCompatActivity {
     //instance variables
     ListView listView;
     LinearLayout linearL;
-    SymptomPersistence thisPersistence = new FakeSymptomPersistence();
-    ArrayList<Symptom> names = thisPersistence.getCommonSymptoms();
-    String[] name = new String[names.size()];
+
+    SearchActivityLogic thisLogic = new SearchActivityLogicImp();
+    String[] name;
     ArrayAdapter<String> arrayAdapter;
 
     @Override
@@ -46,23 +47,14 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
         setTitle("Enter Sign/Symptom");
 
-        for(int i = 0; i < names.size(); i++) {
-            name[i] = names.get(i).getSymptomName();
-        }
-
-        //User may have gotten here via BodyPartsActivity
         Intent i = getIntent();
-        if(i != null) {
-            Bundle b = i.getExtras();
-            if (b != null && !b.isEmpty()) {
-                String[] stringArray = b.getStringArray("ID");
-                if (stringArray != null && stringArray.length > 0) {
-                    name = stringArray;
-                }
-            }
+        Bundle b = i.getExtras();
+
+        if(b == null) {
+            name = thisLogic.getCommonSymptoms();
+        } else {
+            name = b.getStringArray("ID");
         }
-
-
 
         //building the layout and getting Id of textView
         linearL = new LinearLayout(this);
