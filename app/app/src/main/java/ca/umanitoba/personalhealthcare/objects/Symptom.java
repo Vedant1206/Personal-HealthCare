@@ -2,18 +2,24 @@ package ca.umanitoba.personalhealthcare.objects;
 
 public class Symptom {
     String name;
-    String description;
+    String bodyPart;
 
-    public Symptom(String name, String description){
+    public Symptom(String name, String bodyPart){
         this.name = name;
-        this.description = description;
+        this.bodyPart = bodyPart;
     }
-    public String getDescription() {
-        return description;
+    public String getBodyPart() {
+        return bodyPart;
     }
     public String getSymptomName() {
         return name;
     }
+
+    public boolean equals(Symptom other){
+        return other.getSymptomName().equalsIgnoreCase(name);
+    }
+
+    public String toString() {return name;}
 }
 
 

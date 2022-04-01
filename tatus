@@ -1,0 +1,1465 @@
+[33mcommit 61c7cafdacd561994727128bf4f31f6ae3f305f0[m[33m ([m[1;36mHEAD -> [m[1;32mDiseaseInterface[m[33m, [m[1;31morigin/DiseaseInterface[m[33m)[m
+Author: Asit Patel <patela8@myumanitoba.ca>
+Date:   Wed Mar 30 23:51:55 2022 -0500
+
+    modified some objects and entered data in fake disease DB
+
+[33mcommit a8d30a00d8e1fcf76b04cc02fed3719fc5e1c031[m
+Author: Asit Patel <patela8@myumanitoba.ca>
+Date:   Wed Mar 30 18:22:37 2022 -0500
+
+    worked more on FakeDiseasePersistence and connected Conditions & Symptoms
+
+[33mcommit 104447a5c103e9dfdf68eca6ddd388fbb78a7419[m
+Merge: 9dd5db1 47a365c
+Author: Asit Patel <patela8@myumanitoba.ca>
+Date:   Wed Mar 30 16:08:49 2022 -0500
+
+    Merge branch 'AddSymptom' into DiseaseInterface
+
+[33mcommit 47a365ce7a6d307697dff1145b4a9f7b1b415e45[m
+Author: Asit Patel <patela8@myumanitoba.ca>
+Date:   Wed Mar 30 16:06:32 2022 -0500
+
+    initialized DiseasePersistence implementation
+
+[33mcommit bc0a880507c31206ad452fbf63bbef64c47b2c78[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Wed Mar 30 15:34:57 2022 -0500
+
+    BodyPartsActivity now connected to SearchActivity
+
+[33mcommit a6b08c05c6a5db28739445886c10bd666d8e74e8[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Wed Mar 30 13:45:19 2022 -0500
+
+    changed name of headactivity to bodypartsymptomsactivity
+
+[33mcommit ff2f4b5b83a7acf737332770f2ed17163bf640c8[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Wed Mar 30 13:21:29 2022 -0500
+
+    fixed array string problem in headactivity
+
+[33mcommit 01fe079925901a6ee92b0d3fa91a0d7f49a74a10[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Wed Mar 30 11:44:20 2022 -0500
+
+    worked on bodypartsactivity
+
+[33mcommit 166b0581dcbcd4abad2d9f6f8ffa4f32f621a235[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Wed Mar 30 10:59:21 2022 -0500
+
+    body parts and symptom persistence
+
+[33mcommit 244f911d3963269f2b40d96d19f63c8825ea0fd3[m
+Merge: 73f100e 9554ced
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Wed Mar 30 09:45:53 2022 -0500
+
+    Merge branch 'main' into AddSymptom
+
+[33mcommit 9dd5db129bfb7788ca0fdc47a9657579879b72c6[m
+Merge: ea8024b 9554ced
+Author: Asit Patel <patela8@myumanitoba.ca>
+Date:   Wed Mar 30 01:02:33 2022 -0500
+
+    Merge branch 'main' into DiseaseInterface
+
+[33mcommit 9554cedad5e7dc0696e463897b11bc56d5740764[m[33m ([m[1;32mmain[m[33m)[m
+Merge: 9a16ee0 1467e52
+Author: Asit Patel <patela8@myumanitoba.ca>
+Date:   Wed Mar 30 06:00:00 2022 +0000
+
+    Merge branch 'hsqldbSetupFix' into 'main'
+    
+    removed hsqldb duplicate source jar
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!72
+
+[33mcommit 1467e5222ee2bceaa73129239499d6b32f66736e[m[33m ([m[1;31morigin/hsqldbSetupFix[m[33m, [m[1;32mhsqldbSetupFix[m[33m)[m
+Author: Asit Patel <patela8@myumanitoba.ca>
+Date:   Wed Mar 30 00:57:16 2022 -0500
+
+    removed hsqldb duplicate source jar
+
+[33mcommit 73f100ed996ebba0f04308dacf67b71bd53965d5[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Tue Mar 29 20:40:22 2022 -0500
+
+    created BodyPartsLogic, refactored, Added getters to Condition
+
+[33mcommit ea8024b0ef2186b5a062624e0c240847d7fb0ce8[m
+Merge: 611f32e 9a16ee0
+Author: Asit Patel <patela8@myumanitoba.ca>
+Date:   Tue Mar 29 20:03:41 2022 -0500
+
+    Merge branch 'main' into DiseaseInterface
+
+[33mcommit bdb9f59bbaa23ebb408295200d249992f7e5b437[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Tue Mar 29 19:27:34 2022 -0500
+
+    merge main
+
+[33mcommit 8a89e56cc04fab944e1a2a5a7c94395485608cfd[m
+Merge: 97c80ef 9a16ee0
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Tue Mar 29 18:58:21 2022 -0500
+
+    Merge branch 'main' into AddSymptom
+
+[33mcommit 9a16ee04a253209fe4c789e313f57e94af3bab9f[m
+Merge: 943a1cf 54e565e
+Author: Asit Patel <patela8@myumanitoba.ca>
+Date:   Tue Mar 29 23:46:57 2022 +0000
+
+    Merge branch 'DiseaseInterface' into 'main'
+    
+    Created Condition DSO and  DiseasePersistence interface
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!71
+
+[33mcommit 54e565ed4078ce97a7ceaffb5b742f55473ee573[m
+Author: Asit Patel <patela8@myumanitoba.ca>
+Date:   Tue Mar 29 18:43:22 2022 -0500
+
+    Created Condition DSO and  DiseasePersistence interface
+
+[33mcommit 611f32e9e50ebcd81539b81cef8c9d74975971ba[m
+Author: Asit Patel <patela8@myumanitoba.ca>
+Date:   Tue Mar 29 18:43:22 2022 -0500
+
+    Created Condition DSO and  DiseasePersistence interface
+
+[33mcommit 943a1cf9e9d93e913d90bcd51353744ccb51b5ab[m
+Merge: c5ff664 80b545e
+Author: Kien Mai <maik@myumanitoba.ca>
+Date:   Tue Mar 29 23:20:25 2022 +0000
+
+    Merge branch 'DatabaseSetup' into 'main'
+    
+    Database setup
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!70
+
+[33mcommit 80b545e4efa30d44b06360cb64ebbf199c2fa309[m
+Author: ImKevin <maingockien>
+Date:   Tue Mar 29 17:59:58 2022 -0500
+
+    Set up database connection
+
+[33mcommit 3c41e54c781f8d5e8537cf4d671c90ce6da8ce64[m
+Author: ImKevin <maingockien>
+Date:   Tue Mar 29 17:58:48 2022 -0500
+
+    Set up dependencies for HLSQDB
+
+[33mcommit f368dc026530b7526e7ed94adb8788445ef9ec37[m
+Author: ImKevin <maingockien>
+Date:   Tue Mar 29 16:09:07 2022 -0500
+
+    Rename lib -> libs
+
+[33mcommit 361683a684e8ab5fec9d5aff342efaf89acafc3c[m
+Author: Kien Mai <maik@myumanitoba.ca>
+Date:   Tue Mar 29 15:10:46 2022 -0500
+
+    Download jar hsqldb
+
+[33mcommit 97c80ef12ac35b3f032b361fcb6f43a403be1b31[m
+Merge: ea5e147 c5ff664
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Tue Mar 29 16:44:35 2022 -0500
+
+    fixed conflicts
+
+[33mcommit ea5e147bb086a69d73d06cb247c7f9b0ecace7ca[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Tue Mar 29 16:36:54 2022 -0500
+
+    search by body part
+
+[33mcommit c5ff664a61da5965098214caafce2a2d3fdb0975[m
+Merge: 5fb36bf 3068883
+Author: Vedant Pulahru <pulahruv@myumanitoba.ca>
+Date:   Tue Mar 29 21:18:53 2022 +0000
+
+    Merge branch 'SymptomPersistence' into 'main'
+    
+    Symptom persistence
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!69
+
+[33mcommit 3068883b96098e198a422eb7f3cbca37bb702966[m
+Author: Vedant Pulahru <pulahruv@myumanitoba.ca>
+Date:   Tue Mar 29 21:18:53 2022 +0000
+
+    Symptom persistence
+
+[33mcommit 084a6831dd15c4606b82707cbfddd4622607e9f3[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Mon Mar 28 15:24:50 2022 -0500
+
+    Vedant added some stuff
+
+[33mcommit 5e7f6b89b324b1436d2fefa3015be78ed740a03f[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Mon Mar 28 12:52:23 2022 -0500
+
+    Worked on body parts activity
+
+[33mcommit ff196e6e31e437f9a013f50ea6f670456ff3d3d2[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Mon Mar 28 12:47:54 2022 -0500
+
+    Worked on add symptom
+
+[33mcommit f048f9f1691addab729f6fb8e58ca9928668c913[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Mon Mar 28 11:34:33 2022 -0500
+
+    Added ReportSymptoms class in the persistence package
+
+[33mcommit c4406bd0b1a71ce9e01cc7c9bf92a75a842c241d[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Mon Mar 28 11:07:13 2022 -0500
+
+    Worked on addsymptom
+
+[33mcommit 0366556a51e3deb6632e5b9f5ae89461272098f3[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Sun Mar 27 00:08:44 2022 -0500
+
+    worked on add symptom logic
+
+[33mcommit 298dfdad43371c1d17a2bd5b896d67c637e0b617[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 18 13:52:51 2022 -0500
+
+    Worked on UI some more
+
+[33mcommit 8e07c054ef8510d0a27f4d979ae23f3c9c31d4c1[m
+Merge: 0880447 5fb36bf
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 18 12:31:05 2022 -0500
+
+    Merge branch 'main' into AddSymptom
+
+[33mcommit 08804475bc1ab20c1512224f5f1bec7886e885e1[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 18 12:30:09 2022 -0500
+
+    Worked on UI
+
+[33mcommit 5fb36bff046439158bc1f552e470774ff5a3d122[m
+Merge: 77a23c9 acedc50
+Author: Kien Mai <maik@myumanitoba.ca>
+Date:   Fri Mar 18 15:07:28 2022 +0000
+
+    Merge branch 'CreateAccountActivity' into 'main'
+    
+    Create account activity
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!68
+
+[33mcommit acedc5026c0be8d8ed252b7a2695f9a9d7c12ec8[m
+Author: ImKevin <maingockien>
+Date:   Fri Mar 18 10:01:19 2022 -0500
+
+    Implement simple Create Account activity with fake hookup database and unit test for logic layer
+
+[33mcommit f3e99ea6d6ec3b5c949b96bb45208f7fb7a86d9c[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 18 01:53:13 2022 -0500
+
+    Added Add a Symptom UI
+
+[33mcommit 1fd7b01fa7d46440a8bfc1a2f0cc5c7c462b3111[m
+Author: ImKevin <maingockien>
+Date:   Thu Mar 17 17:00:08 2022 -0500
+
+    Modify FakeMemberPersistence function create member
+
+[33mcommit 4231227d14d951d264753c9a2fb2173f0f8c5e2f[m
+Author: ImKevin <maingockien>
+Date:   Thu Mar 17 16:59:27 2022 -0500
+
+    Implement Create Account Activity with create account feedback
+
+[33mcommit db04e8f842944724cb6c9335492fe0f2f3437b51[m
+Author: ImKevin <maingockien>
+Date:   Thu Mar 17 14:53:05 2022 -0500
+
+    Logic layer: manager of member aka account
+
+[33mcommit 1f2c722bcb384d22a9a17d909c62f5e7ebc26aa3[m
+Author: ImKevin <maingockien>
+Date:   Thu Mar 17 14:51:34 2022 -0500
+
+    Member persistence interface and fake hookup db
+
+[33mcommit 37cae489e2589c345cc4f087951cd34be15b6d6e[m
+Author: ImKevin <maingockien>
+Date:   Thu Mar 17 14:49:55 2022 -0500
+
+    Removed redundant functions in childclass - Patient
+
+[33mcommit ed5c191d16240f1b9137d7358ec275861b75f85b[m
+Author: ImKevin <maingockien>
+Date:   Thu Mar 17 14:49:19 2022 -0500
+
+    New exception for creating account: Email already been used
+
+[33mcommit a1d71267a6174b32968da23e5d061821c226d6a2[m
+Author: ImKevin <maingockien>
+Date:   Wed Mar 16 16:30:06 2022 -0500
+
+    Put setter and getter of ID in this and make them public
+
+[33mcommit 81a94b6579406eb074356eb4eeef704f55b0c80d[m
+Author: ImKevin <maingockien>
+Date:   Wed Mar 16 16:29:03 2022 -0500
+
+    Just reformat code lines
+
+[33mcommit b53aeac5b098013da2e5a1e439f972e9e9388fca[m
+Author: ImKevin <maingockien>
+Date:   Wed Mar 16 16:28:29 2022 -0500
+
+    Refactor: simplify profile list and functions
+
+[33mcommit 39ada0ffbf5f04193403ddbcdd83736056744e0a[m
+Author: ImKevin <maingockien>
+Date:   Wed Mar 16 16:27:42 2022 -0500
+
+    Move password, email into this. Add validations for email and password
+
+[33mcommit 8c3e355229623fde10d14030d6839b7b375af373[m
+Author: ImKevin <maingockien>
+Date:   Wed Mar 16 16:26:58 2022 -0500
+
+    Add exceptions for password and email validation
+
+[33mcommit 77a23c9e7d6a66d1365ebf72802e97ac5127b53a[m
+Merge: 1543789 f04047a
+Author: Asit Patel <patela8@myumanitoba.ca>
+Date:   Fri Mar 4 23:30:01 2022 +0000
+
+    Merge branch 'upload_apk' into 'main'
+    
+    Upload build folder which contains apk
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!67
+
+[33mcommit f04047ae2de31a7cf888eb98d13df3794701e514[m[33m ([m[1;31morigin/upload_apk[m[33m, [m[1;32mupload_apk[m[33m)[m
+Author: Asit Patel <patela8@myumanitoba.ca>
+Date:   Fri Mar 4 17:26:21 2022 -0600
+
+    Upload build folder which contains apk
+
+[33mcommit 1543789a516ca02eef8577e0ef3cd5f21c1995f1[m[33m ([m[1;33mtag: v1.0[m[33m, [m[1;33mtag: iteration1_release[m[33m)[m
+Merge: eac7614 38265c4
+Author: Asit Patel <patela8@myumanitoba.ca>
+Date:   Fri Mar 4 22:56:56 2022 +0000
+
+    Merge branch 'main_branch' into 'main'
+    
+    Finalized worksheet and architecture edits
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!66
+
+[33mcommit 38265c4faa46e8f9834b2815b63cf028ad3e4178[m[33m ([m[1;31morigin/main_branch[m[33m, [m[1;32mmain_branch[m[33m)[m
+Author: Asit Patel <patela8@myumanitoba.ca>
+Date:   Fri Mar 4 16:55:27 2022 -0600
+
+    Finalized worksheet and architecture edits
+
+[33mcommit eac761479df2fba763d2ba4c5d78ec62a031c517[m
+Merge: ec91aad 965e3b9
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 21:59:53 2022 +0000
+
+    Merge branch 'kroeke30-main-patch-91016' into 'main'
+    
+    Update Architecture.md
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!65
+
+[33mcommit 965e3b9d59ba66c6f6e5f2282cfaa877b8898776[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 21:59:36 2022 +0000
+
+    Update Architecture.md
+
+[33mcommit ec91aad0f48e58156a573036bbd4cd22f3eab40e[m
+Merge: c0b4545 bee0ae3
+Author: Kien Mai <maik@myumanitoba.ca>
+Date:   Fri Mar 4 21:56:06 2022 +0000
+
+    Merge branch 'maingockien-main-patch-17803' into 'main'
+    
+    Update Architecture.md
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!64
+
+[33mcommit bee0ae38fa87756f33f45d70e79c6d1a9bb9d006[m
+Author: Kien Mai <maik@myumanitoba.ca>
+Date:   Fri Mar 4 21:55:52 2022 +0000
+
+    Update Architecture.md
+
+[33mcommit c0b4545c7acb5c5d82829e28a565f3319a6b3234[m
+Merge: 12fddc3 fd182b2
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 21:53:53 2022 +0000
+
+    Merge branch 'kroeke30-main-patch-07067' into 'main'
+    
+    Update Architecture.md
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!63
+
+[33mcommit fd182b2a3ae539a910ade12bd110823699ff066f[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 21:53:39 2022 +0000
+
+    Update Architecture.md
+
+[33mcommit 12fddc33836c93a3bceb6c464cc52a4d71b2542b[m
+Merge: bb81abf 50a3457
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 21:51:27 2022 +0000
+
+    Merge branch 'kroeke30-main-patch-84297' into 'main'
+    
+    Update Architecture.md
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!62
+
+[33mcommit 50a34575f269b86595e3739200fc8230a406235c[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 21:51:07 2022 +0000
+
+    Update Architecture.md
+
+[33mcommit bb81abfd9b7bb40274d1f92480e9712536d0c572[m
+Merge: 9863656 e5c99ed
+Author: SANGIL HAN <hans34@myumanitoba.ca>
+Date:   Fri Mar 4 21:41:06 2022 +0000
+
+    Merge branch 'most0093-main-patch-56465' into 'main'
+    
+    Delete Tests.java
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!60
+
+[33mcommit e5c99edc4b0da18a0f893c0816e3994a71ab8632[m
+Author: SANGIL HAN <hans34@myumanitoba.ca>
+Date:   Fri Mar 4 21:40:59 2022 +0000
+
+    Delete Tests.java
+
+[33mcommit 98636560392f5b0347ee6f4961245dddf07ba37c[m
+Merge: b8790a5 5919fb8
+Author: SANGIL HAN <hans34@myumanitoba.ca>
+Date:   Fri Mar 4 21:40:38 2022 +0000
+
+    Merge branch 'most0093-main-patch-22772' into 'main'
+    
+    Delete Test.java
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!59
+
+[33mcommit 5919fb8f6096b41e73cb5a744de1c9e3a14f5c2b[m
+Author: SANGIL HAN <hans34@myumanitoba.ca>
+Date:   Fri Mar 4 21:40:28 2022 +0000
+
+    Delete Test.java
+
+[33mcommit b8790a5add01ac79e30229fd0fbef956222c1b40[m
+Merge: 3863829 81fb264
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 21:10:05 2022 +0000
+
+    Merge branch 'kroeke30-main-patch-58748' into 'main'
+    
+    Update i1_worksheet.md
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!58
+
+[33mcommit 81fb264607cdaac1da70a85870f1e242f1e5716a[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 21:09:47 2022 +0000
+
+    Update i1_worksheet.md
+
+[33mcommit 386382946886c7d07fdce6dae3a6c2a063197ed9[m
+Merge: e475f74 8e8625f
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 21:04:48 2022 +0000
+
+    Merge branch 'kroeke30-main-patch-26004' into 'main'
+    
+    Update i1_worksheet.md
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!57
+
+[33mcommit 8e8625f6eab89cc343e3ec9031e189f9efc2bc74[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 21:04:30 2022 +0000
+
+    Update i1_worksheet.md
+
+[33mcommit e475f7436ca0ad3a96ea27b624d13b83aa9eae4c[m
+Merge: 09c8fd8 e2dba8c
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 21:00:48 2022 +0000
+
+    Merge branch 'kroeke30-main-patch-46350' into 'main'
+    
+    Update i1_worksheet.md
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!56
+
+[33mcommit e2dba8c73550c698c987b33185ecef1826fc33ae[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 21:00:25 2022 +0000
+
+    Update i1_worksheet.md
+
+[33mcommit 09c8fd8eed8ff80e56f1e9788c4e41cc189e68e9[m[33m ([m[1;31morigin/JUnitTest(for_user_classes)[m[33m, [m[1;32morigin[m[33m)[m
+Merge: bf3d076 36dd389
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 20:50:49 2022 +0000
+
+    Merge branch 'kroeke30-main-patch-42606' into 'main'
+    
+    Update i1_worksheet.md
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!55
+
+[33mcommit 36dd3891c778f032cc091e4e36ddf817d1ff792d[m[33m ([m[1;31morigin/kroeke30-main-patch-42606[m[33m)[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 20:50:26 2022 +0000
+
+    Update i1_worksheet.md
+
+[33mcommit bf3d076b2b74be5a5da61a9d58f07e7a79fd046b[m
+Merge: a7f5669 0049dc3
+Author: SANGIL HAN <hans34@myumanitoba.ca>
+Date:   Fri Mar 4 20:40:47 2022 +0000
+
+    Merge branch 'most0093-main-patch-29075' into 'main'
+    
+    Update app/app/src/main/java/ca/umanitoba/personalhealthcare/objects/Profile.java
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!54
+
+[33mcommit 0049dc36f363916c8ac5265b95b7dcb1ffd91f75[m
+Author: SANGIL HAN <hans34@myumanitoba.ca>
+Date:   Fri Mar 4 20:40:36 2022 +0000
+
+    Update app/app/src/main/java/ca/umanitoba/personalhealthcare/objects/Profile.java
+
+[33mcommit a7f5669547edcca5f5ce3e81dde0dedb1188feba[m
+Merge: 495ddbf d36689b
+Author: SANGIL HAN <hans34@myumanitoba.ca>
+Date:   Fri Mar 4 20:38:52 2022 +0000
+
+    Merge branch 'User_class_Test' into 'main'
+    
+    User class test
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!50
+
+[33mcommit d36689beb5eed09d7cd61bf70573d84e73044110[m
+Author: SANGIL HAN <hans34@myumanitoba.ca>
+Date:   Fri Mar 4 20:38:52 2022 +0000
+
+    User class test
+
+[33mcommit 495ddbf7593362b27f78e8d4ad4cad55de5e59e6[m
+Merge: c46f8e7 4d71a8a
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 20:36:37 2022 +0000
+
+    Merge branch 'kroeke30-main-patch-96630' into 'main'
+    
+    Update i1_worksheet.md
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!53
+
+[33mcommit 4d71a8a17d83319b6fad4df7e2095d49dae76251[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 20:35:27 2022 +0000
+
+    Update i1_worksheet.md
+
+[33mcommit c46f8e780a96a31730b954512dcb4577d5725c2c[m
+Merge: 27223b3 c0a0c61
+Author: Kien Mai <maik@myumanitoba.ca>
+Date:   Fri Mar 4 20:35:37 2022 +0000
+
+    Merge branch 'OrganizaeHierachy' into 'main'
+    
+    Organizae hierachy
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!52
+
+[33mcommit c0a0c619aff04a0105130010a4079aac170493f5[m
+Author: Kien Mai <maik@myumanitoba.ca>
+Date:   Fri Mar 4 20:35:37 2022 +0000
+
+    Organizae hierachy
+
+[33mcommit 27223b345c5d811f72a26d9e01f3d5ac32cef577[m
+Merge: 812c77f 0629d47
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 20:34:03 2022 +0000
+
+    Merge branch 'kroeke30-main-patch-07367' into 'main'
+    
+    Update branching_strategy.md
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!51
+
+[33mcommit 0629d4718076e01fb697d70864c556b456d98bca[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 20:33:48 2022 +0000
+
+    Update branching_strategy.md
+
+[33mcommit 812c77ff10f711ce156cbf1d3e741506687d06f6[m
+Merge: d6a68bd 6279810
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 20:32:28 2022 +0000
+
+    Merge branch 'kroeke30-main-patch-13424' into 'main'
+    
+    Replace BranchingStrategyPic.PNG
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!49
+
+[33mcommit 6279810506d1e3b8f0be5d41cf6221261ee38961[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 20:32:06 2022 +0000
+
+    Replace BranchingStrategyPic.PNG
+
+[33mcommit d6a68bdbd4740b758ed7887be8ae1cc9a6bfb133[m
+Merge: a3f2614 b66d857
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 20:30:44 2022 +0000
+
+    Merge branch 'AdamAddSketches' into 'main'
+    
+    added sketches
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!48
+
+[33mcommit b66d857e3878ce72af861d8eab2916ba76c4f84c[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 14:29:38 2022 -0600
+
+    added sketches
+
+[33mcommit a3f261434af6cb9204adfc4993e10f642a318e1e[m
+Merge: 4c0ea83 97a665f
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 20:23:11 2022 +0000
+
+    Merge branch 'kroeke30-main-patch-34245' into 'main'
+    
+    Add new directory
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!47
+
+[33mcommit 97a665ffa88eb108e54fae71ed7b1002d9d1c6db[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 20:22:56 2022 +0000
+
+    Add new directory
+
+[33mcommit 4c0ea839fcfeb488d6e5f65b069c617572b50ccc[m
+Merge: 0e7e78f cc7a789
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 20:22:07 2022 +0000
+
+    Merge branch 'kroeke30-main-patch-86807' into 'main'
+    
+    Replace BranchingStrategyPic.PNG
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!46
+
+[33mcommit cc7a7897826fa7d9afab00a02ae9536d10a20753[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 20:21:47 2022 +0000
+
+    Replace BranchingStrategyPic.PNG
+
+[33mcommit 0e7e78f2612f0767b2fba98ffe55851323de2044[m
+Merge: d2b9056 8f01e8b
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 20:12:19 2022 +0000
+
+    Merge branch 'AdamAddFiles' into 'main'
+    
+    added files
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!45
+
+[33mcommit 8f01e8b641ea7366562834e425659a99657e11c2[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 14:11:33 2022 -0600
+
+    added files
+
+[33mcommit d2b90567906d895b083ed90870f0241274fe58b9[m
+Merge: 665f7b6 b367fda
+Author: Kien Mai <maik@myumanitoba.ca>
+Date:   Fri Mar 4 20:06:52 2022 +0000
+
+    Merge branch 'AccountRelatedActivities' into 'main'
+    
+    Account related activities
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!44
+
+[33mcommit b367fdaccfc2a62a453955e920c31af75cf4ad8f[m
+Author: Kien Mai <maik@myumanitoba.ca>
+Date:   Fri Mar 4 20:06:52 2022 +0000
+
+    Account related activities
+
+[33mcommit 665f7b66f56cf3dda2cb175810fc44439d8fe75c[m[33m ([m[1;31morigin/24-dev-task-create-log-in-and-create-account-activities[m[33m)[m
+Merge: 6d5c927 0be29c1
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 20:00:43 2022 +0000
+
+    Merge branch 'kroeke30-main-patch-20306' into 'main'
+    
+    Delete branching_strategy.md
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!42
+
+[33mcommit 0be29c19104da01a69666268e2977fe0c90afd34[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 20:00:28 2022 +0000
+
+    Delete branching_strategy.md
+
+[33mcommit 6d5c927702251588d886319765dcc006a90cbe68[m
+Merge: 414ce07 c136d76
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 20:00:06 2022 +0000
+
+    Merge branch 'kroeke30-main-patch-82331' into 'main'
+    
+    Delete i1_worksheet.md
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!41
+
+[33mcommit c136d76caf0b8a41a9b405e19930572e5375ff74[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 19:59:51 2022 +0000
+
+    Delete i1_worksheet.md
+
+[33mcommit 414ce07f1c9dd27594bcc3a818bc802d63a30260[m
+Merge: 6a60d66 1f12a29
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 19:50:28 2022 +0000
+
+    Merge branch 'kroeke30-main-patch-93797' into 'main'
+    
+    Update branching_strategy.md remove picture
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!40
+
+[33mcommit 1f12a29e0b1148d8b1fde0066f5dde08792a0069[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 19:50:12 2022 +0000
+
+    Update branching_strategy.md remove picture
+
+[33mcommit 6a60d660f4c41ff7521b0ad2fe68a118437e771a[m
+Merge: 7bbcc93 c6f53f2
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 19:34:24 2022 +0000
+
+    Merge branch 'kroeke30-main-patch-75718' into 'main'
+    
+    Update i1_worksheet.md revert
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!38
+
+[33mcommit c6f53f2f195e19825a8c0ac279e62465c50e96b2[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 19:34:06 2022 +0000
+
+    Update i1_worksheet.md revert
+
+[33mcommit 7bbcc93840b1d974c51698e5079865baf3949d8e[m
+Merge: b2c852d dec7c42
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 17:52:29 2022 +0000
+
+    Merge branch 'kroeke30-main-patch-90154' into 'main'
+    
+    Update branching_strategy.md
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!36
+
+[33mcommit dec7c4213960527c026aff39853d16d79646f570[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 17:52:17 2022 +0000
+
+    Update branching_strategy.md
+
+[33mcommit b2c852df69320b8bcb04b2eb2038fe68d6c45cb7[m
+Merge: a4df5c1 58a597d
+Author: SANGIL HAN <hans34@myumanitoba.ca>
+Date:   Fri Mar 4 16:42:10 2022 +0000
+
+    Merge branch 'most0093-main-patch-91757' into 'main'
+    
+    Update User.java
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!35
+
+[33mcommit 58a597d57c4bbc2ecc9c05309cb29644c8c33f5c[m
+Author: SANGIL HAN <hans34@myumanitoba.ca>
+Date:   Fri Mar 4 16:41:57 2022 +0000
+
+    Update User.java
+
+[33mcommit a4df5c13784685333606f787180b7e85ca28db8f[m
+Merge: a3e9353 4748cd6
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 16:37:10 2022 +0000
+
+    Merge branch 'kroeke30-main-patch-70454' into 'main'
+    
+    Update i1_worksheet.md
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!34
+
+[33mcommit 4748cd68f855b1f7589dc4ca2605fb7ea746c98b[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 16:36:36 2022 +0000
+
+    Update i1_worksheet.md
+
+[33mcommit a3e9353c69da1ef68c0c44c38172c3cf191544ed[m
+Merge: 05156fa 60091a2
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 16:32:49 2022 +0000
+
+    Merge branch 'addScreenshot' into 'main'
+    
+    Added screenshot
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!33
+
+[33mcommit 60091a2157062884d62bbdbe5321ebc3c3310e47[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 10:31:28 2022 -0600
+
+    Added screenshot
+
+[33mcommit 05156fa2b4e7ff957ac3fd1766f02d30c647d3f0[m
+Merge: ae3b575 6c4da13
+Author: SANGIL HAN <hans34@myumanitoba.ca>
+Date:   Fri Mar 4 16:30:48 2022 +0000
+
+    Merge branch 'most0093-main-patch-11566' into 'main'
+    
+    Update Patient.java
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!32
+
+[33mcommit 6c4da13288604fcb5afe90596983daed1f21ae69[m
+Author: SANGIL HAN <hans34@myumanitoba.ca>
+Date:   Fri Mar 4 16:30:37 2022 +0000
+
+    Update Patient.java
+
+[33mcommit ae3b575e0ff8eaf3900736fcf270a70de36d868f[m
+Merge: 02327a6 e4df797
+Author: SANGIL HAN <hans34@myumanitoba.ca>
+Date:   Fri Mar 4 16:28:55 2022 +0000
+
+    Merge branch 'most0093-main-patch-09082' into 'main'
+    
+    Update Member.java
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!31
+
+[33mcommit e4df797cb5261acce5b2a10b26ef47a10b87a2b0[m
+Author: SANGIL HAN <hans34@myumanitoba.ca>
+Date:   Fri Mar 4 16:28:47 2022 +0000
+
+    Update Member.java
+
+[33mcommit 02327a66be7cb6e094bfff891f80fc307bb62ad4[m
+Merge: 4f88ce2 e72fd15
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 16:28:01 2022 +0000
+
+    Merge branch 'AdamUpdateWorksheet' into 'main'
+    
+    Update i1_worksheet.md
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!30
+
+[33mcommit e72fd156f10700a191bc90287151a10c23fc6398[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 16:27:34 2022 +0000
+
+    Update i1_worksheet.md
+
+[33mcommit 4f88ce25f793a31013b8ba841b1ed1ddf9e8c1f7[m
+Merge: 13e33b3 4ff0f77
+Author: SANGIL HAN <hans34@myumanitoba.ca>
+Date:   Fri Mar 4 16:26:47 2022 +0000
+
+    Merge branch 'most0093-main-patch-75616' into 'main'
+    
+    Update Guest.java
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!29
+
+[33mcommit 4ff0f7750bce872b0d9dbfdedc165d546fb8152a[m
+Author: SANGIL HAN <hans34@myumanitoba.ca>
+Date:   Fri Mar 4 16:26:47 2022 +0000
+
+    Update Guest.java
+
+[33mcommit 13e33b38325b848c7d25e5ac021d794b1f6843e7[m
+Merge: fd67340 fc73cf8
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 05:11:40 2022 +0000
+
+    Merge branch 'SearchByPicture' into 'main'
+    
+    Search by picture
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!28
+
+[33mcommit fc73cf8d5d6dc65aa52ceb1e14ad1c7a3eb2f63d[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 05:11:40 2022 +0000
+
+    Search by picture
+
+[33mcommit fd67340970738fbf4ad6af77c82a73f8a43037d8[m
+Merge: 4c26ef6 712e075
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 04:00:26 2022 +0000
+
+    Merge branch 'Update_worksheet' into 'main'
+    
+    Updated link to worksheet in README
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!27
+
+[33mcommit 712e07593defef57a091d5b437436c5ec3095843[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Mar 4 03:59:42 2022 +0000
+
+    Updated link to worksheet in README
+
+[33mcommit 4c26ef658f11cf84ea0d90c8d784eb6c8daebe0d[m
+Merge: 36b438d 1740eac
+Author: Asit Patel <patela8@myumanitoba.ca>
+Date:   Fri Mar 4 01:19:33 2022 +0000
+
+    Merge branch 'Asit_documents' into 'main'
+    
+    Re-arranged documents into directories
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!26
+
+[33mcommit 1740eac3b6dc58f41e4cabd933f562d536255721[m
+Author: Asit Patel <patela8@myumanitoba.ca>
+Date:   Thu Mar 3 19:10:52 2022 -0600
+
+    Re-arranged documents into directories
+
+[33mcommit 36b438d46456142a3ee03dbb19583d68b46d08c6[m
+Merge: 68db8d7 72b24cb
+Author: SANGIL HAN <hans34@myumanitoba.ca>
+Date:   Thu Mar 3 20:16:37 2022 +0000
+
+    Merge branch 'Branch(SangilHan)' into 'main'
+    
+    User classes
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!25
+
+[33mcommit 72b24cbcce17d85ba54a3179fe28b2c2a5b8b4ce[m
+Author: SANGIL HAN <hans34@myumanitoba.ca>
+Date:   Thu Mar 3 20:16:37 2022 +0000
+
+    User classes
+
+[33mcommit 68db8d7cfe42e49b9192bd3bf29f4377d7af551b[m
+Merge: 7799906 54613ed
+Author: Kien Mai <maik@myumanitoba.ca>
+Date:   Wed Mar 2 23:13:20 2022 +0000
+
+    Merge branch 'SearchListFeature' into 'main'
+    
+    Search list feature
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!24
+
+[33mcommit 54613ede6a0a7c14aef9b09101ea93d8e7f79edd[m
+Author: Kien Mai <maik@myumanitoba.ca>
+Date:   Wed Mar 2 23:13:20 2022 +0000
+
+    Search list feature
+
+[33mcommit 77999061a3db5a87a5bc5bf7fb7d34641374c807[m
+Merge: d2c962a 2679c41
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Wed Mar 2 22:06:25 2022 +0000
+
+    Merge branch 'headacheActivity' into 'main'
+    
+    added headache activity
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!22
+
+[33mcommit 2679c411119a686feaef2f1fa018d72dcb76d374[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Wed Mar 2 16:01:39 2022 -0600
+
+    added headache activity
+
+[33mcommit d2c962a1975dc4437040821dad7031a9d41dc141[m
+Author: SANGIL HAN <hans34@myumanitoba.ca>
+Date:   Wed Mar 2 21:31:37 2022 +0000
+
+    Add new directory that store all the documents for the Iteration1
+
+[33mcommit 93473934b295dd0d9a91df17618fc71b8e6a6151[m
+Author: SANGIL HAN <hans34@myumanitoba.ca>
+Date:   Wed Mar 2 20:30:14 2022 +0000
+
+    Update ARCHITECTURE.md
+    Change the title of the file.
+
+[33mcommit 1fd23afcd7cdbae89f52901cf53b7fba71e732de[m
+Author: Sangil Han <hans34@myumanitoba.ca>
+Date:   Mon Feb 28 11:56:25 2022 -0600
+
+    Adding more tests
+    Adding the Control
+
+[33mcommit 5ccdbebf3643f5bc879e447093a21aa0bef223e0[m
+Merge: 0702daa 9c0bd4b
+Author: Sangil Han <hans34@myumanitoba.ca>
+Date:   Mon Feb 28 09:57:30 2022 -0600
+
+    Merge remote-tracking branch 'origin/main'
+    
+    # Conflicts:
+    #       app/app/src/main/java/ca/umanitoba/personalhealthcare/Tests.java
+
+[33mcommit 0702daa6563e94bf9a3fc4122154ef463e0cecf9[m
+Author: Sangil Han <hans34@myumanitoba.ca>
+Date:   Sun Feb 27 16:17:40 2022 -0600
+
+    Testing Patient class
+
+[33mcommit d3b81ec844e454614b08bf146f9bd80b81643b1b[m
+Author: Sangil Han <hans34@myumanitoba.ca>
+Date:   Sun Feb 27 15:54:46 2022 -0600
+
+    Adding Test class to check the user classes
+
+[33mcommit 9c0bd4b03a550e135776b18c057507d0684d22c2[m
+Author: Sangil Han <hans34@myumanitoba.ca>
+Date:   Sun Feb 27 15:42:31 2022 -0600
+
+    Adding new file named Test/To test the user class
+
+[33mcommit 2a2f21ef2b951e0dcb29a43305ebf7c54c0d8faa[m
+Merge: 100f4aa 35b891c
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Sun Feb 27 20:12:54 2022 +0000
+
+    Merge branch 'SearchBar' into 'main'
+    
+    Search bar
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!19
+
+[33mcommit 35b891cf3397d620a4861782332c8d72135f68f5[m
+Author: Vedant Pulahru <pulahruv@myumanitoba.ca>
+Date:   Sun Feb 27 20:12:54 2022 +0000
+
+    Search bar
+
+[33mcommit 100f4aa5d34a0341115a331b4714055e0b191ed6[m
+Merge: 80cb6cf 39184f6
+Author: Vedant Pulahru <pulahruv@myumanitoba.ca>
+Date:   Fri Feb 25 23:40:04 2022 +0000
+
+    Merge branch 'SearchBar' into 'main'
+    
+    Search bar
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!18
+
+[33mcommit 39184f6a050f5f67ad3d1d5b7df20230ba32fef2[m
+Author: Vedant Pulahru <pulahruv@myumanitoba.ca>
+Date:   Fri Feb 25 23:40:04 2022 +0000
+
+    Search bar
+
+[33mcommit 80cb6cf886ce9f23bf937fa3f0ad4539e0fd175f[m
+Merge: 8d5e8bc 1c3b43d
+Author: Vedant Pulahru <pulahruv@myumanitoba.ca>
+Date:   Fri Feb 25 23:33:27 2022 +0000
+
+    Merge branch 'SearchBar' into 'main'
+    
+    Search bar
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!17
+
+[33mcommit 1c3b43da08a46e8507fcd66cdc0013c6e783dbec[m
+Author: Vedant Pulahru <pulahruv@myumanitoba.ca>
+Date:   Fri Feb 25 23:33:27 2022 +0000
+
+    Search bar
+
+[33mcommit 8d5e8bcd00d3660fc70f8a315ce8f7d4d2f269ac[m
+Merge: fbe0988 990ec6b
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Feb 25 23:25:41 2022 +0000
+
+    Merge branch 'bodyParts' into 'main'
+    
+    Added Body Parts Activity
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!16
+
+[33mcommit 990ec6b0942cd95e62cebbd3ee199b1dcf0668bd[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Feb 25 17:24:58 2022 -0600
+
+    Added Body Parts Activity
+
+[33mcommit fbe0988167c98a8015779b4f0120244cdf81cd81[m
+Author: STEVE HAN <most@wifi-wpa-cw2-140-193-75-241.wifi.umanitoba.ca>
+Date:   Fri Feb 25 17:12:30 2022 -0600
+
+    TESTING
+
+[33mcommit 06204da280d453671f8259b7481026aef0cc38af[m
+Merge: 803e685 0c28c4e
+Author: SANGIL HAN <hans34@myumanitoba.ca>
+Date:   Fri Feb 25 23:00:54 2022 +0000
+
+    Merge branch 'Working_on_user_classes' into 'main'
+    
+    Working Partiant class
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!15
+
+[33mcommit 0c28c4e29ee215b9ffe67050b4980116f272a0c1[m
+Author: STEVE HAN <most@wifi-wpa-cw2-140-193-75-241.wifi.umanitoba.ca>
+Date:   Fri Feb 25 16:58:12 2022 -0600
+
+    Working Partiant class
+
+[33mcommit 803e685f7e838b9a868e5217c7642b067b238cea[m
+Merge: b4141fb 2821d04
+Author: SANGIL HAN <hans34@myumanitoba.ca>
+Date:   Fri Feb 25 21:37:46 2022 +0000
+
+    Merge branch 'Create_User_Class' into 'main'
+    
+    Adding new files
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!14
+
+[33mcommit 2821d049f456398892a8c18edb09b44968b0a59e[m
+Author: STEVE HAN <most@wifi-wpa-cw2-140-193-75-241.wifi.umanitoba.ca>
+Date:   Fri Feb 25 15:34:11 2022 -0600
+
+    Adding new files
+
+[33mcommit b4141fbf1d54d6f2095370df0e2e67ade4966fb3[m
+Merge: ae2fa62 83b12c8
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Feb 25 21:08:42 2022 +0000
+
+    Merge branch 'worksheetLink' into 'main'
+    
+    Updated Worksheet Link
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!13
+
+[33mcommit 83b12c8c4be886962057a8b214d01c91d5451334[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Feb 25 15:08:07 2022 -0600
+
+    Updated Worksheet Link
+
+[33mcommit ae2fa62a7da6275113a03bd66b70b5fd652b4ccd[m
+Merge: 4b91486 4896c7f
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Feb 25 21:02:55 2022 +0000
+
+    Merge branch 'worksheetLink' into 'main'
+    
+    Added link to worksheet in readme
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!12
+
+[33mcommit 4896c7f7adcd82240623f3be2203c69f5299afbd[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Feb 25 15:02:08 2022 -0600
+
+    Added link to worksheet in readme
+
+[33mcommit 4b91486f6c1784b2df11267c883b4d81e8380932[m
+Merge: 5745371 35eae18
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Feb 25 20:47:35 2022 +0000
+
+    Merge branch 'addWorksheet' into 'main'
+    
+    Added Worksheet
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!11
+
+[33mcommit 35eae18c30b00fbb8bdf054ddbf554574c048664[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Feb 25 14:46:30 2022 -0600
+
+    Added Worksheet
+
+[33mcommit 5745371ca1fbe59575784a0eb6b6403e42bdd167[m
+Merge: 5b3b2b5 ead347b
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Feb 25 20:18:25 2022 +0000
+
+    Merge branch 'branchingStrategy' into 'main'
+    
+    Branching strategy
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!10
+
+[33mcommit ead347bc6409f7c850128a65c755686fe403ce74[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Feb 25 20:18:25 2022 +0000
+
+    Branching strategy
+
+[33mcommit 5b3b2b5fa7dc1ee7321a96de9bc7e02570b02802[m
+Merge: 5879033 451244b
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Wed Feb 23 00:19:32 2022 +0000
+
+    Merge branch 'branchingStrategy' into 'main'
+    
+    Branching Strategy
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!9
+
+[33mcommit 58790337a75f65b638f5a30b4dcf7dde76ebb874[m
+Author: SANGIL HAN <hans34@myumanitoba.ca>
+Date:   Wed Feb 23 00:17:10 2022 +0000
+
+    Upload New File
+
+[33mcommit b9d13e08cda91ae18d8ebc500a8ca3ca61553c9d[m
+Author: SANGIL HAN <hans34@myumanitoba.ca>
+Date:   Wed Feb 23 00:15:27 2022 +0000
+
+    Add new directory, to store dev documents
+
+[33mcommit 451244b405c77799f48432b5f54a9acbd0678d0c[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Tue Feb 22 18:12:56 2022 -0600
+
+    Branching Strategy
+
+[33mcommit 7d6f9c91205499dd9fb86135354da18669d0ea19[m
+Merge: 84fcf87 2702c38
+Author: Vedant Pulahru <pulahruv@myumanitoba.ca>
+Date:   Tue Feb 22 23:44:51 2022 +0000
+
+    Merge branch 'VedantWork' into 'main'
+    
+    Add new acts
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!8
+
+[33mcommit 2702c38c42375d95b3d69b0a9de88c5dabc9e210[m
+Author: Vedant1206 <70309263+Vedant1206@users.noreply.github.com>
+Date:   Tue Feb 22 17:44:24 2022 -0600
+
+    Add new acts
+
+[33mcommit 84fcf875cf58fba6a4e0b067ea8f9cf5b8d925fe[m
+Merge: df6dd3f d01c316
+Author: Vedant Pulahru <pulahruv@myumanitoba.ca>
+Date:   Tue Feb 22 23:38:40 2022 +0000
+
+    Merge branch 'VedantWork' into 'main'
+    
+    Added Intro Act and Create User Act
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!7
+
+[33mcommit d01c316b73c9a0424868f89b587f49aebd85150b[m
+Author: Vedant1206 <70309263+Vedant1206@users.noreply.github.com>
+Date:   Tue Feb 22 17:37:03 2022 -0600
+
+    Added Intro Act and Create User Act
+
+[33mcommit df6dd3f7ee44ebd8ab3648c3c9b5522095e4199f[m
+Merge: 3b6384b a00a9d0
+Author: Kien Mai <maik@myumanitoba.ca>
+Date:   Tue Feb 22 22:34:06 2022 +0000
+
+    Merge branch 'initApp' into 'main'
+    
+    Init Android project with empty activity
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!6
+
+[33mcommit a00a9d0ae382431947e4e86bb1b6184e39c47f55[m
+Author: Kevin <maingockien01@gmail.com>
+Date:   Tue Feb 22 16:32:06 2022 -0600
+
+    Init Android project with empty activity
+
+[33mcommit 3b6384b612a2c96cbeaf4b3f2151ba3e447f806c[m
+Author: Kevin <maingockien01@gmail.com>
+Date:   Tue Feb 22 16:24:28 2022 -0600
+
+    Add .gitignore
+
+[33mcommit 1ff0d1844c635fb9f8e367f7d5ce025f45a4e597[m
+Author: SANGIL HAN <hans34@myumanitoba.ca>
+Date:   Sat Feb 19 19:10:07 2022 +0000
+
+    Add new file
+
+[33mcommit 8fee875ba0561ce0a2af88f01319677a88ec31ce[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Feb 11 16:36:19 2022 +0000
+
+    Delete AdamTest.md
+
+[33mcommit a4ff9861fbe7139787a813f7b8cf7261eb5546b1[m
+Merge: 7505250 9fa1228
+Author: Kien Mai <maik@myumanitoba.ca>
+Date:   Fri Feb 11 15:49:59 2022 +0000
+
+    Merge branch 'README' into 'main'
+    
+    Iteration 0 Submisison
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!5
+
+[33mcommit 9fa12285a4152ee9c303dbed23a61a24b8a0e0a7[m[33m ([m[1;31morigin/README[m[33m)[m
+Author: Kien Mai <maik@myumanitoba.ca>
+Date:   Fri Feb 11 15:47:48 2022 +0000
+
+    Update README.md for Iteration 0
+
+[33mcommit 7505250e38005672f9985993e22a512427727728[m
+Merge: 5cf8ca4 fb10ffd
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Sat Feb 5 00:43:50 2022 +0000
+
+    Merge branch 'adambranch' into 'main'
+    
+    test adam
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!4
+
+[33mcommit fb10ffdb8324551a2c8d83124b47260a82734286[m
+Author: Adam Kroeker <kroeke30@myumanitoba.ca>
+Date:   Fri Feb 4 18:39:28 2022 -0600
+
+    test adam
+
+[33mcommit 5cf8ca42e5633994a894afb85e39cf3172906752[m
+Merge: 453460e d8da3d4
+Author: Vedant Pulahru <pulahruv@myumanitoba.ca>
+Date:   Sat Feb 5 00:38:34 2022 +0000
+
+    Merge branch 'TestBranchV' into 'main'
+    
+    Added my name V
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!3
+
+[33mcommit d8da3d420c9ea6b625e30eca92372bc2437e145b[m
+Author: Vedant1206 <70309263+Vedant1206@users.noreply.github.com>
+Date:   Fri Feb 4 18:35:55 2022 -0600
+
+    Added my name V
+
+[33mcommit 453460e56b8371cb1cfe8d93fc2183727189f3bd[m
+Merge: 6394e7c 7ef3773
+Author: Asit Patel <patela8@myumanitoba.ca>
+Date:   Sat Feb 5 00:33:17 2022 +0000
+
+    Merge branch 'patela8-main-patch-75013' into 'main'
+    
+    Added Asit as a contributor in README.md
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!2
+
+[33mcommit 7ef377348a3e4334198e47a850f9ae7049fdb138[m
+Author: Asit Patel <patela8@myumanitoba.ca>
+Date:   Sat Feb 5 00:31:58 2022 +0000
+
+    Added Asit as a contributor in README.md
+
+[33mcommit 6394e7cf47c0c57b2a3483e6656a3441e9883f95[m
+Author: SANGIL HAN <hans34@myumanitoba.ca>
+Date:   Sat Feb 5 00:30:01 2022 +0000
+
+    Update README.md
+
+[33mcommit 14020024ad7d932d7b7c5015c60c126094b6e875[m
+Author: Vedant Pulahru <pulahruv@myumanitoba.ca>
+Date:   Sat Feb 5 00:28:35 2022 +0000
+
+    Update README.md
+
+[33mcommit 77214c0ce1fe198d019278c9a942f2d273457409[m
+Merge: 036d645 f88b128
+Author: Kien Mai <maik@myumanitoba.ca>
+Date:   Sat Feb 5 00:24:45 2022 +0000
+
+    Merge branch 'KienMaiInit' into 'main'
+    
+    Kien Mai Init commit
+    
+    See merge request winter-2022-a01/group-1/personal_healthcare!1
+
+[33mcommit f88b128873a58709eda5b549894cfd4a746955f2[m
+Author: Kevin <maingockien01@gmail.com>
+Date:   Fri Feb 4 18:23:35 2022 -0600
+
+    Kien Mai Init commit
+
+[33mcommit 036d645b2066856df4840e45cba8ba1830debe7d[m
+Author: Kien Mai <maik@myumanitoba.ca>
+Date:   Sat Feb 5 00:21:11 2022 +0000
+
+    Initial commit
