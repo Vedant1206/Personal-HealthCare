@@ -41,7 +41,6 @@ public class ProfileManagerImp implements ProfileManager{
 
     }
 
-
     @Override
     public Profile insertProfile(Profile newProfile) {
         return profiles.insertProfile(newProfile);

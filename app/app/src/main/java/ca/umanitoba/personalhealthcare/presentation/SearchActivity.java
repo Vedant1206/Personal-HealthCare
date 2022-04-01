@@ -15,8 +15,14 @@ import android.widget.ListView;
 
 import androidx.appcompat.widget.SearchView;
 
+import java.util.ArrayList;
+
 import ca.umanitoba.personalhealthcare.R;
 import ca.umanitoba.personalhealthcare.business.DataActivityClass;
+import ca.umanitoba.personalhealthcare.business.SearchActivityLogic;
+import ca.umanitoba.personalhealthcare.objects.Symptom;
+import ca.umanitoba.personalhealthcare.persistence.SymptomPersistence;
+import ca.umanitoba.personalhealthcare.persistence.fakeDb.FakeSymptomPersistence;
 
 /**
  * SearchActivity has a list of symptoms
@@ -29,7 +35,9 @@ public class SearchActivity extends AppCompatActivity {
     //instance variables
     ListView listView;
     LinearLayout linearL;
-    String[] name = {"Headache","Nausea","Fever, flue, Cold"};
+    SymptomPersistence thisPersistence = new FakeSymptomPersistence();
+    ArrayList<Symptom> names = thisPersistence.getCommonSymptoms();
+    String[] name = new String[names.size()];
     ArrayAdapter<String> arrayAdapter;
 
     @Override
@@ -37,6 +45,10 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         setTitle("Enter Sign/Symptom");
+
+        for(int i = 0; i < names.size(); i++) {
+            name[i] = names.get(i).getSymptomName();
+        }
 
         //User may have gotten here via BodyPartsActivity
         Intent i = getIntent();
@@ -49,6 +61,8 @@ public class SearchActivity extends AppCompatActivity {
                 }
             }
         }
+
+
 
         //building the layout and getting Id of textView
         linearL = new LinearLayout(this);
@@ -82,11 +96,6 @@ public class SearchActivity extends AppCompatActivity {
      * */
     public void searchByPicture(View v){
         Intent i = new Intent(this, BodyPartsActivity.class);
-        startActivity(i);
-    }
-
-    public void reportAMissingSymptom(View v){
-        Intent i = new Intent(this, AddSymptomActivity.class);
         startActivity(i);
     }
 

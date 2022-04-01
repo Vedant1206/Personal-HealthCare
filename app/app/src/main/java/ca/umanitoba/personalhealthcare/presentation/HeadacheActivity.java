@@ -28,7 +28,7 @@ public class HeadacheActivity extends AppCompatActivity {
 
         //Using dataClassActivity as the a SearchActivityManager
         DataActivityClass data = new DataActivityClass();
-        String description = data.getDescription(name);
+        String description = data.getName(name);
 
         //Printing the description on the textView
         t.setText(description);

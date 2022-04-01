@@ -21,3 +21,5 @@ public class Symptom {
 
     public String toString() {return name;}
 }
+
+

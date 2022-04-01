@@ -16,9 +16,9 @@ public class DataActivityClass {
         if (symp.equals("Headache")){
             return headacheData();
         }else if (symp.equals("Nausea")){
-            return symptomList.get(1).getDescription();
+            return symptomList.get(1).getSymptomName();
         }else  if (symp.equals("Fever, flue, Cold")){
-            return symptomList.get(2).getDescription();
+            return symptomList.get(2).getSymptomName();
         }
         return "fuck u";
     }

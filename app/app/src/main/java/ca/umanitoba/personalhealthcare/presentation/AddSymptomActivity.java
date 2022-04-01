@@ -33,6 +33,7 @@ public class AddSymptomActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_symptom);
+        setTitle("Report a Missing Symptom");
 
         symptomName = (EditText) findViewById(R.id.symptomName);
         editTextC1 = (EditText) findViewById(R.id.editTextC1);

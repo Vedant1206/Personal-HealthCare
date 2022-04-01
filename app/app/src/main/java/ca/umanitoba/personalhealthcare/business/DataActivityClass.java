@@ -17,10 +17,10 @@ public class DataActivityClass {
         instance = new FakeSymptomPersistence();
     }
 
-    //returning description of the symptom
-    public String getDescription(String name){
+    //returning name of the symptom
+    public String getName(String name){
         Symptom temp = instance.getSymptomByName(name);
-        String des = temp.getDescription();
+        String des = temp.getSymptomName();
         return des;
     }
 

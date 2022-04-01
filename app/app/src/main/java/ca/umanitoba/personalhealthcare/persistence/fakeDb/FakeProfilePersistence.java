@@ -7,6 +7,7 @@ import ca.umanitoba.personalhealthcare.persistence.ProfilePersistence;
 import ca.umanitoba.personalhealthcare.objects.Profile;
 import ca.umanitoba.personalhealthcare.objects.Member;
 import ca.umanitoba.personalhealthcare.objects.NameExistsException;
+import ca.umanitoba.personalhealthcare.persistence.ProfilePersistence;
 
 
 public class FakeProfilePersistence implements ProfilePersistence {

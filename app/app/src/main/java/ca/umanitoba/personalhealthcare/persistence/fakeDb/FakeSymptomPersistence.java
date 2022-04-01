@@ -29,19 +29,72 @@ public class FakeSymptomPersistence implements SymptomPersistence {
         }else  if (name.equals("Fever, flue, Cold")){
             return symptomList.get(2);
         }
-        return new Symptom("");
+        return new Symptom("", "");
     }
 
     //returns the symptom according to body part
     public ArrayList<Symptom> getSymptomsByBodyPart(String bodyPart){
+
+        symptomList = new ArrayList<Symptom>();
+
+        if(bodyPart.equals("head")){
+            Symptom Headache = new Symptom("Headache", "");
+            Symptom Dizziness = new Symptom("Dizziness", "");
+            Symptom MemoryLoss = new Symptom("Memory Loss", "");
+            Symptom RingingInTheEars = new Symptom("Ringing in the Ears", "");
+            Symptom DilatedPupils = new Symptom("Dilated Pupils", "");
+
+            symptomList.add(Headache);
+            symptomList.add(Dizziness);
+            symptomList.add(MemoryLoss);
+            symptomList.add(RingingInTheEars);
+            symptomList.add(DilatedPupils);
+        }
+
+        if(bodyPart.equals("stomach")){
+            Symptom Nausea = new Symptom("Nausea", "");
+            Symptom StomachPain = new Symptom("Stomach Pain", "");
+
+            symptomList.add(Nausea);
+            symptomList.add(StomachPain);
+        }
+
+        if(bodyPart.equals("chest")){
+            Symptom TightnessInTheChest = new Symptom("Tightness in the Chest", "");
+            Symptom ShortnessOfBreath = new Symptom("Shortness of Breath", "");
+
+            symptomList.add(TightnessInTheChest);
+            symptomList.add(ShortnessOfBreath);
+        }
+
         return symptomList;
+    }
+
+    public ArrayList<Symptom> getCommonSymptoms(){
+
+        symptomList = new ArrayList<Symptom>();
+
+        Symptom Headache = new Symptom("Headache", "");
+        Symptom ShortnessOfBreath = new Symptom("Shortness of Breath", "");
+        Symptom Nausea = new Symptom("Nausea", "");
+        Symptom RingingInTheEars = new Symptom("Ringing in the Ears", "");
+        Symptom MemoryLoss = new Symptom("Memory Loss", "");
+
+        symptomList.add(Headache);
+        symptomList.add(ShortnessOfBreath);
+        symptomList.add(MemoryLoss);
+        symptomList.add(RingingInTheEars);
+        symptomList.add(Nausea);
+
+        return symptomList;
+
     }
 
     //storing the data into arraylist
     public void storeData(){
-        Symptom Headache = new Symptom("Headache");
-        Symptom Nausea = new Symptom("Nausea");
-        Symptom Cold = new Symptom("Fever, flue, Cold");
+        Symptom Headache = new Symptom("Headache", "head");
+        Symptom Nausea = new Symptom("Nausea", "stomach");
+        Symptom Cold = new Symptom("Fever, flue, Cold", "head");
         symptomList.add(Headache);
         symptomList.add(Nausea);
         symptomList.add(Cold);
