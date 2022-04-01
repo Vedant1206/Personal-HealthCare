@@ -17,7 +17,7 @@ public class SymptomTest {
 
         assertTrue("Symptom name should be Blurry vision", "Blurry vision".equals(sym.getSymptomName()) );
         assertTrue("BodyPart should be Blurry vision", "Head".equals(sym.getBodyPart()) );
-        assertTrue("Symptom toString() should return its name", "Blurry vision".equals(sym) );
+        assertTrue("Symptom toString() should return its name", "Blurry vision".equals(sym.toString()) );
 
 
         System.out.println("Finished testCreation");
@@ -31,7 +31,9 @@ public class SymptomTest {
         Symptom sym2 = new Symptom("Blurry vision", "Legs");
         Symptom sym3 = new Symptom("Headache", "Head");
 
-        assertTrue("Checking if Blurry vision equals Blurry vision", sym1.equals(new Symptom("Blurry vision", "Head")) );
+        // whitebox testing the equals() method because we know it should test the strings with ignoreCase()
+        assertTrue("Checking if Blurry vision equals Blurry vision", sym1.equals(new Symptom("BlURry ViSiOn", "heAd")) );
+
         assertFalse("Both symptoms bodyParts are different, should not be equal", sym2.equals(sym1) );
         assertFalse("Both symptoms names are different, should not be equal", sym1.equals(sym3) );
 
