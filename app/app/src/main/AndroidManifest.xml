@@ -11,12 +11,8 @@
         android:theme="@style/Theme.PersonalHealthcare">
         <activity
             android:name=".presentation.AddSymptomActivity"
-<<<<<<< HEAD
-            android:exported="false" />
-=======
             android:exported="false"
             android:parentActivityName=".presentation.SearchActivity" />
->>>>>>> main
         <activity
             android:name=".presentation.LogInActivity"
             android:exported="false" />
@@ -25,7 +21,7 @@
             android:exported="false"
             android:parentActivityName=".presentation.BodyPartsActivity" />
         <activity
-            android:name=".presentation.BodyPartSymptomsActivity"
+            android:name=".presentation.HeadActivity"
             android:exported="false"
             android:parentActivityName=".presentation.BodyPartsActivity" />
         <activity

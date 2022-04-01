@@ -1,9 +1,6 @@
 package ca.umanitoba.personalhealthcare.presentation;
 
-<<<<<<< HEAD
-=======
 import android.content.Intent;
->>>>>>> main
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,10 +8,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-<<<<<<< HEAD
-import ca.umanitoba.personalhealthcare.R;
-import ca.umanitoba.personalhealthcare.business.AddSymptomLogic;
-=======
 
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
@@ -22,7 +15,6 @@ import java.io.OutputStreamWriter;
 import ca.umanitoba.personalhealthcare.R;
 import ca.umanitoba.personalhealthcare.business.AddSymptomLogic;
 import ca.umanitoba.personalhealthcare.business.AddSymptomLogicImp;
->>>>>>> main
 
 public class AddSymptomActivity extends AppCompatActivity {
 
@@ -35,10 +27,7 @@ public class AddSymptomActivity extends AppCompatActivity {
     CheckBox checkStomach;
     CheckBox checkEverywhere;
     Button submitButton;
-<<<<<<< HEAD
-=======
     AddSymptomLogic thisLogic;
->>>>>>> main
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,14 +58,6 @@ public class AddSymptomActivity extends AppCompatActivity {
                         Boolean everywhere = checkEverywhere.isChecked();
                         if(sympName.isEmpty()) {
                             Toast.makeText(getApplicationContext(), "Please enter the name of the symptom", Toast.LENGTH_SHORT).show();
-<<<<<<< HEAD
-                        } else if(head == false && chest == false && stomach == false && everywhere == false) {
-                            Toast.makeText(getApplicationContext(), "Please select the affected body parts", Toast.LENGTH_SHORT).show();
-                        } else {
-                            new AddSymptomLogic(sympName, condition1, condition2, condition3, head, chest, stomach, everywhere);
-                        }
-                    }
-=======
                         } else if(!head && !chest && !stomach && !everywhere) {
                             Toast.makeText(getApplicationContext(), "Please select the affected body parts", Toast.LENGTH_SHORT).show();
                         } else {
@@ -107,7 +88,6 @@ public class AddSymptomActivity extends AppCompatActivity {
                         }
                         return returnValue;
                     }
->>>>>>> main
                 }
         );
 
