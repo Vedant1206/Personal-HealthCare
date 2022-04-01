@@ -1,16 +1,17 @@
 package ca.umanitoba.personalhealthcare.persistence.fakeDb;
 
 import java.util.ArrayList;
+import java.util.List;
+import ca.umanitoba.personalhealthcare.persistence.ProfilePersistence;
 
-import ca.umanitoba.personalhealthcare.persistence.MemberPersistence;
 import ca.umanitoba.personalhealthcare.objects.Profile;
-import ca.umanitoba.personalhealthcare.objects.EmailExistException;
+import ca.umanitoba.personalhealthcare.objects.Member;
 import ca.umanitoba.personalhealthcare.objects.NameExistsException;
 import ca.umanitoba.personalhealthcare.persistence.ProfilePersistence;
 
 
 public class FakeProfilePersistence implements ProfilePersistence {
-    public static ProfilePersistence profilePersistence;
+    public static FakeProfilePersistence profilePersistence;
     private ArrayList<Profile> profiles;
     private FakeProfilePersistence(){profiles = new ArrayList<>();}
 
@@ -22,57 +23,53 @@ public class FakeProfilePersistence implements ProfilePersistence {
     }
 
     @Override
-    public Profile getProfile(String email, String profileName){
+    public List<Profile> getProfile(Member currentMember){
+        List<Profile> selectedProfiles = new ArrayList<Profile>();
         for(Profile profile : profiles){
-            if(profile.getEmail().equals(email) && profile.getName().equals(profileName)){
-                return profile;
+            if(profile.getEmail().equals(currentMember.getEmail())){
+                profiles.add(profile);
             }
         }
-        return null;
+        return profiles;
     }
 
     @Override
-    public boolean createProfile(Profile newProfile) throws NameExistsException, EmailExistException {
-        String name = newProfile.getName();
-        String email = newProfile.getEmail();
-        boolean check = checkProfile(email, name);
-        boolean created = true;
-        if(check){
-            for (Profile profile: profiles){
-                if(profile.getEmail().equals(email)){
-                    throw new EmailExistException();
-                }
-                if(profile.getName().equals(name)){
-                    throw new NameExistsException();
-                }
-            }
+    public Profile insertProfile(Profile currentProfile){
+        try{
+            insertProfileException(currentProfile);
+
+        }catch (NameExistsException exception){
+            exception.printStackTrace();
         }
-        this.profiles.add(newProfile);
-        return created;
+
+        return currentProfile;
+
     }
 
-    @Override
-    public boolean deleteProfile(String email, String profileName){
-        boolean check = checkProfile(email, profileName);
-        boolean deleted = true;
-        if(check = true){
-            profiles.remove(check);
-            return deleted;
-
-        }
-        return !deleted;
-    }
-
-    @Override
-    public boolean checkProfile(String email, String profileName){
-        boolean checked = true;
+    public boolean insertProfileException(Profile currentProfile) throws NameExistsException{
         for(Profile profile: profiles){
-            if(profile.getEmail().equals(email) && profile.getName().equals(profileName)){
-                return checked;
+            if(profile.getName().equals(currentProfile.getName()) && profile.getEmail().equals(currentProfile.getEmail())){
+                throw new NameExistsException();
             }
         }
-        return !checked;
-
+        return true;
     }
+
+    @Override
+    public void deleteProfile(Profile currentProfile){
+        for(Profile profile: profiles){
+            if(profile.getName().equals(currentProfile.getName()) && profile.getEmail().equals(currentProfile.getEmail())){
+                profiles.remove(profile);
+                return ;
+            }
+        }
+    }
+    @Override
+    public Profile updateProfile(Profile currentProfile){
+
+        return currentProfile;
+    }
+
+
 
 }

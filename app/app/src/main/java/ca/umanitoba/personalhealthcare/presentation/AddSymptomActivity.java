@@ -14,6 +14,7 @@ import java.io.OutputStreamWriter;
 
 import ca.umanitoba.personalhealthcare.R;
 import ca.umanitoba.personalhealthcare.business.AddSymptomLogic;
+import ca.umanitoba.personalhealthcare.business.AddSymptomLogicImp;
 
 public class AddSymptomActivity extends AppCompatActivity {
 
@@ -60,7 +61,7 @@ public class AddSymptomActivity extends AppCompatActivity {
                         } else if(!head && !chest && !stomach && !everywhere) {
                             Toast.makeText(getApplicationContext(), "Please select the affected body parts", Toast.LENGTH_SHORT).show();
                         } else {
-                            thisLogic = new AddSymptomLogic(sympName, condition1, condition2, condition3, head, chest, stomach, everywhere);
+                            thisLogic = new AddSymptomLogicImp(sympName, condition1, condition2, condition3, head, chest, stomach, everywhere);
                             if(reportSymptom(thisLogic.getSymptomString())) {
                                 Toast.makeText(getApplicationContext(), "Thank you for your submission", Toast.LENGTH_SHORT).show();
                                 backToSearch();

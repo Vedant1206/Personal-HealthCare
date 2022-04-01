@@ -1,21 +1,22 @@
 package ca.umanitoba.personalhealthcare.business;
 
-import ca.umanitoba.personalhealthcare.objects.NameExistsException;
-import ca.umanitoba.personalhealthcare.objects.Patient;
-import ca.umanitoba.personalhealthcare.objects.Profile;
 import ca.umanitoba.personalhealthcare.objects.Member;
-import ca.umanitoba.personalhealthcare.objects.EmailExistException;
-import ca.umanitoba.personalhealthcare.persistence.MemberPersistence;
+import ca.umanitoba.personalhealthcare.objects.Profile;
+import java.util.List;
+import java.util.ArrayList;
 import ca.umanitoba.personalhealthcare.persistence.ProfilePersistence;
-import ca.umanitoba.personalhealthcare.persistence.fakeDb.FakeMemberPersistence;
+
+
+import ca.umanitoba.personalhealthcare.persistence.MemberPersistence;
 import ca.umanitoba.personalhealthcare.persistence.fakeDb.FakeProfilePersistence;
+import ca.umanitoba.personalhealthcare.persistence.fakeDb.FakeMemberPersistence;
 
 public class ProfileManagerImp implements ProfileManager{
-    //TODO: Refactor after loginsession add
-    MemberPersistence memberPersistence;
-    Patient selectedPatient;
-    //___________________________________
-    ProfilePersistence profiles;
+    private ProfilePersistence profiles;
+    private Member selectedMember;
+
+    private MemberPersistence members;
+
 
     /**
      * The constructor for ProfileManagerImp
@@ -23,53 +24,42 @@ public class ProfileManagerImp implements ProfileManager{
      * @param password
      */
     public ProfileManagerImp(String email, String password){
-        //------------------------------Area need be rework
-        memberPersistence = FakeMemberPersistence.getMemberPersistence();
-        Member selectedMember = memberPersistence.getMember(email, password);
-        if(selectedMember instanceof Patient){
-            selectedPatient = (Patient)selectedMember;
-            // Maybe need to refactor if the Doctor class is implement.
-        }
-        //TODO: create a fake persistence
-        //------------------------------Area need be rework
-        //TODO: Refactor the constructor after the LoginSession create.
+
+    }
+
+    public ProfileManagerImp(ProfilePersistence profilePersistence){
+        this.profiles = profilePersistence;
+    }
+
+    /**
+     * The constructor for unit testing
+     */
+    public ProfileManagerImp(){
         profiles = FakeProfilePersistence.getProfilePersistence();
+        members = FakeMemberPersistence.getMemberPersistence();
+        //TODO: create a fake persistence
 
     }
 
     @Override
-    public Profile createProfile(Profile newProfile) {
-        if(newProfile.getEmail() == null){
-            newProfile.setEmail(selectedPatient.getEmail());
-            //TODO: Need to be fix when we add the LoginSession.
-        }
-        boolean checking = profiles.checkProfile(newProfile.getEmail(), newProfile.getName());
-        if(checking = true){
-            return null;
-        }
-        try {
-            profiles.createProfile(newProfile);
-        } catch (NameExistsException | EmailExistException e) {
-            e.printStackTrace();
-        }
-        return newProfile;
-
+    public Profile insertProfile(Profile newProfile) {
+        return profiles.insertProfile(newProfile);
     }
 
     @Override
-    public boolean deleteProfile(String email, String profileName){
-        boolean deleted = true;
-        if(profiles.deleteProfile(email, profileName)){
-            return deleted;
-        }
-        return !deleted;
+    public void deleteProfile(Profile profileDeleting){
+        profiles.deleteProfile(profileDeleting);
     }
 
     @Override
-    public Profile getProfile(String email, String profileName){
-        Profile lookingFor = profiles.getProfile(email, profileName);
+    public List<Profile> getProfile(Member selectedMember){
+        List<Profile> lookingFor = profiles.getProfile(selectedMember);
         return lookingFor;
     }
 
-
+    @Override
+    public Profile updateProfile(Profile newProfile){
+        profiles.updateProfile(newProfile);
+        return newProfile;
+    }
 }

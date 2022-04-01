@@ -1,37 +1,38 @@
 package ca.umanitoba.personalhealthcare.business;
 
-import ca.umanitoba.personalhealthcare.objects.Patient;
+import ca.umanitoba.personalhealthcare.objects.Member;
 import ca.umanitoba.personalhealthcare.objects.Profile;
-
+import java.util.List;
+import java.util.ArrayList;
 public interface ProfileManager {
 
     /**
-     * Create new profile
-     * The new profile must have a unique name compare to other profiles under same account.
+     * Insert new profile into currently selected member.
      *
-     * @param   profile {Profile}
-     * @return  true if the profile has a unique name
-     * @return  false if the profile has a same name as one in the list, profile is not added
+     * @param   newProfile the new profile been created.
+     * @return  Profile object
      */
-    public Profile createProfile(Profile newProfile);
+    public Profile insertProfile(Profile newProfile);
 
     /**
-     * Delete the profile with the given profile name and email in parameter
-     * @param email
-     * @param profileName
-     * @return true if successfully delete the profile with given name
-     * @reutnr false if fail to delete the profile with given name
+     * Delete the profile with the given profile
+     * @param Profile profileDeleting the profile we are deleting
+     *
      */
-    public boolean deleteProfile(String email, String profileName);
+    public void deleteProfile(Profile profileDeleting);
 
     /**
      * Search and get the profile with the given profile name and email in parameter
-     * @param   email
-     * @param   profileName
-     * @return  Profile if there is a profile with a given name
-     * @return  null    if there is no profile we need
+     * @param Member selecteMember
+     * @return  List<Profile> all the profiles under the given member
      */
-    public Profile getProfile(String email, String profileName);
+    public List<Profile> getProfile(Member selectedMember);
+
+    /**
+     *
+     *
+     */
+    public Profile updateProfile(Profile newProfile);
 
 
 }
