@@ -61,5 +61,6 @@ public class ProfileManagerImp implements ProfileManager{
     @Override
     public Profile updateProfile(Profile newProfile){
         profiles.updateProfile(newProfile);
+        return newProfile;
     }
 }
