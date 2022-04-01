@@ -58,6 +58,11 @@ public class SearchActivity extends AppCompatActivity {
         });
     }
 
+    public void reportAMissingSymptom(View v){
+        Intent i = new Intent(this, AddSymptomActivity.class);
+        startActivity(i);
+    }
+
     /**
      * This method will lead to another activity where User can click
      * a specific body part and get results
