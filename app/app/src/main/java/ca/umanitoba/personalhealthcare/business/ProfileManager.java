@@ -28,5 +28,11 @@ public interface ProfileManager {
      */
     public List<Profile> getProfile(Member selectedMember);
 
+    /**
+     *
+     *
+     */
+    public Profile updateProfile(Profile newProfile);
+
 
 }

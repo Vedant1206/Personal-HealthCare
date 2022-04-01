@@ -24,28 +24,23 @@ public class ProfileManagerImp implements ProfileManager{
      * @param password
      */
     public ProfileManagerImp(String email, String password){
-        //------------------------------Area maybe need be rework
-        if(profiles == null || members == null){
-            profiles = FakeProfilePersistence.getProfilePersistence();
-            members = FakeMemberPersistence.getMemberPersistence();
 
-        }
-        this.selectedMember = members.getMember(email, password);
+    }
+
+    public ProfileManagerImp(ProfilePersistence profilePersistence){
+        this.profiles = profilePersistence;
+    }
+
+    /**
+     * The constructor for unit testing
+     */
+    public ProfileManagerImp(){
+        profiles = FakeProfilePersistence.getProfilePersistence();
+        members = FakeMemberPersistence.getMemberPersistence();
         //TODO: create a fake persistence
-        //------------------------------Area need be rework
-        //TODO: Refactor the constructor after the LoginSession create.
-
 
     }
 
-    public ProfileManagerImp(Member selectedMember){
-        if(profiles == null || members == null){
-            profiles = FakeProfilePersistence.getProfilePersistence();
-            members = FakeMemberPersistence.getMemberPersistence();
-        }
-        this.selectedMember = selectedMember;
-
-    }
 
     @Override
     public Profile insertProfile(Profile newProfile) {
@@ -63,5 +58,8 @@ public class ProfileManagerImp implements ProfileManager{
         return lookingFor;
     }
 
-
+    @Override
+    public Profile updateProfile(Profile newProfile){
+        profiles.updateProfile(newProfile);
+    }
 }
