@@ -10,6 +10,8 @@ import android.view.View;
 import ca.umanitoba.personalhealthcare.R;
 import ca.umanitoba.personalhealthcare.business.BodyPartsLogic;
 
+
+
 public class BodyPartsActivity extends AppCompatActivity {
 
     BodyPartsLogic thisLogic;
@@ -38,7 +40,7 @@ public class BodyPartsActivity extends AppCompatActivity {
 
     public void start(BodyPartsLogic thisLogic){
         Intent i = new Intent(this, SearchActivity.class);
-        i.putExtra("ID", thisLogic.getSymptomStrings());
+        i.putExtra("ID", thisLogic.getSymptoms());
         i.putExtra("Name", thisLogic.getName());
         startActivity(i);
     }
