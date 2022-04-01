@@ -57,13 +57,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.872" />
-<<<<<<< HEAD
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> main
-</androidx.constraintlayout.widget.ConstraintLayout>
->>>>>>> ce2805e1e9ad1d889a7677643d78a10bf691227f

@@ -19,9 +19,9 @@ public class DataActivityClass {
 
     //returning description of the symptom
     public String getDescription(String name){
-        Symptom temp = instance.getSymptomByName(name);
-        String des = temp.getDescription();
-        return des;
+//        Symptom temp = instance.getSymptomByName(name);
+//        String des = temp.getDescription();
+        return "This is deprecated method, remove this DataActivityClass";
     }
 
 }
