@@ -18,20 +18,16 @@ import java.util.ArrayList;
  */
 public class ConditionSymptoms {
     private Condition condition;
-    private String bodyPart;
     private ArrayList<Symptom> symptomList;
     private boolean isCommonDisease;
 
-    public ConditionSymptoms(Condition condition, ArrayList<Symptom> symptoms, String bodyPart, boolean isCommon){
+    public ConditionSymptoms(Condition condition, ArrayList<Symptom> symptoms, boolean isCommon){
         this.condition = condition;
         this.symptomList = symptoms;
-        this.bodyPart = bodyPart;
         this.isCommonDisease = isCommon;
     }
 
     public Condition getCondition() {return condition;}
     public ArrayList<Symptom> getSymptoms() {return symptomList;}
-
-    public String getBodyPart() {return bodyPart;}
     public boolean isCommonDisease() {return isCommonDisease;}
 }

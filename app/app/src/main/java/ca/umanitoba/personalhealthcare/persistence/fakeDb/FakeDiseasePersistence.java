@@ -46,57 +46,57 @@ public class FakeDiseasePersistence implements DiseasePersistence {
         ArrayList<Symptom> arthritisSymp = new ArrayList<Symptom>();
 
         // initializing symptom list
-        acneSymp.add(new Symptom("Whiteheads"));
-        acneSymp.add(new Symptom("Blackheads"));
-        acneSymp.add(new Symptom("Small bumps"));
-        acneSymp.add(new Symptom("Pimples"));
+        acneSymp.add(new Symptom("Whiteheads", "head"));
+        acneSymp.add(new Symptom("Blackheads", "head"));
+        acneSymp.add(new Symptom("Small bumps", "head"));
+        acneSymp.add(new Symptom("Pimples", "head"));
 
-        gerdSymp.add(new Symptom("Heartburn"));
-        gerdSymp.add(new Symptom("Chest pain"));
-        gerdSymp.add(new Symptom("Difficulty swallowing"));
+        gerdSymp.add(new Symptom("Heartburn", "chest"));
+        gerdSymp.add(new Symptom("Chest pain", "chest"));
+        gerdSymp.add(new Symptom("Difficulty swallowing", "chest"));
 
-        hangoverSymp.add(new Symptom("Fatigue"));
-        hangoverSymp.add(new Symptom("Excessive thirst"));
-        hangoverSymp.add(new Symptom("Nausea"));
-        hangoverSymp.add(new Symptom("Headache"));
-        hangoverSymp.add(new Symptom("Shakiness"));
+        hangoverSymp.add(new Symptom("Fatigue", "chest"));
+        hangoverSymp.add(new Symptom("Excessive thirst", "stomach"));
+        hangoverSymp.add(new Symptom("Nausea", "head"));
+        hangoverSymp.add(new Symptom("Headache", "head"));
+        hangoverSymp.add(new Symptom("Shakiness", "chest"));
 
-        anemiaSymp.add(new Symptom("Fatigue"));
-        anemiaSymp.add(new Symptom("Weakness"));
-        anemiaSymp.add(new Symptom("Pale skin"));
-        anemiaSymp.add(new Symptom("Cold hands"));
-        anemiaSymp.add(new Symptom("Dizziness"));
+        anemiaSymp.add(new Symptom("Fatigue", "chest"));
+        anemiaSymp.add(new Symptom("Weakness", "head"));
+        anemiaSymp.add(new Symptom("Pale skin", "chest"));
+        anemiaSymp.add(new Symptom("Cold hands", "arms"));
+        anemiaSymp.add(new Symptom("Dizziness", "head"));
 
-        coldSymp.add(new Symptom("Sore throat"));
-        coldSymp.add(new Symptom("Stuffy nose"));
-        coldSymp.add(new Symptom("Swollen sinuses"));
-        coldSymp.add(new Symptom("Fatigue"));
-        coldSymp.add(new Symptom("Headache"));
-        coldSymp.add(new Symptom("Sneezing"));
+        coldSymp.add(new Symptom("Sore throat", "head"));
+        coldSymp.add(new Symptom("Stuffy nose", "head"));
+        coldSymp.add(new Symptom("Swollen sinuses", "head"));
+        coldSymp.add(new Symptom("Fatigue", "chest"));
+        coldSymp.add(new Symptom("Headache", "head"));
+        coldSymp.add(new Symptom("Sneezing", "head"));
 
-        pmsSymp.add(new Symptom("Moodiness"));
-        pmsSymp.add(new Symptom("Abdominal cramping"));
-        pmsSymp.add(new Symptom("Food cravings"));
-        pmsSymp.add(new Symptom("Bloating"));
-        pmsSymp.add(new Symptom("Breast tenderness"));
+        pmsSymp.add(new Symptom("Moodiness", "stomach"));
+        pmsSymp.add(new Symptom("Abdominal cramping", "stomach"));
+        pmsSymp.add(new Symptom("Food cravings", "stomach"));
+        pmsSymp.add(new Symptom("Bloating", "stomach"));
+        pmsSymp.add(new Symptom("Breast tenderness", "chest"));
 
-        chalazionSymp.add(new Symptom("Bump on eyelid"));
-        chalazionSymp.add(new Symptom("Eye irritation"));
-        chalazionSymp.add(new Symptom("Blurry vision"));
+        chalazionSymp.add(new Symptom("Bump on eyelid", "head"));
+        chalazionSymp.add(new Symptom("Eye irritation", "head"));
+        chalazionSymp.add(new Symptom("Blurry vision", "head"));
 
-        arthritisSymp.add(new Symptom("Joint pain"));
-        arthritisSymp.add(new Symptom("Joint swelling"));
-        arthritisSymp.add(new Symptom("Joint stiffness"));
+        arthritisSymp.add(new Symptom("Joint pain", "arms"));
+        arthritisSymp.add(new Symptom("Joint swelling", "arms"));
+        arthritisSymp.add(new Symptom("Joint stiffness", "arms"));
 
         //connecting both objects with more metadata
-        conditionsDB.add(new ConditionSymptoms(acne, acneSymp, "head", true));
-        conditionsDB.add(new ConditionSymptoms(gerd, gerdSymp, "chest", false));
-        conditionsDB.add(new ConditionSymptoms(hangover, hangoverSymp, "stomach", true));
-        conditionsDB.add(new ConditionSymptoms(anemia, anemiaSymp, "stomach", true));
-        conditionsDB.add(new ConditionSymptoms(cold, coldSymp, "head", true));
-        conditionsDB.add(new ConditionSymptoms(pms, pmsSymp, "stomach", true));
-        conditionsDB.add(new ConditionSymptoms(chalazion, chalazionSymp, "head", true));
-        conditionsDB.add(new ConditionSymptoms(arthritis, arthritisSymp, "arms", true));
+        conditionsDB.add(new ConditionSymptoms(acne, acneSymp,true));
+        conditionsDB.add(new ConditionSymptoms(gerd, gerdSymp,false));
+        conditionsDB.add(new ConditionSymptoms(hangover, hangoverSymp, true));
+        conditionsDB.add(new ConditionSymptoms(anemia, anemiaSymp, true));
+        conditionsDB.add(new ConditionSymptoms(cold, coldSymp, true));
+        conditionsDB.add(new ConditionSymptoms(pms, pmsSymp, true));
+        conditionsDB.add(new ConditionSymptoms(chalazion, chalazionSymp,true));
+        conditionsDB.add(new ConditionSymptoms(arthritis, arthritisSymp, true));
     }
 
     @Override
@@ -117,8 +117,10 @@ public class FakeDiseasePersistence implements DiseasePersistence {
         ArrayList<Symptom> symptoms = new ArrayList<Symptom>();
 
         for (ConditionSymptoms c : conditionsDB) {
-            if(c.getBodyPart().equalsIgnoreCase(bodyPart))
-                symptoms.addAll(c.getSymptoms());
+            for(Symptom symp : c.getSymptoms()){
+                if(symp.getBodyPart().equalsIgnoreCase(bodyPart))
+                    symptoms.add(symp);
+            }
         }
 
         return symptoms;
