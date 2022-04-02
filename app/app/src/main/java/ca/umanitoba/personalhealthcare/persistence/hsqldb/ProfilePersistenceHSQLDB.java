@@ -11,20 +11,21 @@ import java.util.List;
 import ca.umanitoba.personalhealthcare.objects.NameExistsException;
 import ca.umanitoba.personalhealthcare.persistence.ProfilePersistence;
 import ca.umanitoba.personalhealthcare.objects.Profile;
+import ca.umanitoba.personalhealthcare.persistence.hsqldb.HsqldbConnection;
 
 public class ProfilePersistenceHSQLDB implements ProfilePersistence{
-    private final String dbPath;
+    //private final String dbPath;
     private final String insert;
     private final String update;
     private final String delete;
     private final String get;
     private final String check;
-
+    private final HsqldbConnection setConnection;
     /**
      * The constructor of the ProfilePersistenceHSQLDB
      */
     public ProfilePersistenceHSQLDB(){
-        this.dbPath = "jdbc:hsqldb:file:" + System.getProperty("user.dir") + "/src/main/assets/db/data.db";
+        setConnection = HsqldbConnection.getInstance();
         insert = "INSERT INTO profiles VALUES(?,?,?,?,?,?,?,?,?)"; // SQL queerry for inserting values
         update = "UPDATE profiles SET address = ?, height = ?, weight = ?, year = ?, month = ?, day = ?, sex = ? WHERE email = ? AND name = ?"; // SQL queerry for updating values
         delete = "DELETE FROM profiles WHERE email = ? AND name = ?"; // SQL queerry for deleting values
@@ -36,10 +37,10 @@ public class ProfilePersistenceHSQLDB implements ProfilePersistence{
      * method to build the connection with HSQLDB
      * @return Connection connection with the dbscript from the given database path.
      * @throws SQLException
-     */
+
     private Connection connection() throws SQLException{
         return DriverManager.getConnection(dbPath, "SA", "");
-    }
+    }*/
 
     /**
      * Method to create the profile instance with given result set.
@@ -64,7 +65,8 @@ public class ProfilePersistenceHSQLDB implements ProfilePersistence{
 
     @Override
     public Profile insertProfile(Profile currentProfile) throws NameExistsException {
-        try(final Connection connection = connection()){
+        try{
+            final Connection connection = setConnection.getConnection();
             final PreparedStatement checkStatement = connection.prepareStatement(check);
             checkStatement.setString(1, currentProfile.getEmail());
             checkStatement.setString(2, currentProfile.getName());
@@ -94,7 +96,8 @@ public class ProfilePersistenceHSQLDB implements ProfilePersistence{
 
     @Override
     public Profile updateProfile(Profile currentProfile){
-        try(final Connection connection = connection()){
+        try{
+            final Connection connection = setConnection.getConnection();
             final PreparedStatement preparedStatement = connection.prepareStatement(update);
             preparedStatement.setString(1, currentProfile.getAddress());
             preparedStatement.setInt(2, currentProfile.getHeight());
@@ -116,7 +119,8 @@ public class ProfilePersistenceHSQLDB implements ProfilePersistence{
 
     @Override
     public void deleteProfile(Profile currentProfile){
-        try(final Connection connection = connection();){
+        try{
+            final Connection connection = setConnection.getConnection();
             final PreparedStatement preparedStatement = connection.prepareStatement(delete);
             preparedStatement.setString(1, currentProfile.getEmail());
             preparedStatement.setString(2, currentProfile.getName());
@@ -130,7 +134,8 @@ public class ProfilePersistenceHSQLDB implements ProfilePersistence{
     @Override
     public List<Profile> getProfile(String email){
         final List<Profile> profiles = new ArrayList<Profile>();
-        try(final Connection connection = connection()){
+        try{
+            final Connection connection = setConnection.getConnection();
             final PreparedStatement preparedStatement = connection.prepareStatement(get);
             preparedStatement.setString(1, email);
             ResultSet resultSet = preparedStatement.executeQuery(); // executeQuery will close the preparedStatement.
