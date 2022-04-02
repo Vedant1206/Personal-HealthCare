@@ -131,3 +131,4 @@ INSERT INTO CONDITION_SYMPTOMS VALUES ('Chalazion','blurry vision')
 INSERT INTO CONDITION_SYMPTOMS VALUES ('Arthritis','Joint pain')
 INSERT INTO CONDITION_SYMPTOMS VALUES ('Arthritis','joint swelling')
 INSERT INTO CONDITION_SYMPTOMS VALUES ('Arthritis','joint stiffness')
+

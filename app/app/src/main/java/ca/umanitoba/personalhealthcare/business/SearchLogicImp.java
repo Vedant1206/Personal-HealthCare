@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import ca.umanitoba.personalhealthcare.objects.Condition;
 import ca.umanitoba.personalhealthcare.persistence.DiseasePersistence;
 import ca.umanitoba.personalhealthcare.persistence.fakeDb.FakeDiseasePersistence;
+import ca.umanitoba.personalhealthcare.persistence.hsqldb.DiseasePersistenceHSQLDB;
 
 public class SearchLogicImp implements SearchLogic {
 
@@ -14,6 +15,12 @@ public class SearchLogicImp implements SearchLogic {
                                                     //names of the common conditions
     public SearchLogicImp() {
         thisPersistence = new FakeDiseasePersistence();
+        commonConditions = thisPersistence.getCommonConditions();
+        conditionStrings = createStrings(commonConditions);
+    }
+
+    public SearchLogicImp(DiseasePersistence injectedDB) {
+        thisPersistence = injectedDB;
         commonConditions = thisPersistence.getCommonConditions();
         conditionStrings = createStrings(commonConditions);
     }

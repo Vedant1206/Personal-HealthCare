@@ -19,6 +19,13 @@ public class BodyPartsLogicImp implements BodyPartsLogic{
         symptomStrings = createSymptomStrings(symptoms);
     }
 
+    public BodyPartsLogicImp(String bodyPart, DiseasePersistence injectedDB) {
+        thisPersistence = injectedDB;
+        name = bodyPart;
+        symptoms = thisPersistence.getSymptomsByBodyPart(bodyPart);
+        symptomStrings = createSymptomStrings(symptoms);
+    }
+
     /**
      * Takes the list of Symptom objects and returns
      * the names of all those symptoms stored in
