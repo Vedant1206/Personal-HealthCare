@@ -21,10 +21,6 @@
             android:exported="false"
             android:parentActivityName=".presentation.BodyPartsActivity" />
         <activity
-            android:name=".presentation.HeadActivity"
-            android:exported="false"
-            android:parentActivityName=".presentation.BodyPartsActivity" />
-        <activity
             android:name=".presentation.ColdActivity"
             android:exported="false"
             android:parentActivityName=".presentation.SearchActivity" />
@@ -33,7 +29,7 @@
             android:exported="false"
             android:parentActivityName=".presentation.SearchActivity" />
         <activity
-            android:name=".presentation.HeadacheActivity"
+            android:name=".presentation.ResultsActivity"
             android:exported="false"
             android:parentActivityName=".presentation.SearchActivity" />
         <activity
@@ -43,13 +39,13 @@
         <activity
             android:name=".presentation.SearchActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".application.MainActivity" />
         <activity
             android:name=".presentation.CreateAccountActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".application.MainActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".application.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

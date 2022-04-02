@@ -24,6 +24,8 @@
         android:layout_width="380dp"
         android:layout_height="373dp"
         android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:onClick="clickChest"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView16"
@@ -43,12 +45,14 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="443dp"
-        android:layout_height="63dp"
+        android:layout_width="335dp"
+        android:layout_height="44dp"
         android:text="Select the affected body part"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
