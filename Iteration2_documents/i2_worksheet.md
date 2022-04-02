@@ -35,3 +35,6 @@ Note: Though Dependency Injection is a programming pattern, we would like to see
 Provide a link to an issue opened by the grader.
 
 Explain what the issue was, and why it was flagged. Explain what you did to refactor or fix your code to address the issue. Provide links to the commits where you fixed the issue.
+
+
+[This issue opened by Group 16](https://code.cs.umanitoba.ca/winter-2022-a01/group-1/personal_healthcare/-/issues/22) was in our patient class. We had violated the Single Responsibility Principle by including some functions for the profile list in the patient object. It was fixed in [this merge request](https://code.cs.umanitoba.ca/winter-2022-a01/group-1/personal_healthcare/-/merge_requests/25)
