@@ -32,7 +32,7 @@ GitHub Flow is our branching strategy. We create branches directly from the main
 
 # Worksheet
 
-[Link to our worksheet](Iteration1_documents/i1_worksheet.md)
+[Link to our Iteration2 worksheet](Iteration2_documents/i2_worksheet.md)
 
 # Contributors
 - Kien Mai
