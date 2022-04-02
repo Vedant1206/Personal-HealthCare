@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 import ca.umanitoba.personalhealthcare.business.SearchActivityLogic;
 import ca.umanitoba.personalhealthcare.business.SearchActivityLogicImp;
 
-class SearchActivityLogicTest {
+public class SearchActivityLogicTest {
 
     SearchActivityLogic searchActivityLogic;
     String[] commonConditions;

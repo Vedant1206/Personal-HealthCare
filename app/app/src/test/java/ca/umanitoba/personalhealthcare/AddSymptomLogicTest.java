@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 import ca.umanitoba.personalhealthcare.business.AddSymptomLogic;
 import ca.umanitoba.personalhealthcare.business.AddSymptomLogicImp;
 
-class AddSymptomLogicTest {
+public class AddSymptomLogicTest {
 
     AddSymptomLogic addSymptomLogic;
     String name = "Symptom";

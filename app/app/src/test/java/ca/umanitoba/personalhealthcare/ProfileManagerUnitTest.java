@@ -1,5 +1,6 @@
 package ca.umanitoba.personalhealthcare;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -8,7 +9,9 @@ import java.util.List;
 
 import ca.umanitoba.personalhealthcare.business.ProfileManager;
 import ca.umanitoba.personalhealthcare.business.ProfileManagerImp;
+import ca.umanitoba.personalhealthcare.objects.EmailInvalidException;
 import ca.umanitoba.personalhealthcare.objects.Member;
+import ca.umanitoba.personalhealthcare.objects.PasswordInvalidException;
 import ca.umanitoba.personalhealthcare.objects.Profile;
 import ca.umanitoba.personalhealthcare.objects.Patient;
 import ca.umanitoba.personalhealthcare.persistence.ProfilePersistence;
@@ -20,12 +23,15 @@ public class ProfileManagerUnitTest {
     Profile test1;
     Profile test2;
     Profile test3;
-    Member member1;
-    Member member2;
+    String testemail1;
+    String testemail2;
+    List<Profile> list1;
+    List<Profile> list2;
+    FakeProfilePersistence f;
     @Before
     public void setup() {
 
-        ProfileManager profileManager = new ProfileManagerImp(FakeProfilePersistence.getProfilePersistence());
+        profileManager = new ProfileManagerImp(FakeProfilePersistence.getProfilePersistence());
         // create the test subject 1
         String email = "Test1@example.com";
         String name = "test1";
@@ -41,7 +47,7 @@ public class ProfileManagerUnitTest {
         // test1 and test2 will under same member(email)
         String email2 = "Test1@example.com";
         String name2 = "test2";
-        String address2 = "test adddress2";
+        String address2 = "test address2";
         int height2 = 190;
         int weight2 = 190;
         int year2 = 2000;
@@ -59,38 +65,65 @@ public class ProfileManagerUnitTest {
         int month3 = 9;
         int day3 = 11;
         String sex3 = "m";
-        test3 = new Profile(email, name, address3, height3, weight3, year3, month3, day3, sex3);
-        profileManager.insertProfile(test1);
-        profileManager.insertProfile(test2);
-        profileManager.insertProfile(test3);
-        String password = "P@sssword123!";
-        String id = "1234";
-        String id2 = "2345";
-        member1 = new Patient(id, email, password);
-        member2 = new Patient(id2, email3, password);
+        test3 = new Profile(email3, name3, address3, height3, weight3, year3, month3, day3, sex3);
+        try {
+            profileManager.insertProfile(email, name, address, height, weight, year, month, day, sex);
+            profileManager.insertProfile(email2, name2, address2, height2, weight2, year2, month2, day2, sex2);
+            profileManager.insertProfile(email3, name3, address3, height3, weight3, year3, month3, day3, sex3);
+        } catch (NameExistsException e) {
+            e.printStackTrace();
+            assertEquals(1,0);
+        }
+        testemail1 = email;
+        testemail2 = email3;
+    }
+
+    @After()
+    public void cleanUp(){
+
+        profileManager.deleteProfile(test1);
+        profileManager.deleteProfile(test2);
+        profileManager.deleteProfile(test3);
+
     }
 
     @Test()
     public void testGetProfile() {
-        List<Profile> list1 = profileManager.getProfile(member1); // all the profiles for the member 1
-        List<Profile> list2 = profileManager.getProfile(member2); // all the profiles for the member 2
+
+        assertNotNull(profileManager);
+
+        list1 = profileManager.getProfile(testemail1); // all the profiles for the member 1
+        assertNotNull(list1);
+        list2 = profileManager.getProfile(testemail2); // all the profiles for the member 2
+        assertNotNull(list2);
         assertEquals(list1.size(), 2); // total of 2 profiles in the list1
         assertEquals(list2.size(), 1); // total of 1 profiles in the list2
     }
 
     @Test()
     public void testInsertProfile() {
-        Profile check;
+
+        String email = "Test5@example.com";
+        String name = "test5";
+        String address = "test address1";
+        int height = 200;
+        int weight = 200;
+        int year = 2000;
+        int month = 12;
+        int day = 31;
+        String sex = "m";
+
+        Profile check = null;
         try{
-            check =  profileManager.insertProfile(test1);
+            check =  profileManager.insertProfile(email, name, address, height, weight, year, month, day, sex);
         } catch (NameExistsException exception){
             // if send exception -> error;
             assertEquals(0,1);
         }
 
         assertNotNull(check);
-        assertEquals(check.getName(), "test1");
-        assertEquals(check.getEmail(), "Test1@example.com");
+        assertEquals(check.getName(), "test5");
+        assertEquals(check.getEmail(), "Test5@example.com");
 
     }
 
@@ -108,7 +141,7 @@ public class ProfileManagerUnitTest {
         Profile insertTest = new Profile(email, name, address, height, weight, year, month, day, sex);
 
         try{
-            profileManager.insertProfile(insertTest);
+            profileManager.insertProfile(email, name, address, height, weight, year, month, day, sex);
 
         }catch(NameExistsException exception){
             // if throw -> right
@@ -118,18 +151,37 @@ public class ProfileManagerUnitTest {
 
     @Test()
     public void testDeleteProfile() {
+
+        // create the test subject 4
+        String email4 = "Test7@example.com";
+        String name4 = "test6";
+        String address4 = "test address3";
+        int height4 = 178;
+        int weight4 = 80;
+        int year4 = 2003;
+        int month4 = 9;
+        int day4 = 11;
+        String sex4 = "m";
+        Profile test4 = new Profile(email4, name4, address4, height4, weight4, year4, month4, day4, sex4);
+        try{
+            profileManager.insertProfile(email4, name4, address4, height4, weight4, year4, month4, day4, sex4);
+        } catch (NameExistsException e) {
+            e.printStackTrace();
+            assertEquals(1,0);
+        }
+
         List<Profile> list1; // all the profiles for the member 1
-        profileManager.deleteProfile(test1);
-        list1 = profileManager.getProfile(member1);
+        list1 = profileManager.getProfile(email4);
         assertEquals(list1.size(), 1);
-        profileManager.deleteProfile(test2);
+        profileManager.deleteProfile(test4);
+        list1 = profileManager.getProfile(email4);
         assertEquals(list1.size(), 0);
 
     }
 
     @Test()
     public void testUpdateProfile(){
-        List<Profile> list2 = profileManager.getProfile(member2);
+        List<Profile> list2 = profileManager.getProfile(testemail2);
         Profile target = list2.get(0);
         assertNotNull(target);
         // all the information about target before update
@@ -152,7 +204,7 @@ public class ProfileManagerUnitTest {
         String newSex = "f";
         Profile update = new Profile(email, name, newAddress, newHeight, newWeight, newYear, newMonth, newDay, newSex);
         profileManager.updateProfile(update);
-        list2 = profileManager.getProfile(member2);
+        list2 = profileManager.getProfile(testemail2);
         assertEquals(list2.size(), 1);
         update = list2.get(0);
 

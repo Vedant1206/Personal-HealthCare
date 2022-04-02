@@ -52,7 +52,8 @@ public class SearchActivity extends AppCompatActivity {
             name = thisLogic.getCommonConditions();
         } else {
             name = b.getStringArray("ID");
-            title = b.getString("name") + " symptoms";
+            bodyPart = b.getString("Name");
+            title = bodyPart.substring(0,1).toUpperCase() + bodyPart.substring(1) + " Symptoms";
         }
 
         setTitle(title);

@@ -1,4 +1,4 @@
-package ca.umanitoba.personalhealthcare.persistence.hsqldb;
+/*package ca.umanitoba.personalhealthcare.persistence.hsqldb;
 
 import java.sql.*;
 import java.sql.Connection;
@@ -123,4 +123,4 @@ public class ProfilePersistenceHSQLDB implements ProfilePersistence{
         }
         return profiles;
     }
-}
+}*/
