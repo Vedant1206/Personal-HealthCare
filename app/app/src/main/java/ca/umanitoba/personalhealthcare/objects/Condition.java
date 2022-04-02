@@ -14,4 +14,10 @@ public class Condition {
     public String getName() {return name;}
     public String getSourceLink() {return sourceLink;}
     public String getSourceName() {return sourceName;}
+
+    public boolean equals(Condition other) {
+        return other.getName().equalsIgnoreCase(name) &&
+                other.getSourceName().equalsIgnoreCase(sourceName) &&
+                other.sourceLink.equals(sourceLink);
+    }
 }
