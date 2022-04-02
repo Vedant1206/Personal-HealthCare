@@ -9,26 +9,50 @@ The persistence layer consists of hard-coded data inside the activity classes fo
 # File structure
 ```
 personalhealthcare
-├── MainActivity.java                           -- Launch activity
+├── application 
+│   └── MainActivity.java                       -- Launch activity
 ├── business                                    -- Logic layer 
+│   ├── AccountManager.java
+│   ├── AccountManagerImp.java
+│   ├── AddSymptomLogic.java
+│   ├── AddSymptomLogicImp.java
+│   ├── BodyPartsLogic.java
+│   ├── BodyPartsLogicImp.java
+│   ├── ProfileManager.java
+│   ├── ProfileManagerImp.java
+│   ├── SearchLogic.java
+│   └── SearchLogicLogicImp.java
 ├── objects                                     -- Domain-specific layer
-│   ├── Control.java
+│   ├── Condition.java
+│   ├── ConditionSymptoms.java
+│   ├── EmailExistException.java
+│   ├── EmailInvalidException.java
 │   ├── Guest.java
 │   ├── Member.java
+│   ├── NameExistsException.java
+│   ├── PasswordInvalidException.java
 │   ├── Patient.java
 │   ├── Profile.java
+│   ├── Symptom.java
 │   └── User.java
 ├── persistence                                 -- Database layer
-├── presentation                                -- UI layer
+│   ├── fakeDB
+│   |   ├── FakeDiseasePersistence.java
+│   |   ├── FakeMemberPersistence.java
+│   |   └── FakeProfilePersistence.java
+│   ├── hsqldb
+│   |   ├── HsqldbConnection.java
+│   |   └── ProfilePersistenceHSQLDB.java
+│   ├── DiseasePersistence.java
+│   ├── MemberPersistence.java
+│   └── ProfilePersistence.java
+└── presentation                                -- UI layer
+    ├── AddSymptomActivity.java
     ├── BodyPartsActivity.java
-    ├── ColdActivity.java
     ├── CreateAccountActivity.java
-    ├── HeadacheActivity.java
-    ├── HeadActivity.java
     ├── LogInActivity.java
-    ├── NauseaActivity.java
-    ├── SearchActivity.java
-    └── StomachActivity.java
+    ├── ResultsActivity.java
+    └── SearchActivity.java
 ```
 # Iteration 2 Diagram
 
