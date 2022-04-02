@@ -10,16 +10,17 @@ import ca.umanitoba.personalhealthcare.objects.Profile;
 import ca.umanitoba.personalhealthcare.persistence.ProfilePersistence;
 import ca.umanitoba.personalhealthcare.persistence.hsqldb.ProfilePersistenceHSQLDB;
 import ca.umanitoba.personalhealthcare.objects.NameExistsException;
+import ca.umanitoba.personalhealthcare.business.ProfileManager;
 
 
 
 public class ProfileManagerIntTest{
-    private final profileManager profileManager;
-    private final ProfilePersistence profilePersistence;
+    private ProfileManager profileManager;
+    private ProfilePersistence profilePersistence;
 
     @Before
     public void setUp(){
-        profilePersistence = new ProfilePersistence();
+        profilePersistence = new ProfilePersistenceHSQLDB();
         profileManager = new ProfileManagerImp(profilePersistence);
     }
 
@@ -41,7 +42,6 @@ public class ProfileManagerIntTest{
             // if throw exception -> fail
             assertEquals(1,2);
         }
-        profileManager.insertProfile(email, name, address, height, weight, year, month, day, sex);
         assertEquals(4, (profileManager.getProfile(email)).size());
     }
     @Test
@@ -66,7 +66,7 @@ public class ProfileManagerIntTest{
 
     @Test
     public void getProfile(){
-        String eamil1 = "email1@myumanitoba.ca";
+        String email1 = "email1@myumanitoba.ca";
         String email2 = "email2@myumanitoba.ca";
         String email3 = "email3@myumanitoba.ca";
         String email4 = "email4@myumanitoba.ca";
@@ -100,7 +100,7 @@ public class ProfileManagerIntTest{
         List<Profile> profiles = profileManager.getProfile(email);
         assertEquals(4, profiles.size());
 
-        Profile get;
+        Profile get = null;
         for(Profile profile : profiles){
             if((profile.getName()).equals(name)){
                 get = profile;
