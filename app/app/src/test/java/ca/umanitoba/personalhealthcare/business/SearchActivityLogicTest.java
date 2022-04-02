@@ -1,12 +1,9 @@
-package ca.umanitoba.personalhealthcare.Presentation;
+package ca.umanitoba.personalhealthcare.business;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-
-import ca.umanitoba.personalhealthcare.business.SearchActivityLogic;
-import ca.umanitoba.personalhealthcare.business.SearchActivityLogicImp;
 
 public class SearchActivityLogicTest {
 

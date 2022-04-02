@@ -1,4 +1,4 @@
-package ca.umanitoba.personalhealthcare;
+package ca.umanitoba.personalhealthcare.persistence;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;

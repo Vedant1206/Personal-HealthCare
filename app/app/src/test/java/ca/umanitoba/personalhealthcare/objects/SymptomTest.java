@@ -1,4 +1,4 @@
-package ca.umanitoba.personalhealthcare;
+package ca.umanitoba.personalhealthcare.objects;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
