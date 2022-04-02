@@ -1,14 +1,11 @@
-package ca.umanitoba.personalhealthcare;
+package ca.umanitoba.personalhealthcare.business;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-import ca.umanitoba.personalhealthcare.business.AddSymptomLogic;
-import ca.umanitoba.personalhealthcare.business.AddSymptomLogicImp;
-
-class AddSymptomTest {
+public class AddSymptomLogicTest {
 
     AddSymptomLogic addSymptomLogic;
     String name = "Symptom";
@@ -29,7 +26,7 @@ class AddSymptomTest {
 
     @Test
     public void testString() {
-        assertEquals(addSymptomLogic.getSymptomString(), name + ":\nAffected body parts: [head, chest]"
+        assertEquals(addSymptomLogic.getSymptomString(), name + ":\nAffected body parts: [head, stomach]"
                 + "\nAssociated conditions: [Condition1, Condition2, Condition3]" + "\n");
 
     }

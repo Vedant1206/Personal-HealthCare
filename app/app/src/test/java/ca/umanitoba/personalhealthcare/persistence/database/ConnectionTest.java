@@ -1,4 +1,4 @@
-package ca.umanitoba.personalhealthcare.database;
+package ca.umanitoba.personalhealthcare.persistence.database;
 
 import org.junit.Test;
 

@@ -9,13 +9,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import androidx.appcompat.widget.SearchView;
 
 import ca.umanitoba.personalhealthcare.R;
-import ca.umanitoba.personalhealthcare.business.DataActivityClass;
+import ca.umanitoba.personalhealthcare.business.SearchActivityLogic;
+import ca.umanitoba.personalhealthcare.business.SearchActivityLogicImp;
 
 /**
  * SearchActivity has a list of symptoms
@@ -25,20 +25,34 @@ import ca.umanitoba.personalhealthcare.business.DataActivityClass;
  * */
 public class SearchActivity extends AppCompatActivity {
 
-    //instance variables
-    ListView listView;
-    LinearLayout linearL;
-    String[] name = {"Headache","Nausea","Fever, flue, Cold"};
-    ArrayAdapter<String> arrayAdapter;
+    private String[] name;
+    private ArrayAdapter<String> arrayAdapter;
+    private ListView listView;
+    private SearchActivityLogic thisLogic;
+    private String title;
+    private String bodyPart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-        setTitle("Enter Sign/Symptom");
+
+        Intent i = getIntent();
+        Bundle b = i.getExtras();
+
+        thisLogic = new SearchActivityLogicImp();
+        title = "Search common Conditions";
+
+        if(b == null) {
+            name = thisLogic.getCommonConditions();
+        } else {
+            name = b.getStringArray("ID");
+            bodyPart = b.getString("Name");
+            title = bodyPart.substring(0,1).toUpperCase() + bodyPart.substring(1) + " Symptoms";
+        }
+        setTitle(title);
 
         //building the layout and getting Id of textView
-        linearL = new LinearLayout(this);
         listView = findViewById(R.id.listview);
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, name);
         listView.setAdapter(arrayAdapter);
@@ -50,7 +64,7 @@ public class SearchActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Intent i = new Intent(SearchActivity.this, HeadacheActivity.class);
+                Intent i = new Intent(SearchActivity.this, ResultsActivity.class);
                 String symptomName = name[position];
                 i.putExtra("Name", symptomName);
                 startActivity(i);

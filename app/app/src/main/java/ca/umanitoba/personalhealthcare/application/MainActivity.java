@@ -1,4 +1,4 @@
-package ca.umanitoba.personalhealthcare;
+package ca.umanitoba.personalhealthcare.application;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import ca.umanitoba.personalhealthcare.R;
 import ca.umanitoba.personalhealthcare.presentation.CreateAccountActivity;
 import ca.umanitoba.personalhealthcare.presentation.LogInActivity;
 import ca.umanitoba.personalhealthcare.presentation.SearchActivity;

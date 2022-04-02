@@ -4,17 +4,17 @@ import java.util.ArrayList;
 
 public class AddSymptomLogicImp implements AddSymptomLogic {
 
-    String symptomString;
-    String name;
-    String condition1;
-    String condition2;
-    String condition3;
-    Boolean head;
-    Boolean chest;
-    Boolean stomach;
-    Boolean everywhere;
-    ArrayList<String> affectedBodyParts;
-    ArrayList<String> associatedConditions;
+    private String symptomString;
+    private String name;
+    private String condition1;
+    private String condition2;
+    private String condition3;
+    private Boolean head;
+    private Boolean chest;
+    private Boolean stomach;
+    private Boolean everywhere;
+    private ArrayList<String> affectedBodyParts;
+    private ArrayList<String> associatedConditions;
 
     public AddSymptomLogicImp(String name, String condition1, String condition2, String condition3, Boolean head, Boolean chest, Boolean stomach, Boolean everywhere) {
 
@@ -34,7 +34,7 @@ public class AddSymptomLogicImp implements AddSymptomLogic {
 
     }
 
-    public String createString(String name, ArrayList<String> bodyParts, ArrayList<String> conditions){
+    private String createString(String name, ArrayList<String> bodyParts, ArrayList<String> conditions){
 
         String result = name + ":\nAffected body parts: " + bodyParts.toString()
                 + "\nAssociated conditions: " + conditions.toString() + "\n";
@@ -42,7 +42,7 @@ public class AddSymptomLogicImp implements AddSymptomLogic {
         return result;
     }
 
-    public ArrayList<String> createBodyPartsList(Boolean head, Boolean chest, Boolean stomach, Boolean everywhere){
+    private ArrayList<String> createBodyPartsList(Boolean head, Boolean chest, Boolean stomach, Boolean everywhere){
 
         ArrayList<String> bodyParts = new ArrayList<>();
         if(everywhere) {
@@ -65,7 +65,7 @@ public class AddSymptomLogicImp implements AddSymptomLogic {
 
     }
 
-    public ArrayList<String> createConditionsList(String C1, String C2, String C3){
+    private ArrayList<String> createConditionsList(String C1, String C2, String C3){
 
         ArrayList<String> conditions = new ArrayList<>();
         if(!C1.isEmpty()) {
