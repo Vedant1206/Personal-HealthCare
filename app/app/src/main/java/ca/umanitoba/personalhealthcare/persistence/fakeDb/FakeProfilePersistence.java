@@ -10,14 +10,20 @@ import ca.umanitoba.personalhealthcare.objects.Profile;
 import ca.umanitoba.personalhealthcare.objects.Member;
 import ca.umanitoba.personalhealthcare.objects.NameExistsException;
 
-
+/**
+ * The Fake data base storing the profiles.
+ */
 public class FakeProfilePersistence implements ProfilePersistence {
-    public static FakeProfilePersistence profilePersistence;
-    private ArrayList<Profile> profiles;
-    private FakeProfilePersistence(){profiles = new ArrayList<>();}
+    public static FakeProfilePersistence profilePersistence; //the holding instance of the class
+    private ArrayList<Profile> profiles; //db that storing all the profiles
+    private FakeProfilePersistence(){profiles = new ArrayList<>();} // constructor for the class
 
+    /**
+     * Method to return the persistence of the profile(fake)
+     */
     public static ProfilePersistence getProfilePersistence(){
         if(profilePersistence == null){
+            //case the empty instance
             profilePersistence = new FakeProfilePersistence();
         }
         return profilePersistence;
@@ -34,9 +40,11 @@ public class FakeProfilePersistence implements ProfilePersistence {
         return selectedProfiles;
     }
 
+    @Override
     public Profile insertProfile(Profile currentProfile) throws NameExistsException{
         for(Profile profile: profiles){
             if(((profile.getName()).equals(currentProfile.getName())) && ((profile.getEmail()).equals(currentProfile.getEmail()))){
+                // check same profile name is existing under a email. one email multiple name(profile) but no duplicate name
                 throw new NameExistsException();
             }
         }
