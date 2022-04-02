@@ -18,18 +18,13 @@ One example of where we paid off technical debt is in the Search Activity. In It
 The type of debt is reckless & deliberate because we knew how to create a Logic layer in iteration 1 but we chose not to because we were short on time. 
 
 ## SOLID
-Find a SOLID violation in the project of group with group number n-1 in the same section of the course as you (group 1 does group 16). Open an issue in their project with the violation, clearly explaining the SOLID violation - specifying the type, provide a link to that issue. Be sure your links in the issues are to specific commits (not to main, or develop as those will be changed).
-
-Provide a link to the issue you created here.
+We could not find a SOLID violation in Group 16's project because their code is clean and their project is well-organized.
 
 ## Retrospective
-Describe how the retrospective has changed the way you are doing your project. Is there evidence of the change in estimating/committing/peer review/timelines/testing? Provide those links and evidence here - or explain why there is not evidence.
-
 
 The retrospective helped us change the way we plan our project. During Iteration 1 we mostly did the planning as we went along, but for Iteration 2 we were able to do a lot of the planning earlier on. Evidence of this includes the fact that we assigned user stories to each group member and added deadlines for those user stories.
 
 [Link to an issue with a due date](https://code.cs.umanitoba.ca/winter-2022-a01/group-1/personal_healthcare/-/issues/14)
-
 
 ## Design patterns
 Show links to your project where you use a well-known design pattern. Which pattern is it? Provide links to the design pattern that you used.
