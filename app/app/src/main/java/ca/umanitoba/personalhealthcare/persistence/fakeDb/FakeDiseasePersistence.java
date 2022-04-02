@@ -123,33 +123,4 @@ public class FakeDiseasePersistence implements DiseasePersistence {
         return symptoms;
     }
 
-    /*
-        We have coded it such that if the input symptoms match over 25% of the real symptoms in database
-        then we add it to the output Conditions list
-     */
-    @Override
-    public ArrayList<Condition> getConditionsBySymptoms(ArrayList<Symptom> inputSymptoms) {
-
-        int symptCounter;
-        ArrayList<Condition> conditions = new ArrayList<Condition>();
-
-        for (ConditionSymptoms c : conditionsDB) {
-            symptCounter = 0;
-
-            //prelim check of length, so if the input symptoms from the getgo are not long enough then we ignore them
-            if(inputSymptoms.size() >= c.getSymptoms().size()/4){
-                for(Symptom s : c.getSymptoms()){
-                    if(inputSymptoms.contains(s))
-                        symptCounter++;
-                }
-
-                if(symptCounter >= c.getSymptoms().size()/4)
-                    conditions.add(c.getCondition());
-            }
-
-        }
-
-        return conditions;
-    }
-
 }

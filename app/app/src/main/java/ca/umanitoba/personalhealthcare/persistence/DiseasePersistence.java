@@ -19,7 +19,4 @@ public interface DiseasePersistence {
     // check if bodypart needs to be an Object
     public ArrayList<Symptom> getSymptomsByBodyPart(String bodyPart);
 
-
-    //maybe throw an exception if no symptoms are added
-    public ArrayList<Condition> getConditionsBySymptoms(ArrayList<Symptom> symptoms);
 }
