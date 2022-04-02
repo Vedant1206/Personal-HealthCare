@@ -17,18 +17,6 @@
             android:name=".presentation.LogInActivity"
             android:exported="false" />
         <activity
-            android:name=".presentation.StomachActivity"
-            android:exported="false"
-            android:parentActivityName=".presentation.BodyPartsActivity" />
-        <activity
-            android:name=".presentation.ColdActivity"
-            android:exported="false"
-            android:parentActivityName=".presentation.SearchActivity" />
-        <activity
-            android:name=".presentation.NauseaActivity"
-            android:exported="false"
-            android:parentActivityName=".presentation.SearchActivity" />
-        <activity
             android:name=".presentation.ResultsActivity"
             android:exported="false"
             android:parentActivityName=".presentation.SearchActivity" />

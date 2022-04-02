@@ -16,7 +16,7 @@ public class SymptomTest {
         assertNotNull(sym);
 
         assertTrue("Symptom name should be Blurry vision", "Blurry vision".equals(sym.getSymptomName()) );
-        assertTrue("BodyPart should be Blurry vision", "Head".equals(sym.getBodyPart()) );
+        assertTrue("BodyPart should be Head", "Head".equals(sym.getBodyPart()) );
         assertTrue("Symptom toString() should return its name", "Blurry vision".equals(sym.toString()) );
 
 

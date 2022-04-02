@@ -4,17 +4,17 @@ import java.util.ArrayList;
 
 public class AddSymptomLogicImp implements AddSymptomLogic {
 
-    private String symptomString;
-    private String name;
-    private String condition1;
-    private String condition2;
-    private String condition3;
-    private Boolean head;
-    private Boolean chest;
-    private Boolean stomach;
-    private Boolean everywhere;
-    private ArrayList<String> affectedBodyParts;
-    private ArrayList<String> associatedConditions;
+    private String symptomString;                   //String containing info about the reported symptom
+    private String name;                            //Text input
+    private String condition1;                      //Text input
+    private String condition2;                      //Text input
+    private String condition3;                      //Text input
+    private Boolean head;                           //Checkbox input
+    private Boolean chest;                          //Checkbox input
+    private Boolean stomach;                        //Checkbox input
+    private Boolean everywhere;                     //Checkbox input
+    private ArrayList<String> affectedBodyParts;    //Body parts affected by this symptom
+    private ArrayList<String> associatedConditions; //List of Condition objects associated with this symptom
 
     public AddSymptomLogicImp(String name, String condition1, String condition2, String condition3, Boolean head, Boolean chest, Boolean stomach, Boolean everywhere) {
 
@@ -34,6 +34,12 @@ public class AddSymptomLogicImp implements AddSymptomLogic {
 
     }
 
+    /**
+     * Takes the info input by the user and creates a big String
+     * containing all that info.
+     *
+     * @return String
+     */
     private String createString(String name, ArrayList<String> bodyParts, ArrayList<String> conditions){
 
         String result = name + ":\nAffected body parts: " + bodyParts.toString()
@@ -42,6 +48,11 @@ public class AddSymptomLogicImp implements AddSymptomLogic {
         return result;
     }
 
+    /**
+     * Takes info input by the user about which body parts are affected
+     * by their reported symptom, and creates an ArrayList of Strings
+     * containing the names of the body parts that are affected.
+     */
     private ArrayList<String> createBodyPartsList(Boolean head, Boolean chest, Boolean stomach, Boolean everywhere){
 
         ArrayList<String> bodyParts = new ArrayList<>();
@@ -65,6 +76,11 @@ public class AddSymptomLogicImp implements AddSymptomLogic {
 
     }
 
+    /**
+     * Takes info input by the user about which conditions are associated
+     * with their reported symptom, and creates an ArrayList of Strings
+     * containing the names of the conditions input by the user
+     */
     private ArrayList<String> createConditionsList(String C1, String C2, String C3){
 
         ArrayList<String> conditions = new ArrayList<>();
@@ -81,6 +97,11 @@ public class AddSymptomLogicImp implements AddSymptomLogic {
 
     }
 
+    /**
+     * Gets a big String containing all the info input by the user.
+     *
+     * @return String
+     */
     public String getSymptomString(){return symptomString;}
 
 }

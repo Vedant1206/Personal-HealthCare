@@ -3,8 +3,6 @@ package ca.umanitoba.personalhealthcare.objects;
 
 import java.util.regex.Pattern;
 
-import ca.umanitoba.personalhealthcare.objects.User;
-
 public abstract class Member extends User {
     protected String email;
     protected String password;

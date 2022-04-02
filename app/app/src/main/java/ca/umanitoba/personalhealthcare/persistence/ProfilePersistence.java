@@ -1,10 +1,8 @@
 package ca.umanitoba.personalhealthcare.persistence;
 
 import ca.umanitoba.personalhealthcare.objects.Profile;
-import ca.umanitoba.personalhealthcare.objects.Member;
 import java.util.List;
 
-import ca.umanitoba.personalhealthcare.objects.EmailExistException;
 import ca.umanitoba.personalhealthcare.objects.NameExistsException;
 
 public interface ProfilePersistence{

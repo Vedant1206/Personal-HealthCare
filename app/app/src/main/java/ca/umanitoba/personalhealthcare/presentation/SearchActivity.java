@@ -14,8 +14,8 @@ import android.widget.ListView;
 import androidx.appcompat.widget.SearchView;
 
 import ca.umanitoba.personalhealthcare.R;
-import ca.umanitoba.personalhealthcare.business.SearchActivityLogic;
-import ca.umanitoba.personalhealthcare.business.SearchActivityLogicImp;
+import ca.umanitoba.personalhealthcare.business.SearchLogic;
+import ca.umanitoba.personalhealthcare.business.SearchLogicImp;
 
 /**
  * SearchActivity has a list of symptoms
@@ -25,13 +25,13 @@ import ca.umanitoba.personalhealthcare.business.SearchActivityLogicImp;
  * */
 public class SearchActivity extends AppCompatActivity {
 
-    private String[] name;
-    private ArrayAdapter<String> arrayAdapter;
-    private ListView listView;
-    private SearchActivityLogic thisLogic;
-    private String title;
-    private String bodyPart;
-
+    private String[] name;                      //List items
+    private ArrayAdapter<String> arrayAdapter;  //arrayAdapter
+    private ListView listView;                  //ListView
+    private SearchLogic thisLogic;              //Logic
+    private String title;                       //Title of the page
+    private String bodyPart;                    //Which body part the user selected
+                                                //(if they got here from BodyPartsActivity)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,9 +40,12 @@ public class SearchActivity extends AppCompatActivity {
         Intent i = getIntent();
         Bundle b = i.getExtras();
 
-        thisLogic = new SearchActivityLogicImp();
-        title = "Search common Conditions";
+        thisLogic = new SearchLogicImp();
+        title = "Search Common Conditions";
 
+        //Display the list of common conditions, unless the user
+        //came here from BodyPartsActivity, then display a different
+        //title and list items based on info in Bundle b
         if(b == null) {
             name = thisLogic.getCommonConditions();
         } else {
@@ -72,6 +75,11 @@ public class SearchActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * This button leads to the AddSymptom activity,
+     * where the user can create a report for a symptom
+     * that they think should be added to the list.
+    **/
     public void reportAMissingSymptom(View v){
         Intent i = new Intent(this, AddSymptomActivity.class);
         startActivity(i);

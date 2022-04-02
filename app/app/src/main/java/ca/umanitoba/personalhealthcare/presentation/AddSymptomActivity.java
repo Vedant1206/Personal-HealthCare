@@ -16,18 +16,23 @@ import ca.umanitoba.personalhealthcare.R;
 import ca.umanitoba.personalhealthcare.business.AddSymptomLogic;
 import ca.umanitoba.personalhealthcare.business.AddSymptomLogicImp;
 
+/**
+ * AddSymptomActivity has a form that the
+ * user can fill out if they think our
+ * list of symptoms is missing a symptom.
+ * */
 public class AddSymptomActivity extends AppCompatActivity {
 
-    private EditText symptomName;
-    private EditText editTextC1;
-    private EditText editTextC2;
-    private EditText editTextC3;
-    private CheckBox checkHead;
-    private CheckBox checkChest;
-    private CheckBox checkStomach;
-    private CheckBox checkEverywhere;
-    private AddSymptomLogic thisLogic;
-    private Button submitButton;
+    private EditText symptomName;       //user input
+    private EditText editTextC1;        //user input
+    private EditText editTextC2;        //user input
+    private EditText editTextC3;        //user input
+    private CheckBox checkHead;         //user input
+    private CheckBox checkChest;        //user input
+    private CheckBox checkStomach;      //user input
+    private CheckBox checkEverywhere;   //user input
+    private AddSymptomLogic thisLogic;  //Logic
+    private Button submitButton;        //submit button
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +62,9 @@ public class AddSymptomActivity extends AppCompatActivity {
                         Boolean chest = checkChest.isChecked();
                         Boolean stomach = checkStomach.isChecked();
                         Boolean everywhere = checkEverywhere.isChecked();
+
+                        //If the name or body part fields are empty,
+                        //the user will be asked to fill those out.
                         if(sympName.isEmpty()) {
                             Toast.makeText(getApplicationContext(), "Please enter the name of the symptom", Toast.LENGTH_SHORT).show();
                         } else if(!head && !chest && !stomach && !everywhere) {
@@ -71,10 +79,15 @@ public class AddSymptomActivity extends AppCompatActivity {
                             }
                         }
                     }
+
+                    //Send the user back to Search Activity
                     public void backToSearch(){
                         Intent i = new Intent(AddSymptomActivity.this, SearchActivity.class);
                         startActivity(i);
                     }
+
+                    //Takes a String containing the info input
+                    //by the user and writes it to a txt file.
                     public Boolean reportSymptom(String symptomString){
                         Boolean returnValue = false;
                         try {
