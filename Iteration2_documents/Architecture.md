@@ -4,7 +4,7 @@ The UI layer consists of all the activity files in our project. The activity fil
 
 The domain specific objects include the Guest, Patient, Member, Profile, User, Condition, Symptom, and ConditionSymptoms classes, as well as some classes for exceptions.
 
-The persistence layer consists of hard-coded data inside the activity classes for now.
+The persistence layer consists of a fake and a real database. The fake database has hardcoded data with domain specific objects. The real database is an HSQLDB database.
 
 # File structure
 ```
