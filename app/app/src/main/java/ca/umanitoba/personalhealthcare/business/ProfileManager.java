@@ -1,4 +1,8 @@
 package ca.umanitoba.personalhealthcare.business;
+/**
+ * The logic layer class that handle profiles
+ * The input of this class method can be change in next iteration.
+ */
 
 import ca.umanitoba.personalhealthcare.objects.Member;
 import ca.umanitoba.personalhealthcare.objects.NameExistsException;

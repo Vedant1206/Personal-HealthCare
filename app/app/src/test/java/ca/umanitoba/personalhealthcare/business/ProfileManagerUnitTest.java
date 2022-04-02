@@ -23,7 +23,7 @@ public class ProfileManagerUnitTest {
     FakeProfilePersistence f;
     @Before
     public void setup() {
-
+        // populate the fake DB
         profileManager = new ProfileManagerImp(FakeProfilePersistence.getProfilePersistence());
         // create the test subject 1
         String email = "Test1@example.com";
@@ -60,6 +60,7 @@ public class ProfileManagerUnitTest {
         String sex3 = "m";
         test3 = new Profile(email3, name3, address3, height3, weight3, year3, month3, day3, sex3);
         try {
+            // insert the profiles in to fake DB
             profileManager.insertProfile(email, name, address, height, weight, year, month, day, sex);
             profileManager.insertProfile(email2, name2, address2, height2, weight2, year2, month2, day2, sex2);
             profileManager.insertProfile(email3, name3, address3, height3, weight3, year3, month3, day3, sex3);
@@ -82,7 +83,7 @@ public class ProfileManagerUnitTest {
 
     @Test()
     public void testGetProfile() {
-
+        // Testing for getting the profiles using same email
         assertNotNull(profileManager);
 
         list1 = profileManager.getProfile(testemail1); // all the profiles for the member 1
@@ -95,7 +96,7 @@ public class ProfileManagerUnitTest {
 
     @Test()
     public void testInsertProfile() {
-
+        // Tetsting for inserting the new profile
         String email = "Test5@example.com";
         String name = "test5";
         String address = "test address1";
@@ -122,6 +123,7 @@ public class ProfileManagerUnitTest {
 
     @Test()
     public void testInsertProfileExistingName() {
+        // Testing for inserting the profile with same email and same profile name which is invalid.
         String email = "Test1@example.com";
         String name = "test1";
         String address = "test address1";
@@ -144,7 +146,7 @@ public class ProfileManagerUnitTest {
 
     @Test()
     public void testDeleteProfile() {
-
+        // Testing for deleting the profile
         // create the test subject 4
         String email4 = "Test7@example.com";
         String name4 = "test6";
@@ -157,23 +159,25 @@ public class ProfileManagerUnitTest {
         String sex4 = "m";
         Profile test4 = new Profile(email4, name4, address4, height4, weight4, year4, month4, day4, sex4);
         try{
+            // insert the new profile
             profileManager.insertProfile(email4, name4, address4, height4, weight4, year4, month4, day4, sex4);
         } catch (NameExistsException e) {
             e.printStackTrace();
             assertEquals(1,0);
         }
-
         List<Profile> list1; // all the profiles for the member 1
         list1 = profileManager.getProfile(email4);
-        assertEquals(list1.size(), 1);
-        profileManager.deleteProfile(test4);
+        assertEquals(list1.size(), 1);// check the number of the profile
+        profileManager.deleteProfile(test4); // delete the profile just created.
         list1 = profileManager.getProfile(email4);
-        assertEquals(list1.size(), 0);
+        assertEquals(list1.size(), 0); // recheck the profile
 
     }
 
     @Test()
     public void testUpdateProfile(){
+
+        // check the update of the profile.
         List<Profile> list2 = profileManager.getProfile(testemail2);
         Profile target = list2.get(0);
         assertNotNull(target);

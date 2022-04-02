@@ -20,19 +20,33 @@ public class ProfilePersistenceHSQLDB implements ProfilePersistence{
     private final String get;
     private final String check;
 
+    /**
+     * The constructor of the ProfilePersistenceHSQLDB
+     */
     public ProfilePersistenceHSQLDB(){
         this.dbPath = "jdbc:hsqldb:file:" + System.getProperty("user.dir") + "/src/main/assets/db/data.db";
-        insert = "INSERT INTO profiles VALUES(?,?,?,?,?,?,?,?,?)";
-        update = "UPDATE profiles SET address = ?, height = ?, weight = ?, year = ?, month = ?, day = ?, sex = ? WHERE email = ? AND name = ?";
-        delete = "DELETE FROM profiles WHERE email = ? AND name = ?";
-        get = "SELECT * FROM profiles WHERE email = ?";
-        check = "SELECT * FROM profiles WHERE email = ? AND name = ?";
+        insert = "INSERT INTO profiles VALUES(?,?,?,?,?,?,?,?,?)"; // SQL queerry for inserting values
+        update = "UPDATE profiles SET address = ?, height = ?, weight = ?, year = ?, month = ?, day = ?, sex = ? WHERE email = ? AND name = ?"; // SQL queerry for updating values
+        delete = "DELETE FROM profiles WHERE email = ? AND name = ?"; // SQL queerry for deleting values
+        get = "SELECT * FROM profiles WHERE email = ?"; // SQL queerry for getting values
+        check = "SELECT * FROM profiles WHERE email = ? AND name = ?"; // SQL queerry for selecting values
     }
 
+    /**
+     * method to build the connection with HSQLDB
+     * @return Connection connection with the dbscript from the given database path.
+     * @throws SQLException
+     */
     private Connection connection() throws SQLException{
         return DriverManager.getConnection(dbPath, "SA", "");
     }
 
+    /**
+     * Method to create the profile instance with given result set.
+     * @param rs
+     * @return Profile single profile instance with given information fromo result set.
+     * @throws SQLException
+     */
     private Profile createProfileInstanceFromResultSet(final ResultSet rs) throws SQLException{
         final String email =  rs.getString("email");
         final String name = rs.getString("name");
@@ -47,6 +61,7 @@ public class ProfilePersistenceHSQLDB implements ProfilePersistence{
         return new Profile(email, name, address, height, weight, year, month, day, sex);
     }
 
+
     @Override
     public Profile insertProfile(Profile currentProfile) throws NameExistsException {
         try(final Connection connection = connection()){
@@ -54,7 +69,7 @@ public class ProfilePersistenceHSQLDB implements ProfilePersistence{
             checkStatement.setString(1, currentProfile.getEmail());
             checkStatement.setString(2, currentProfile.getName());
             ResultSet resultSet = checkStatement.executeQuery(); // executeQuery will close the preparedStatement.
-            if(!resultSet.first()){
+            if(!resultSet.first()){ // check same profile name is existing under a email. one email multiple name(profile) but no duplicate name
                 throw new NameExistsException();
             }
             final PreparedStatement preparedStatement = connection.prepareStatement(insert);
