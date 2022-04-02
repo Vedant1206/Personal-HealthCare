@@ -25,6 +25,12 @@ Provide a link to the issue you created here.
 ## Retrospective
 Describe how the retrospective has changed the way you are doing your project. Is there evidence of the change in estimating/committing/peer review/timelines/testing? Provide those links and evidence here - or explain why there is not evidence.
 
+
+The retrospective helped us change the way we plan our project. During Iteration 1 we mostly did the planning as we went along, but for Iteration 2 we were able to do a lot of the planning earlier on. Evidence of this includes the fact that we assigned user stories to each group member and added deadlines for those user stories.
+
+[Link to an issue with a due date](https://code.cs.umanitoba.ca/winter-2022-a01/group-1/personal_healthcare/-/issues/14)
+
+
 ## Design patterns
 Show links to your project where you use a well-known design pattern. Which pattern is it? Provide links to the design pattern that you used.
 
