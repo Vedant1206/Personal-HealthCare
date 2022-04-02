@@ -11,7 +11,7 @@ Example of how to link to a diff - click on he commit in the commit log, then cl
 
 One example of where we paid off technical debt is in the Search Activity. In Iteration 1, we hardcoded a list of symptoms to be shown on the page, because we didn't have time to create a logic layer. In this iteration, we have used a logic class to send the information to be shown to the UI layer.
 
-[Hardcoded data in UI layer](90488f9bfae4b7129e95010e333f5de10a525ae7#L31)
+[Hardcoded data in UI layer](90488f9bfae4b7129e95010e333f5de10a525ae7) at line 31
 
 [Data being passed to UI from Logic layer](https://code.cs.umanitoba.ca/winter-2022-a01/group-1/personal_healthcare/-/blob/557089b8ca8ecfb744feb36e9a2c0dc9de6a3f97/app/app/src/main/java/ca/umanitoba/personalhealthcare/presentation/SearchActivity.java#L47)
 
