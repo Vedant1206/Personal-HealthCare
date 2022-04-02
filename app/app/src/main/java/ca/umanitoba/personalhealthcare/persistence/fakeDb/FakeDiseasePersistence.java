@@ -1,5 +1,7 @@
 package ca.umanitoba.personalhealthcare.persistence.fakeDb;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -115,14 +117,12 @@ public class FakeDiseasePersistence implements DiseasePersistence {
     //returns the symptom according to body part
     public ArrayList<Symptom> getSymptomsByBodyPart(String bodyPart) {
         ArrayList<Symptom> symptoms = new ArrayList<Symptom>();
-
         for (ConditionSymptoms c : conditionsDB) {
             for(Symptom symp : c.getSymptoms()){
                 if(symp.getBodyPart().equalsIgnoreCase(bodyPart))
                     symptoms.add(symp);
             }
         }
-
         return symptoms;
     }
 

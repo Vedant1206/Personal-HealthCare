@@ -18,16 +18,16 @@ import ca.umanitoba.personalhealthcare.business.AddSymptomLogicImp;
 
 public class AddSymptomActivity extends AppCompatActivity {
 
-    EditText symptomName;
-    EditText editTextC1;
-    EditText editTextC2;
-    EditText editTextC3;
-    CheckBox checkHead;
-    CheckBox checkChest;
-    CheckBox checkStomach;
-    CheckBox checkEverywhere;
-    Button submitButton;
-    AddSymptomLogic thisLogic;
+    private EditText symptomName;
+    private EditText editTextC1;
+    private EditText editTextC2;
+    private EditText editTextC3;
+    private CheckBox checkHead;
+    private CheckBox checkChest;
+    private CheckBox checkStomach;
+    private CheckBox checkEverywhere;
+    private AddSymptomLogic thisLogic;
+    private Button submitButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,15 +35,15 @@ public class AddSymptomActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_symptom);
         setTitle("Report a Missing Symptom");
 
-        symptomName = (EditText) findViewById(R.id.symptomName);
-        editTextC1 = (EditText) findViewById(R.id.editTextC1);
-        editTextC2 = (EditText) findViewById(R.id.editTextC2);
-        editTextC3 = (EditText) findViewById(R.id.editTextC3);
-        checkHead = (CheckBox) findViewById(R.id.checkHead);
-        checkChest = (CheckBox) findViewById(R.id.checkChest);
-        checkStomach = (CheckBox) findViewById(R.id.checkStomach);
-        checkEverywhere = (CheckBox) findViewById(R.id.checkEverywhere);
-        submitButton = (Button) findViewById(R.id.submitButton);
+        symptomName = findViewById(R.id.symptomName);
+        editTextC1 = findViewById(R.id.editTextC1);
+        editTextC2 = findViewById(R.id.editTextC2);
+        editTextC3 = findViewById(R.id.editTextC3);
+        checkHead = findViewById(R.id.checkHead);
+        checkChest = findViewById(R.id.checkChest);
+        checkStomach = findViewById(R.id.checkStomach);
+        checkEverywhere = findViewById(R.id.checkEverywhere);
+        submitButton = findViewById(R.id.submitButton);
 
         submitButton.setOnClickListener(
                 new View.OnClickListener() {

@@ -1,4 +1,4 @@
-package ca.umanitoba.personalhealthcare;
+package ca.umanitoba.personalhealthcare.Business;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -29,7 +29,7 @@ public class AddSymptomLogicTest {
 
     @Test
     public void testString() {
-        assertEquals(addSymptomLogic.getSymptomString(), name + ":\nAffected body parts: [head, chest]"
+        assertEquals(addSymptomLogic.getSymptomString(), name + ":\nAffected body parts: [head, stomach]"
                 + "\nAssociated conditions: [Condition1, Condition2, Condition3]" + "\n");
 
     }

@@ -1,5 +1,7 @@
 package ca.umanitoba.personalhealthcare.persistence.fakeDb;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 import ca.umanitoba.personalhealthcare.persistence.ProfilePersistence;
@@ -7,7 +9,6 @@ import ca.umanitoba.personalhealthcare.persistence.ProfilePersistence;
 import ca.umanitoba.personalhealthcare.objects.Profile;
 import ca.umanitoba.personalhealthcare.objects.Member;
 import ca.umanitoba.personalhealthcare.objects.NameExistsException;
-import ca.umanitoba.personalhealthcare.persistence.ProfilePersistence;
 
 
 public class FakeProfilePersistence implements ProfilePersistence {
@@ -23,36 +24,24 @@ public class FakeProfilePersistence implements ProfilePersistence {
     }
 
     @Override
-    public List<Profile> getProfile(Member currentMember){
+    public List<Profile> getProfile(String email){
         List<Profile> selectedProfiles = new ArrayList<Profile>();
         for(Profile profile : profiles){
-            if(profile.getEmail().equals(currentMember.getEmail())){
-                profiles.add(profile);
+            if(profile.getEmail().equals(email)){
+                selectedProfiles.add(profile);
             }
         }
-        return profiles;
+        return selectedProfiles;
     }
 
-    @Override
-    public Profile insertProfile(Profile currentProfile){
-        try{
-            insertProfileException(currentProfile);
-
-        }catch (NameExistsException exception){
-            exception.printStackTrace();
-        }
-
-        return currentProfile;
-
-    }
-
-    public boolean insertProfileException(Profile currentProfile) throws NameExistsException{
+    public Profile insertProfile(Profile currentProfile) throws NameExistsException{
         for(Profile profile: profiles){
-            if(profile.getName().equals(currentProfile.getName()) && profile.getEmail().equals(currentProfile.getEmail())){
+            if(((profile.getName()).equals(currentProfile.getName())) && ((profile.getEmail()).equals(currentProfile.getEmail()))){
                 throw new NameExistsException();
             }
         }
-        return true;
+        profiles.add(currentProfile);
+        return currentProfile;
     }
 
     @Override
@@ -64,12 +53,22 @@ public class FakeProfilePersistence implements ProfilePersistence {
             }
         }
     }
+
     @Override
     public Profile updateProfile(Profile currentProfile){
-
+        for(Profile profile: profiles){
+            if(profile.getName().equals(currentProfile.getName()) && profile.getEmail().equals(currentProfile.getEmail())){
+                profile.setAddress(currentProfile.getAddress());
+                profile.setHeight(currentProfile.getHeight());
+                profile.setWeight(currentProfile.getWeight());
+                profile.setYear(currentProfile.getYear());
+                profile.setMonth(currentProfile.getMonth());
+                profile.setDay(currentProfile.getDay());
+                profile.setSex(currentProfile.getSex());
+                return profile;
+            }
+        }
         return currentProfile;
     }
-
-
 
 }

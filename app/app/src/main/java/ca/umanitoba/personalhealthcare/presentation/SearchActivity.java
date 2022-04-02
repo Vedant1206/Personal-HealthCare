@@ -4,25 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import androidx.appcompat.widget.SearchView;
 
-import java.util.ArrayList;
-
 import ca.umanitoba.personalhealthcare.R;
-import ca.umanitoba.personalhealthcare.business.DataActivityClass;
 import ca.umanitoba.personalhealthcare.business.SearchActivityLogic;
-import ca.umanitoba.personalhealthcare.objects.Symptom;
-import ca.umanitoba.personalhealthcare.persistence.SymptomPersistence;
-import ca.umanitoba.personalhealthcare.persistence.fakeDb.FakeSymptomPersistence;
+import ca.umanitoba.personalhealthcare.business.SearchActivityLogicImp;
 
 /**
  * SearchActivity has a list of symptoms
@@ -32,40 +25,34 @@ import ca.umanitoba.personalhealthcare.persistence.fakeDb.FakeSymptomPersistence
  * */
 public class SearchActivity extends AppCompatActivity {
 
-    //instance variables
-    ListView listView;
-    LinearLayout linearL;
-    SymptomPersistence thisPersistence = new FakeSymptomPersistence();
-    ArrayList<Symptom> names = thisPersistence.getCommonSymptoms();
-    String[] name = new String[names.size()];
-    ArrayAdapter<String> arrayAdapter;
+    private String[] name;
+    private ArrayAdapter<String> arrayAdapter;
+    private ListView listView;
+    private SearchActivityLogic thisLogic;
+    private String title;
+    private String bodyPart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-        setTitle("Enter Sign/Symptom");
 
-        for(int i = 0; i < names.size(); i++) {
-            name[i] = names.get(i).getSymptomName();
-        }
-
-        //User may have gotten here via BodyPartsActivity
         Intent i = getIntent();
-        if(i != null) {
-            Bundle b = i.getExtras();
-            if (b != null && !b.isEmpty()) {
-                String[] stringArray = b.getStringArray("ID");
-                if (stringArray != null && stringArray.length > 0) {
-                    name = stringArray;
-                }
-            }
+        Bundle b = i.getExtras();
+
+        thisLogic = new SearchActivityLogicImp();
+        title = "Enter Sign/Symptom";
+
+        if(b == null) {
+            name = thisLogic.getCommonConditions();
+        } else {
+            name = b.getStringArray("ID");
+            bodyPart = b.getString("Name");
+            title = bodyPart.substring(0,1).toUpperCase() + bodyPart.substring(1) + " Symptoms";
         }
-
-
+        setTitle(title);
 
         //building the layout and getting Id of textView
-        linearL = new LinearLayout(this);
         listView = findViewById(R.id.listview);
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, name);
         listView.setAdapter(arrayAdapter);

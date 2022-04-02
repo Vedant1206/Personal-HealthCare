@@ -1,4 +1,4 @@
-package ca.umanitoba.personalhealthcare;
+package ca.umanitoba.personalhealthcare.Business;
 import org.junit.Before;
 import org.junit.Test;
 
