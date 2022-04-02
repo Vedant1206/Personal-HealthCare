@@ -41,3 +41,45 @@ GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.CHARACTER_DATA TO PUBLIC
 GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.SQL_IDENTIFIER TO PUBLIC
 GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.TIME_STAMP TO PUBLIC
 GRANT DBA TO SA
+
+CREATE TABLE SYMPTOM( sympName varchar(100) not null, bodyPart varchar(50) not null, CONSTRAINT Symptom_PK PRIMARY KEY (sympName) )
+CREATE TABLE CONDITION( name varchar(50) not null, srcName varchar(50) not null, srcLink varchar(200) not null, commonness int not null, CONSTRAINT Condition_PK PRIMARY KEY (name) )
+CREATE TABLE CONDITION_SYMPTOMS( condName varchar(50) not null, sympName varchar(100) not null, CONSTRAINT relation_PK PRIMARY KEY (condName, sympName), CONSTRAINT relation_FK1 FOREIGN KEY (condName) REFERENCES CONDITION(name), CONSTRAINT relation_FK2 FOREIGN KEY (sympName) REFERENCES SYMPTOM(sympName) )
+
+INSERT INTO CONDITION_SYMPTOMS
+VALUES('Acne','whiteheads');
+VALUES('Acne','blackheads');
+VALUES('Acne','small bumps');
+VALUES('Acne','pimples');
+VALUES('Acid reflux (Gerd)','heartburn');
+VALUES('Acid reflux (Gerd)','chest pain');
+VALUES('Acid reflux (Gerd)','difficulty swallowing');
+VALUES('Hangover','fatigue');
+VALUES('Hangover','excessive thirst');
+VALUES('Hangover','Nausea');
+VALUES('Hangover','headache');
+VALUES('Hangover','shakiness');
+VALUES('Anemia','fatigue');
+VALUES('Anemia','weakness');
+VALUES('Anemia','pale skin');
+VALUES('Anemia','VALUES('Cold' hands');
+VALUES('Anemia','dizziness');
+VALUES('PMS','moodiness');
+VALUES('PMS','abdominal cramping');
+VALUES('PMS','food cravings');
+VALUES('PMS','bloating');
+VALUES('PMS','breast tenderness');
+VALUES('Cold','Sore throat ');
+VALUES('Cold','Stuffy nose');
+VALUES('Cold','Swollen sinuses');
+VALUES('Cold','Fatigue');
+VALUES('Cold','Headache');
+VALUES('Cold','Sneezing');
+VALUES('Chalazion','bump on eyelid');
+VALUES('Chalazion','eye irritation');
+VALUES('Chalazion','blurry vision');
+VALUES('Arthritis','Joint pain');
+VALUES('Arthritis','joint swelling');
+VALUES('Arthritis','joint stiffness');
+
+

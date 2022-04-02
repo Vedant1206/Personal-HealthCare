@@ -1,4 +1,4 @@
-/*package ca.umanitoba.personalhealthcare.persistence.hsqldb;
+package ca.umanitoba.personalhealthcare.persistence.hsqldb;
 
 import java.sql.*;
 import java.sql.Connection;
@@ -10,6 +10,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import ca.umanitoba.personalhealthcare.objects.NameExistsException;
 import ca.umanitoba.personalhealthcare.persistence.ProfilePersistence;
 import ca.umanitoba.personalhealthcare.objects.Profile;
 import ca.umanitoba.personalhealthcare.objects.Member;
@@ -20,6 +21,7 @@ public class ProfilePersistenceHSQLDB implements ProfilePersistence{
     private final String update;
     private final String delete;
     private final String get;
+    private final String check;
 
     public ProfilePersistenceHSQLDB(){
         this.dbPath = "jdbc:hsqldb:file:" + System.getProperty("user.dir") + "/src/main/assets/db/data.db";
@@ -27,6 +29,7 @@ public class ProfilePersistenceHSQLDB implements ProfilePersistence{
         update = "UPDATE profiles SET address = ?, height = ?, weight = ?, year = ?, month = ?, day = ?, sex = ? WHERE email = ? AND name = ?";
         delete = "DELETE FROM profiles WHERE email = ? AND name = ?";
         get = "SELECT * FROM profiles WHERE email = ?";
+        check = "SELECT * FROM profiles WHERE email = ? AND name = ?";
     }
 
     private Connection connection() throws SQLException{
@@ -48,8 +51,15 @@ public class ProfilePersistenceHSQLDB implements ProfilePersistence{
     }
 
     @Override
-    public Profile insertProfile(Profile currentProfile){
+    public Profile insertProfile(Profile currentProfile) throws NameExistsException {
         try(final Connection connection = connection()){
+            final PreparedStatement checkStatement = connection.prepareStatement(check);
+            checkStatement.setString(1, currentProfile.getEmail());
+            checkStatement.setString(2, currentProfile.getName());
+            ResultSet resultSet = checkStatement.executeQuery(); // executeQuery will close the preparedStatement.
+            if(!resultSet.first()){
+                throw new NameExistsException();
+            }
             final PreparedStatement preparedStatement = connection.prepareStatement(insert);
             preparedStatement.setString(1,currentProfile.getEmail());
             preparedStatement.setString(2,currentProfile.getName());
@@ -106,11 +116,11 @@ public class ProfilePersistenceHSQLDB implements ProfilePersistence{
     }
 
     @Override
-    public List<Profile> getProfile(Member currentMember){
+    public List<Profile> getProfile(String email){
         final List<Profile> profiles = new ArrayList<Profile>();
         try(final Connection connection = connection();){
             final PreparedStatement preparedStatement = connection.prepareStatement(get);
-            preparedStatement.setString(1, currentMember.getEmail());
+            preparedStatement.setString(1, email);
             ResultSet resultSet = preparedStatement.executeQuery(); // executeQuery will close the preparedStatement.
             while(resultSet.next()){
                 final Profile profile = createProfileInstanceFromResultSet(resultSet);
@@ -123,4 +133,4 @@ public class ProfilePersistenceHSQLDB implements ProfilePersistence{
         }
         return profiles;
     }
-}*/
+}
