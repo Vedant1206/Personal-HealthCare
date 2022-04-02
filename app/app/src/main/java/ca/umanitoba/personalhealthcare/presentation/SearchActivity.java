@@ -64,7 +64,7 @@ public class SearchActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Intent i = new Intent(SearchActivity.this, HeadacheActivity.class);
+                Intent i = new Intent(SearchActivity.this, ResultsActivity.class);
                 String symptomName = name[position];
                 i.putExtra("Name", symptomName);
                 startActivity(i);
