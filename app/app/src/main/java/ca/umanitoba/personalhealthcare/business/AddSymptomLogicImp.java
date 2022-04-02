@@ -4,17 +4,17 @@ import java.util.ArrayList;
 
 public class AddSymptomLogicImp implements AddSymptomLogic {
 
-    String symptomString;
-    String name;
-    String condition1;
-    String condition2;
-    String condition3;
-    Boolean head;
-    Boolean chest;
-    Boolean stomach;
-    Boolean everywhere;
-    ArrayList<String> affectedBodyParts;
-    ArrayList<String> associatedConditions;
+    private String symptomString;
+    private String name;
+    private String condition1;
+    private String condition2;
+    private String condition3;
+    private Boolean head;
+    private Boolean chest;
+    private Boolean stomach;
+    private Boolean everywhere;
+    private ArrayList<String> affectedBodyParts;
+    private ArrayList<String> associatedConditions;
 
     public AddSymptomLogicImp(String name, String condition1, String condition2, String condition3, Boolean head, Boolean chest, Boolean stomach, Boolean everywhere) {
 

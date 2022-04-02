@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import ca.umanitoba.personalhealthcare.R;
@@ -14,7 +13,7 @@ import ca.umanitoba.personalhealthcare.business.BodyPartsLogic;
 
 public class BodyPartsActivity extends AppCompatActivity {
 
-    BodyPartsLogic thisLogic;
+    private BodyPartsLogic thisLogic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

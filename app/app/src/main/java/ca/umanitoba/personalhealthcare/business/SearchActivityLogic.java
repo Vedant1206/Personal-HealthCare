@@ -4,4 +4,5 @@ public interface SearchActivityLogic {
 
     String[] getCommonConditions();
 
+
 }

@@ -1,7 +1,5 @@
 package ca.umanitoba.personalhealthcare.business;
 
-import android.util.Log;
-
 import java.util.ArrayList;
 import ca.umanitoba.personalhealthcare.objects.Symptom;
 import ca.umanitoba.personalhealthcare.persistence.DiseasePersistence;

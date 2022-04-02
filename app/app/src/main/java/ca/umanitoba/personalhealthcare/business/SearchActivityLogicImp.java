@@ -8,9 +8,9 @@ import ca.umanitoba.personalhealthcare.persistence.fakeDb.FakeDiseasePersistence
 
 public class SearchActivityLogicImp implements SearchActivityLogic{
 
-    DiseasePersistence thisPersistence;
-    ArrayList<Condition> commonConditions;
-    String[] conditionStrings;
+    private DiseasePersistence thisPersistence;
+    private ArrayList<Condition> commonConditions;
+    private String[] conditionStrings;
 
     public SearchActivityLogicImp() {
         thisPersistence = new FakeDiseasePersistence();
