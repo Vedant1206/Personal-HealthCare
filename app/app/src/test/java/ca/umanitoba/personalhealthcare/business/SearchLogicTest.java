@@ -5,16 +5,16 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class SearchActivityLogicTest {
+public class SearchLogicTest {
 
-    SearchActivityLogic searchActivityLogic;
+    SearchLogic searchLogic;
     String[] commonConditions;
 
     @Before
     public void setup() {
 
-        searchActivityLogic = new SearchActivityLogicImp();
-        commonConditions = searchActivityLogic.getCommonConditions();
+        searchLogic = new SearchLogicImp();
+        commonConditions = searchLogic.getCommonConditions();
 
     }
 

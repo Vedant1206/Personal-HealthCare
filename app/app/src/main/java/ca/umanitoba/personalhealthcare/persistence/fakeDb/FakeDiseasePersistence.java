@@ -1,9 +1,6 @@
 package ca.umanitoba.personalhealthcare.persistence.fakeDb;
 
-import android.util.Log;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import ca.umanitoba.personalhealthcare.objects.Condition;
 import ca.umanitoba.personalhealthcare.objects.ConditionSymptoms;

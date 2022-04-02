@@ -18,16 +18,6 @@ public class ProfileManagerImp implements ProfileManager{
 
     private MemberPersistence members;
 
-
-    /**
-     * The constructor for ProfileManagerImp
-     * We have not decide it will pass the object of member or
-     * the some related information about the member
-     * This constructor will be use if we decide to pass just informationo.
-     * @param email
-     */
-    //public ProfileManagerImp(String email){}
-
     /**
      * The constructor for ProfileMannagerImp
      *
@@ -37,8 +27,6 @@ public class ProfileManagerImp implements ProfileManager{
         this.profiles = profilePersistence;
     }
 
-
-    //@Override
     public Profile insertProfile(String email, String name, String address,
                                  int height, int weight,
                                  int year, int month, int day,
@@ -48,18 +36,15 @@ public class ProfileManagerImp implements ProfileManager{
         return newProfile;
     }
 
-    //@Override
     public void deleteProfile(Profile profileDeleting){
         profiles.deleteProfile(profileDeleting);
     }
 
-    //@Override
     public List<Profile> getProfile(String email){
         List<Profile> lookingFor = profiles.getProfile(email);
         return lookingFor;
     }
 
-    //@Override
     public Profile updateProfile(Profile newProfile){
         return profiles.updateProfile(newProfile);
 
