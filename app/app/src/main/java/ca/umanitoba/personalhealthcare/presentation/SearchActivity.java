@@ -41,7 +41,7 @@ public class SearchActivity extends AppCompatActivity {
         Bundle b = i.getExtras();
 
         thisLogic = new SearchActivityLogicImp();
-        title = "Enter Sign/Symptom";
+        title = "Select a Condition";
 
         if(b == null) {
             name = thisLogic.getCommonConditions();

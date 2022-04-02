@@ -1,4 +1,4 @@
-package ca.umanitoba.personalhealthcare.Business;
+package ca.umanitoba.personalhealthcare.business;
 
 import org.junit.After;
 import org.junit.Before;
@@ -7,14 +7,7 @@ import static org.junit.Assert.*;
 import java.util.List;
 
 
-import ca.umanitoba.personalhealthcare.business.ProfileManager;
-import ca.umanitoba.personalhealthcare.business.ProfileManagerImp;
-import ca.umanitoba.personalhealthcare.objects.EmailInvalidException;
-import ca.umanitoba.personalhealthcare.objects.Member;
-import ca.umanitoba.personalhealthcare.objects.PasswordInvalidException;
 import ca.umanitoba.personalhealthcare.objects.Profile;
-import ca.umanitoba.personalhealthcare.objects.Patient;
-import ca.umanitoba.personalhealthcare.persistence.ProfilePersistence;
 import ca.umanitoba.personalhealthcare.persistence.fakeDb.FakeProfilePersistence;
 import ca.umanitoba.personalhealthcare.objects.NameExistsException;
 
