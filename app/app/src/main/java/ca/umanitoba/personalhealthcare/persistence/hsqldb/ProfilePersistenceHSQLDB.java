@@ -130,7 +130,7 @@ public class ProfilePersistenceHSQLDB implements ProfilePersistence{
     @Override
     public List<Profile> getProfile(String email){
         final List<Profile> profiles = new ArrayList<Profile>();
-        try(final Connection connection = connection();){
+        try(final Connection connection = connection()){
             final PreparedStatement preparedStatement = connection.prepareStatement(get);
             preparedStatement.setString(1, email);
             ResultSet resultSet = preparedStatement.executeQuery(); // executeQuery will close the preparedStatement.
