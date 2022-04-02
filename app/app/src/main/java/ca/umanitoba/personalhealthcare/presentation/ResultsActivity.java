@@ -12,7 +12,7 @@ import ca.umanitoba.personalhealthcare.business.DataActivityClass;
  * This class is displaying the description
  * of whatever symptom we are clicking
  * */
-public class HeadacheActivity extends AppCompatActivity {
+public class ResultsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
