@@ -2,7 +2,7 @@ The architecture of our project includes a UI layer, a logic layer, a persistenc
 
 The UI layer consists of all the activity files in our project. The activity files are responsible for the GUI of our app.
 
-The domain specific objects include the Guest, Patient, Member, Profile, and User classes.
+The domain specific objects include the Guest, Patient, Member, Profile, User, Condition, Symptom, and ConditionSymptoms classes, as well as some classes for exceptions.
 
 The persistence layer consists of hard-coded data inside the activity classes for now.
 
