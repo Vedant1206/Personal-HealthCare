@@ -42,44 +42,92 @@ GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.SQL_IDENTIFIER TO PUBLIC
 GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.TIME_STAMP TO PUBLIC
 GRANT DBA TO SA
 
+CREATE MEMORY TABLE PUBLIC.PROFILES(EMAIL VARCHAR(25) NOT NULL, NAME VARCHAR(20) NOT NULL, ADDRESS VARCHAR(20) NOT NULL, HEIGHT INTEGER NOT NULL, WEIGHT INTEGER NOT NULL, YEAR INTEGER NOT NULL, MONTH INTEGER NOT NULL, DAY INTEGER NOT NULL, SEX VARCHAR(2) CONSTRAINT CONSTRAINT1 PRIMARY KEY(EMAIL, NAME))
 CREATE TABLE SYMPTOM( sympName varchar(100) not null, bodyPart varchar(50) not null, CONSTRAINT Symptom_PK PRIMARY KEY (sympName) )
 CREATE TABLE CONDITION( name varchar(50) not null, srcName varchar(50) not null, srcLink varchar(200) not null, commonness int not null, CONSTRAINT Condition_PK PRIMARY KEY (name) )
 CREATE TABLE CONDITION_SYMPTOMS( condName varchar(50) not null, sympName varchar(100) not null, CONSTRAINT relation_PK PRIMARY KEY (condName, sympName), CONSTRAINT relation_FK1 FOREIGN KEY (condName) REFERENCES CONDITION(name), CONSTRAINT relation_FK2 FOREIGN KEY (sympName) REFERENCES SYMPTOM(sympName) )
 
-INSERT INTO CONDITION_SYMPTOMS
-VALUES('Acne','whiteheads');
-VALUES('Acne','blackheads');
-VALUES('Acne','small bumps');
-VALUES('Acne','pimples');
-VALUES('Acid reflux (Gerd)','heartburn');
-VALUES('Acid reflux (Gerd)','chest pain');
-VALUES('Acid reflux (Gerd)','difficulty swallowing');
-VALUES('Hangover','fatigue');
-VALUES('Hangover','excessive thirst');
-VALUES('Hangover','Nausea');
-VALUES('Hangover','headache');
-VALUES('Hangover','shakiness');
-VALUES('Anemia','fatigue');
-VALUES('Anemia','weakness');
-VALUES('Anemia','pale skin');
-VALUES('Anemia','VALUES('Cold' hands');
-VALUES('Anemia','dizziness');
-VALUES('PMS','moodiness');
-VALUES('PMS','abdominal cramping');
-VALUES('PMS','food cravings');
-VALUES('PMS','bloating');
-VALUES('PMS','breast tenderness');
-VALUES('Cold','Sore throat ');
-VALUES('Cold','Stuffy nose');
-VALUES('Cold','Swollen sinuses');
-VALUES('Cold','Fatigue');
-VALUES('Cold','Headache');
-VALUES('Cold','Sneezing');
-VALUES('Chalazion','bump on eyelid');
-VALUES('Chalazion','eye irritation');
-VALUES('Chalazion','blurry vision');
-VALUES('Arthritis','Joint pain');
-VALUES('Arthritis','joint swelling');
-VALUES('Arthritis','joint stiffness');
+INSERT INTO PROFILES VALUES('email1@myumanitoba.ca', 'James', 'Street1 City1', 180, 70, 2000, 12, 31, 'M')
+INSERT INTO PROFILES VALUES('email1@myumanitoba.ca', 'Isabella', 'Street1 City1', 162, 55, 1999, 5, 1, 'F')
+INSERT INTO PROFILES VALUES('email1@myumanitoba.ca', 'Benjamin', 'Street3 City4', 180, 80, 2000, 9, 15, 'M')
+INSERT INTO PROFILES VALUES('email2@myumanitoba.ca', 'Mia', 'Street2 City2', 155, 40, 1992, 12, 31, 'F')
+INSERT INTO PROFILES VALUES('email2@myumanitoba.ca', 'Lucas', 'Street12 City15', 172, 66, 2002, 3, 20, 'M')
+INSERT INTO PROFILES VALUES('email3@myumanitoba.ca', 'Evelyn', 'Street6 City7', 168, 55, 1997, 11, 2, 'F')
+INSERT INTO PROFILES VALUES('email4@myumanitoba.ca', 'Alexander', 'Street16 City81', 180, 98, 2000, 12, 31, 'M')
 
+INSERT INTO CONDITION VALUES ('Acne', 'MayoClinic', 'https://www.mayoclinic.org/diseases-conditions/acne/symptoms-causes/syc-20368047', 1)
+INSERT INTO CONDITION VALUES ('Acid reflux (Gerd)', 'MayoClinic', 'https://www.mayoclinic.org/diseases-conditions/gerd/symptoms-causes/syc-20361940', 0)
+INSERT INTO CONDITION VALUES ('Hangover','MayoClinic','https://www.mayoclinic.org/diseases-conditions/hangovers/symptoms-causes/syc-20373012', 1)
+INSERT INTO CONDITION VALUES ('Anemia','MayoClinic','https://www.mayoclinic.org/diseases-conditions/anemia/symptoms-causes/syc-20351360', 0)
+INSERT INTO CONDITION VALUES ('PMS','WebMD','https://www.webmd.com/cold-and-flu/features/cold-sinus-infections',1)
+INSERT INTO CONDITION VALUES ('Cold','WebMD','https://www.webmd.com/women/pms/features/pms-signs-symptoms', 1)
+INSERT INTO CONDITION VALUES ('Chalazion','MedlinePlus','https://medlineplus.gov/ency/article/001006.htm', 1)
+INSERT INTO CONDITION VALUES ('Arthritis','MedlinePlus','https://medlineplus.gov/ency/article/001243.htm', 0)
 
+INSERT INTO SYMPTOM VALUES ('whiteheads','head')
+INSERT INTO SYMPTOM VALUES ('blackheads','head')
+INSERT INTO SYMPTOM VALUES ('small bumps','head')
+INSERT INTO SYMPTOM VALUES ('pimples','head')
+INSERT INTO SYMPTOM VALUES ('heartburn','chest')
+INSERT INTO SYMPTOM VALUES ('chest pain','chest')
+INSERT INTO SYMPTOM VALUES ('difficulty swallowing','chest')
+INSERT INTO SYMPTOM VALUES ('fatigue','chest')
+INSERT INTO SYMPTOM VALUES ('excessive thirst','stomach')
+INSERT INTO SYMPTOM VALUES ('Nausea','stomach')
+INSERT INTO SYMPTOM VALUES ('headache','head')
+INSERT INTO SYMPTOM VALUES ('shakiness','chest')
+INSERT INTO SYMPTOM VALUES ('weakness','head')
+INSERT INTO SYMPTOM VALUES ('pale skin','chest')
+INSERT INTO SYMPTOM VALUES ('cold hands','arms')
+INSERT INTO SYMPTOM VALUES ('dizziness','head')
+INSERT INTO SYMPTOM VALUES ('moodiness','stomach')
+INSERT INTO SYMPTOM VALUES ('abdominal cramping','stomach')
+INSERT INTO SYMPTOM VALUES ('food cravings','stomach')
+INSERT INTO SYMPTOM VALUES ('bloating','stomach')
+INSERT INTO SYMPTOM VALUES ('breast tenderness','chest')
+INSERT INTO SYMPTOM VALUES ('Sore throat ','head')
+INSERT INTO SYMPTOM VALUES ('Stuffy nose','head')
+INSERT INTO SYMPTOM VALUES ('Swollen sinuses','head')
+INSERT INTO SYMPTOM VALUES ('Headache','head')
+INSERT INTO SYMPTOM VALUES ('Sneezing','head')
+INSERT INTO SYMPTOM VALUES ('bump on eyelid','head')
+INSERT INTO SYMPTOM VALUES ('eye irritation','head')
+INSERT INTO SYMPTOM VALUES ('blurry vision','head')
+INSERT INTO SYMPTOM VALUES ('Joint pain','arms')
+INSERT INTO SYMPTOM VALUES ('joint swelling','arms')
+INSERT INTO SYMPTOM VALUES ('joint stiffness','arms')
+
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Acne','whiteheads')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Acne','blackheads')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Acne','small bumps')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Acne','pimples')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Acid reflux (Gerd)','heartburn')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Acid reflux (Gerd)','chest pain')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Acid reflux (Gerd)','difficulty swallowing')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Hangover','fatigue')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Hangover','excessive thirst')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Hangover','Nausea')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Hangover','headache')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Hangover','shakiness')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Anemia','fatigue')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Anemia','weakness')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Anemia','pale skin')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Anemia','Cold hands')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Anemia','dizziness')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('PMS','moodiness')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('PMS','abdominal cramping')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('PMS','food cravings')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('PMS','bloating')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('PMS','breast tenderness')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Cold','Sore throat ')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Cold','Stuffy nose')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Cold','Swollen sinuses')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Cold','Fatigue')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Cold','Headache')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Cold','Sneezing')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Chalazion','bump on eyelid')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Chalazion','eye irritation')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Chalazion','blurry vision')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Arthritis','Joint pain')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Arthritis','joint swelling')
+INSERT INTO CONDITION_SYMPTOMS VALUES ('Arthritis','joint stiffness')

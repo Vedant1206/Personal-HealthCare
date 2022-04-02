@@ -72,8 +72,8 @@ public class DiseasePersistenceHSQLDB implements DiseasePersistence {
             preparedStatement.setString(1, );
             ResultSet resultSet = preparedStatement.executeQuery(); // executeQuery will close the preparedStatement.
             while(resultSet.next()){
-                final Profile profile = createProfileInstanceFromResultSet(resultSet);
-                profiles.add(profile);
+//                final Profile profile = createProfileInstanceFromResultSet(resultSet);
+//                profiles.add(profile);
             }
             resultSet.close();
 

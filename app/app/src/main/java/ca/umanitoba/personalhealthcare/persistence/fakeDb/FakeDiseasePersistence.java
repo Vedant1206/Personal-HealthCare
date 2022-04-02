@@ -59,7 +59,7 @@ public class FakeDiseasePersistence implements DiseasePersistence {
 
         hangoverSymp.add(new Symptom("Fatigue", "chest"));
         hangoverSymp.add(new Symptom("Excessive thirst", "stomach"));
-        hangoverSymp.add(new Symptom("Nausea", "head"));
+        hangoverSymp.add(new Symptom("Nausea", "stomach"));
         hangoverSymp.add(new Symptom("Headache", "head"));
         hangoverSymp.add(new Symptom("Shakiness", "chest"));
 
