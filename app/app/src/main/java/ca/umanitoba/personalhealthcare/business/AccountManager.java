@@ -2,13 +2,14 @@ package ca.umanitoba.personalhealthcare.business;
 
 import ca.umanitoba.personalhealthcare.objects.EmailExistException;
 import ca.umanitoba.personalhealthcare.objects.EmailInvalidException;
+import ca.umanitoba.personalhealthcare.objects.LoginSession;
 import ca.umanitoba.personalhealthcare.objects.Member;
 import ca.umanitoba.personalhealthcare.objects.PasswordInvalidException;
 
 public interface AccountManager {
 
     // Access to persistence to check if authentication is succeed
-    public boolean authMemberLogin(String username, String password);
+    public LoginSession authMemberLogin(String username, String password);
 
     /**
      * Given email, password to create a new member/account

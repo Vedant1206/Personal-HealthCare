@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PersonalHealthcare</string>
+    <string name="main_welcome_default">"Welcome to personal Health Care"</string>
 </resources>
