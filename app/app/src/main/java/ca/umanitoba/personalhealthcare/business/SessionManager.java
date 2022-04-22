@@ -13,4 +13,6 @@ public interface SessionManager {
     public void saveSessionMember (Member member);
     public void saveSessionProfile (Profile selectedProfile);
     public void restartExpiredTime ();
+    public boolean logout ();
+
 }
