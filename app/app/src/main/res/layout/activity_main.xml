@@ -7,10 +7,10 @@
     tools:context=".application.MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/main_welcome"
         android:layout_width="329dp"
         android:layout_height="48dp"
-        android:text="Welcome to personal Health Care"
+        android:text="@string/main_welcome_default"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -19,18 +19,31 @@
         app:layout_constraintVertical_bias="0.361" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="126dp"
-        android:layout_height="93dp"
+        android:id="@+id/main_select_profile_btn"
+        android:layout_width="122dp"
+        android:layout_height="68dp"
+        android:clickable="true"
+        android:text="Select profile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.517" />
+
+    <Button
+        android:id="@+id/main_create_account_btn"
+        android:layout_width="129dp"
+        android:layout_height="61dp"
         android:clickable="true"
         android:onClick="createAccount"
         android:text="Create account"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.553"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.557" />
+        app:layout_constraintVertical_bias="0.685" />
 
     <Button
         android:id="@+id/button2"
@@ -51,11 +64,12 @@
         android:id="@+id/openLoginBtn"
         android:layout_width="108dp"
         android:layout_height="66dp"
-        android:text="Login"
+        android:layout_marginBottom="124dp"
 
+        android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.557"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
         app:layout_constraintVertical_bias="0.189" />

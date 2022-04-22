@@ -15,7 +15,8 @@
             android:parentActivityName=".presentation.SearchActivity" />
         <activity
             android:name=".presentation.LogInActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".application.MainActivity"/>
         <activity
             android:name=".presentation.ResultsActivity"
             android:exported="false"

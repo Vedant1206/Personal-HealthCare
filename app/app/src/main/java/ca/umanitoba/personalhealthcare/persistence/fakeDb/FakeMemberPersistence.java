@@ -24,8 +24,12 @@ public class FakeMemberPersistence implements MemberPersistence {
 
     @Override
     public Member getMember(String email, String password) {
+        System.out.println("Get : " + email + " - " + password);
         for (Member member : members) {
+            System.out.println("Search : " + member.getEmail() + " - " + member.getPassword());
+
             if (member.getEmail().equals(email) && member.getPassword().equals(password)) {
+
                 return member;
             }
         }
@@ -34,6 +38,8 @@ public class FakeMemberPersistence implements MemberPersistence {
 
     @Override
     public Member createMember(Member newMember) throws EmailExistException {
+        System.out.println("Create : " + newMember.getEmail() + " - " + newMember.getPassword());
+
         for (Member member : members) {
             if (member.getEmail()
                     .equals(newMember.getEmail())) {

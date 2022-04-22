@@ -2,6 +2,7 @@ package ca.umanitoba.personalhealthcare.presentation;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -36,6 +37,7 @@ public class CreateAccountActivity extends AppCompatActivity {
 
         emailInput = findViewById(R.id.emailInput);
         passwordInput = findViewById(R.id.passwordInput);
+
         createFeedback = (TextView) findViewById(R.id.createAccountFeedback);
         restartView();
     }
@@ -51,8 +53,10 @@ public class CreateAccountActivity extends AppCompatActivity {
         String email = emailInput.getText().toString();
         String password = passwordInput.getText().toString();
 
+        System.out.println("Create... " + email + " - " + password);
         try {
             Member newMember = accountManager.createAccount(email, password);
+            succeedCreating();
         } catch (PasswordInvalidException e) {
             notifyPasswordInvalid(e);
         } catch (EmailInvalidException e) {
@@ -61,12 +65,12 @@ public class CreateAccountActivity extends AppCompatActivity {
         } catch (EmailExistException e) {
             notifyEmailExist(e);
         }
-        succeedCreating();
     }
 
     void succeedCreating () {
         feedbackException("Account is created", Color.GREEN);
         //TODO: move to login page
+        openLoginActivity();
         System.out.println("Move to login page now");
     }
 
@@ -89,5 +93,10 @@ public class CreateAccountActivity extends AppCompatActivity {
         createFeedback.setText(message);
         createFeedback.setVisibility(View.VISIBLE);
         createFeedback.setTextColor(color);
+    }
+
+    void openLoginActivity () {
+        Intent i = new Intent( this, LogInActivity.class);
+        startActivity(i);
     }
 }
