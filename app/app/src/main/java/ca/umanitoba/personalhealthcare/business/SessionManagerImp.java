@@ -35,4 +35,13 @@ public class SessionManagerImp implements SessionManager{
     public void restartExpiredTime() {
         //TODO: to be implemented
     }
+
+
+    @Override
+    public boolean logout() {
+        LoginSession session = persistence.getLoginSession();
+        session.setLogined(false);
+        persistence.saveLoginSession(session);
+        return session.isLogined();
+    }
 }

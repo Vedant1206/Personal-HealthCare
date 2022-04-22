@@ -21,9 +21,11 @@ public class MainActivity extends AppCompatActivity {
     Button loginButton;
     Button createAccountButton;
     Button selectProfileButton;
+    Button logoutButton;
     TextView welcomeTextView;
 
     SessionManager sessionManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,18 +38,35 @@ public class MainActivity extends AppCompatActivity {
         createAccountButton = (Button) findViewById(R.id.main_create_account_btn);
         welcomeTextView = (TextView) findViewById(R.id.main_welcome);
         selectProfileButton = (Button) findViewById(R.id.main_select_profile_btn);
+        logoutButton = (Button) findViewById(R.id.main_log_out_btn);
 
         loginButton.setOnClickListener(view -> {
             openLoginActivity(view);
         });
 
+        logoutButton.setOnClickListener(view -> {
+            logout();
+        });
+
+        selectProfileButton.setOnClickListener(view -> {
+            //TODO: update profile selection when we have select profile features
+        });
+
+        updateView();
+    }
+
+    private void updateView () {
         loginButton.setVisibility(View.GONE);
         createAccountButton.setVisibility(View.GONE);
         selectProfileButton.setVisibility(View.GONE);
-
+        logoutButton.setVisibility(View.GONE);
 
         handleIsLogin(sessionManager.retrieveSession());
+    }
 
+    private void logout () {
+        sessionManager.logout();
+        updateView();
     }
 
     public void createAccount(View view){
@@ -68,7 +87,8 @@ public class MainActivity extends AppCompatActivity {
         if (session.isLogined()) {
             welcomeTextView.setText("Welcome user " + session.getMemberEmail());
             selectProfileButton.setVisibility(View.VISIBLE);
-            //TODO: update profile selection when we have select profile features
+            logoutButton.setVisibility(View.VISIBLE);
+
         } else {
             welcomeTextView.setText(R.string.main_welcome_default);
             loginButton.setVisibility(View.VISIBLE);
