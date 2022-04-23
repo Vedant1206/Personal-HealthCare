@@ -65,12 +65,18 @@ public class DiseasePersistenceHSQLDB implements DiseasePersistence {
         return symptomList;
     }
 
+    @Override
+    public Condition getConditionBySymptoms(ArrayList<Symptom> symptoms) {
+        return null;
+    }
+
     private Condition getConditionFromResultSet(final ResultSet rs) throws SQLException {
         final String name = rs.getString("name");
         final String sourceName = rs.getString("srcName");
         final String sourceLink = rs.getString("srcLink");
+        final String description = rs.getString("description");
 
-        return new Condition(name, sourceName, sourceLink);
+        return new Condition(name, sourceName, sourceLink, description);
     }
 
     private Symptom getSymptomFromResultSet(final ResultSet rs) throws SQLException {

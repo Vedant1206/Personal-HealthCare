@@ -1,5 +1,6 @@
 package ca.umanitoba.personalhealthcare.persistence;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import ca.umanitoba.personalhealthcare.objects.Condition;
@@ -18,5 +19,7 @@ public interface DiseasePersistence {
      */
     // check if bodypart needs to be an Object
     public ArrayList<Symptom> getSymptomsByBodyPart(String bodyPart);
+
+    public Condition getConditionBySymptoms(ArrayList<Symptom> symptoms);
 
 }
