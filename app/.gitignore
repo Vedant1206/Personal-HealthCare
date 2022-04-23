@@ -13,3 +13,6 @@
 .externalNativeBuild
 .cxx
 local.properties
+app/app/src/main/assets/db/data.db.log
+app/app/src/main/assets/db/data.db.properties
+app/app/src/main/assets/db/data.db.script
