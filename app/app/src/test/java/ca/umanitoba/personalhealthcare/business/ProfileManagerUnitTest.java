@@ -86,9 +86,9 @@ public class ProfileManagerUnitTest {
         // Testing for getting the profiles using same email
         assertNotNull(profileManager);
 
-        list1 = profileManager.getProfile(testemail1); // all the profiles for the member 1
+        list1 = profileManager.getProfiles(testemail1); // all the profiles for the member 1
         assertNotNull(list1);
-        list2 = profileManager.getProfile(testemail2); // all the profiles for the member 2
+        list2 = profileManager.getProfiles(testemail2); // all the profiles for the member 2
         assertNotNull(list2);
         assertEquals(list1.size(), 2); // total of 2 profiles in the list1
         assertEquals(list2.size(), 1); // total of 1 profiles in the list2
@@ -166,10 +166,10 @@ public class ProfileManagerUnitTest {
             assertEquals(1,0);
         }
         List<Profile> list1; // all the profiles for the member 1
-        list1 = profileManager.getProfile(email4);
+        list1 = profileManager.getProfiles(email4);
         assertEquals(list1.size(), 1);// check the number of the profile
         profileManager.deleteProfile(test4); // delete the profile just created.
-        list1 = profileManager.getProfile(email4);
+        list1 = profileManager.getProfiles(email4);
         assertEquals(list1.size(), 0); // recheck the profile
 
     }
@@ -178,7 +178,7 @@ public class ProfileManagerUnitTest {
     public void testUpdateProfile(){
 
         // check the update of the profile.
-        List<Profile> list2 = profileManager.getProfile(testemail2);
+        List<Profile> list2 = profileManager.getProfiles(testemail2);
         Profile target = list2.get(0);
         assertNotNull(target);
         // all the information about target before update
@@ -201,7 +201,7 @@ public class ProfileManagerUnitTest {
         String newSex = "f";
         Profile update = new Profile(email, name, newAddress, newHeight, newWeight, newYear, newMonth, newDay, newSex);
         profileManager.updateProfile(update);
-        list2 = profileManager.getProfile(testemail2);
+        list2 = profileManager.getProfiles(testemail2);
         assertEquals(list2.size(), 1);
         update = list2.get(0);
 

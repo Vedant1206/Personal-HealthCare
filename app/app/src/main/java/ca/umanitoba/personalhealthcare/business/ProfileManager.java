@@ -34,7 +34,9 @@ public interface ProfileManager {
      * @param Member selecteMember
      * @return  List<Profile> all the profiles under the given member
      */
-    public List<Profile> getProfile(String email);
+    public List<Profile> getProfiles(String email);
+
+    public Profile getProfile (String email, String profileName);
 
     /**
      *

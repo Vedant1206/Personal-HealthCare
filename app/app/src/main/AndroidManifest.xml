@@ -10,13 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PersonalHealthcare">
         <activity
+            android:name=".presentation.SelectProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.AddSymptomActivity"
             android:exported="false"
             android:parentActivityName=".presentation.SearchActivity" />
         <activity
             android:name=".presentation.LogInActivity"
             android:exported="false"
-            android:parentActivityName=".application.MainActivity"/>
+            android:parentActivityName=".application.MainActivity" />
         <activity
             android:name=".presentation.ResultsActivity"
             android:exported="false"

@@ -90,8 +90,8 @@ public class LogInActivity extends AppCompatActivity {
     }
 
     public void moveToProfileActivity () {
-        //TODO: to be implemented, for now move back to main
-        backToMainActivity(); //TODO: fix this later
+        Intent i = new Intent(this, SelectProfileActivity.class);
+        startActivity(i);
     }
 
     public boolean login(View view) {
