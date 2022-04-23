@@ -15,6 +15,7 @@ import ca.umanitoba.personalhealthcare.objects.LoginSession;
 import ca.umanitoba.personalhealthcare.presentation.CreateAccountActivity;
 import ca.umanitoba.personalhealthcare.presentation.LogInActivity;
 import ca.umanitoba.personalhealthcare.presentation.SearchActivity;
+import ca.umanitoba.personalhealthcare.presentation.SelectProfileActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         selectProfileButton.setOnClickListener(view -> {
-            //TODO: update profile selection when we have select profile features
+            openSelectProfileActivity(view);
         });
 
         updateView();
@@ -83,9 +84,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    private void openSelectProfileActivity (View view) {
+        Intent i = new Intent(this, SelectProfileActivity.class);
+        startActivity(i);
+    }
+
     private void handleIsLogin (LoginSession session) {
         if (session.isLogined()) {
-            welcomeTextView.setText("Welcome user " + session.getMemberEmail());
+            welcomeTextView.setText("Welcome user " + session.getMemberEmail() + " - " + session.getProfileName());
             selectProfileButton.setVisibility(View.VISIBLE);
             logoutButton.setVisibility(View.VISIBLE);
 
@@ -93,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
             welcomeTextView.setText(R.string.main_welcome_default);
             loginButton.setVisibility(View.VISIBLE);
             createAccountButton.setVisibility(View.VISIBLE);
-
         }
     }
 }

@@ -1,6 +1,5 @@
 package ca.umanitoba.personalhealthcare.business;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -10,8 +9,6 @@ import ca.umanitoba.personalhealthcare.objects.Profile;
 import ca.umanitoba.personalhealthcare.persistence.ProfilePersistence;
 import ca.umanitoba.personalhealthcare.persistence.hsqldb.ProfilePersistenceHSQLDB;
 import ca.umanitoba.personalhealthcare.objects.NameExistsException;
-import ca.umanitoba.personalhealthcare.business.ProfileManager;
-
 
 
 public class ProfileManagerIntTest{
@@ -42,7 +39,7 @@ public class ProfileManagerIntTest{
             // if throw exception -> fail
             assertEquals(1,2);
         }
-        assertEquals(4, (profileManager.getProfile(email)).size());
+        assertEquals(4, (profileManager.getProfiles(email)).size());
     }
     @Test
     public void testInsertProfileExistingName() {
@@ -60,7 +57,7 @@ public class ProfileManagerIntTest{
         }catch (NameExistsException exception){
             // if throw exception -> right
             assertEquals(1,1);
-            assertEquals(4, (profileManager.getProfile(email)).size());//check the number of profiles under the given email
+            assertEquals(4, (profileManager.getProfiles(email)).size());//check the number of profiles under the given email
         }
     }
 
@@ -70,10 +67,10 @@ public class ProfileManagerIntTest{
         String email2 = "email2@myumanitoba.ca";
         String email3 = "email3@myumanitoba.ca";
         String email4 = "email4@myumanitoba.ca";
-        assertEquals(4,(profileManager.getProfile(email1)).size());
-        assertEquals(2,(profileManager.getProfile(email2)).size());
-        assertEquals(1,(profileManager.getProfile(email3)).size());
-        assertEquals(1,(profileManager.getProfile(email4)).size());
+        assertEquals(4,(profileManager.getProfiles(email1)).size());
+        assertEquals(2,(profileManager.getProfiles(email2)).size());
+        assertEquals(1,(profileManager.getProfiles(email3)).size());
+        assertEquals(1,(profileManager.getProfiles(email4)).size());
     }
 
     @Test
@@ -97,7 +94,7 @@ public class ProfileManagerIntTest{
         String newSex = "F";
         Profile update = new Profile(email, name, newAddress, newHeight, newWeight, newYear, newMonth, newDay, newSex);
         profileManager.updateProfile(update);
-        List<Profile> profiles = profileManager.getProfile(email);
+        List<Profile> profiles = profileManager.getProfiles(email);
         assertEquals(4, profiles.size());
 
         Profile get = null;
@@ -129,9 +126,9 @@ public class ProfileManagerIntTest{
         int day = 25;
         String sex = "M";
         Profile target = new Profile(email, name, address, height, weight, year, month, day, sex);
-        assertEquals(4,(profileManager.getProfile(email)).size());
+        assertEquals(4,(profileManager.getProfiles(email)).size());
         profileManager.deleteProfile(target);
-        assertEquals(3, (profileManager.getProfile(email)).size());
+        assertEquals(3, (profileManager.getProfiles(email)).size());
     }
 
 }
