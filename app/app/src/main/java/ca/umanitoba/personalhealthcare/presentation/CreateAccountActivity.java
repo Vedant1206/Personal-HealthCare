@@ -69,7 +69,6 @@ public class CreateAccountActivity extends AppCompatActivity {
 
     void succeedCreating () {
         feedbackException("Account is created", Color.GREEN);
-        //TODO: move to login page
         openLoginActivity();
         System.out.println("Move to login page now");
     }

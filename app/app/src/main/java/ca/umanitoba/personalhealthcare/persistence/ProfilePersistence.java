@@ -35,6 +35,10 @@ public interface ProfilePersistence{
      * @param currentMember
      * @return List<Profile> The list of the profile under the given member.
      */
-    List<Profile> getProfile(String email);
+    List<Profile> getProfiles(String email);
+
+    Profile getProfile (String email, String profileName);
+
+    Profile updateProfileName (Profile profile, String initName);
 
 }

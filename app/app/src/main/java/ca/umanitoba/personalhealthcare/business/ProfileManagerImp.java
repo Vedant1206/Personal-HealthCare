@@ -42,18 +42,22 @@ public class ProfileManagerImp implements ProfileManager{
     }
 
     public List<Profile> getProfiles(String email){
-        List<Profile> lookingFor = profilePersistence.getProfile(email);
+        List<Profile> lookingFor = profilePersistence.getProfiles(email);
         return lookingFor;
     }
 
     public Profile updateProfile(Profile newProfile){
         return profilePersistence.updateProfile(newProfile);
-
     }
 
     @Override
     public Profile getProfile(String email, String profileName) {
-        //TODO: to be implemented
-        return null;
+
+        return profilePersistence.getProfile(email, profileName);
+    }
+
+    @Override
+    public Profile updateProfileName(Profile profile, String initName) {
+        return profilePersistence.updateProfileName(profile, initName);
     }
 }
