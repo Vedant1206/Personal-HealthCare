@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">PersonalHealthcare</string>
     <string name="main_welcome_default">"Welcome to personal Health Care"</string>
+
+    <string name="bundle_key_email">email</string>
+    <string name="bundle_key_profile_name">profileName</string>
+
 </resources>

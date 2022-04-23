@@ -30,7 +30,7 @@ public class FakeProfilePersistence implements ProfilePersistence {
     }
 
     @Override
-    public List<Profile> getProfile(String email){
+    public List<Profile> getProfiles(String email){
         List<Profile> selectedProfiles = new ArrayList<Profile>();
         for(Profile profile : profiles){
             if(profile.getEmail().equals(email)){
@@ -79,4 +79,24 @@ public class FakeProfilePersistence implements ProfilePersistence {
         return currentProfile;
     }
 
+    @Override
+    public Profile updateProfileName (Profile newProfile, String initName) {
+        for(Profile profile: profiles){
+            if(profile.getName().equals(initName) && profile.getEmail().equals(newProfile.getEmail())){
+                profile.setName(newProfile.getName());
+                return profile;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public Profile getProfile(String email, String profileName) {
+        for (Profile profile : profiles) {
+            if (profile.getName().equals(profileName) && profile.getEmail().equals(email)) {
+                return profile;
+            }
+        }
+        return null;
+    }
 }

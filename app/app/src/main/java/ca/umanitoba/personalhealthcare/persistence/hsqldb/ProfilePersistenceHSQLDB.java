@@ -132,7 +132,7 @@ public class ProfilePersistenceHSQLDB implements ProfilePersistence{
     }
 
     @Override
-    public List<Profile> getProfile(String email){
+    public List<Profile> getProfiles(String email){
         final List<Profile> profiles = new ArrayList<Profile>();
         try{
             final Connection connection = setConnection.getConnection();
@@ -149,5 +149,17 @@ public class ProfilePersistenceHSQLDB implements ProfilePersistence{
             System.err.println(exception.getMessage());
         }
         return profiles;
+    }
+
+    @Override
+    public Profile getProfile(String email, String profileName) {
+        //TODO: to be implemented
+        return null;
+    }
+
+    @Override
+    public Profile updateProfileName(Profile profile, String initName) {
+        //TODO: to be implemented
+        return null;
     }
 }

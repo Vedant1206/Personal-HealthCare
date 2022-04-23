@@ -85,12 +85,16 @@ public class SelectProfileActivity extends AppCompatActivity implements ProfileI
         String email = profile.getEmail();
 
         Bundle bundle = new Bundle();
-        bundle.putString("profileName", profileName);
-        bundle.putString("email", email);
 
-        //TODO: to be implemented
-        //Intent intentEdit = new Intent(this, EditProfileActivity.class)
-        //startActivity(intentEdit, bundle);
+        System.out.println("Editing: " + email + " - " + profileName);
+
+        bundle.putString("edit_key_profile_name", profileName);
+        bundle.putString("edit_key_email", email);
+
+        Intent intentEdit = new Intent(this, EditProfileActivity.class);
+        intentEdit.putExtras(bundle);
+        startActivity(intentEdit);
+        System.out.println("Start editing ....");
     }
 }
 

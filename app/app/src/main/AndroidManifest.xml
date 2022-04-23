@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PersonalHealthcare">
         <activity
+            android:name=".presentation.EditProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.SelectProfileActivity"
             android:exported="false" />
         <activity
