@@ -1,6 +1,7 @@
 package ca.umanitoba.personalhealthcare.persistence;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import ca.umanitoba.personalhealthcare.objects.EmailExistException;
@@ -12,9 +13,14 @@ import ca.umanitoba.personalhealthcare.persistence.fakeDb.FakeMemberPersistence;
 
 public class MemberPersistenceTest {
     MemberPersistence persistence;
-    @Test
-    public void testLoginSucceed () {
+
+    @Before
+    public void setup () {
         persistence = FakeMemberPersistence.getMemberPersistence();
+    }
+
+    @Test
+    public void testCreateMember () {
 
         try {
             persistence.createMember(new Patient("1", "randomEmail@gmail.com", "P@ssword123!"));
