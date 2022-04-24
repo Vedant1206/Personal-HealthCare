@@ -30,8 +30,8 @@ public class FakeDiseasePersistenceTest {
 
         System.out.println("\nStarting testCommonConditions in FakeDiseaseDB");
 
-        Condition pms = new Condition("PMS", "WebMD", "https://www.webmd.com/women/pms/features/pms-signs-symptoms");
-        Condition arthritis = new Condition("Arthritis", "MedlinePlus", "https://medlineplus.gov/ency/article/001243.htm");
+        Condition pms = new Condition("PMS", "WebMD", "https://www.webmd.com/women/pms/features/pms-signs-symptoms", "");
+        Condition arthritis = new Condition("Arthritis", "MedlinePlus", "https://medlineplus.gov/ency/article/001243.htm", "");
 
         ArrayList<Condition> conditionList = fakeDb.getCommonConditions();
         assertNotNull(conditionList);

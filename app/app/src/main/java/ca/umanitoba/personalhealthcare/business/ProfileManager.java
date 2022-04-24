@@ -44,6 +44,6 @@ public interface ProfileManager {
      */
     public Profile updateProfile(Profile newProfile);
 
-    public Profile updateProfileName (Profile profile, String newName);
+    public Profile updateProfileName (Profile profile, String newName) throws NameExistsException;
 
 }
