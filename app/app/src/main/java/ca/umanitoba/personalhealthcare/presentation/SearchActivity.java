@@ -13,6 +13,8 @@ import android.widget.ListView;
 
 import androidx.appcompat.widget.SearchView;
 
+import java.util.ArrayList;
+
 import ca.umanitoba.personalhealthcare.R;
 import ca.umanitoba.personalhealthcare.business.SearchLogic;
 import ca.umanitoba.personalhealthcare.business.SearchLogicImp;
@@ -25,7 +27,11 @@ import ca.umanitoba.personalhealthcare.business.SearchLogicImp;
  * */
 public class SearchActivity extends AppCompatActivity {
 
+    private Boolean isConditionsPage;           //Is the list showing conditions
+    private ArrayList<String> selectedItems;    //Items selected from the list by the user
     private String[] name;                      //List items
+    private String[] conditionNames;            //List of condition names to be displayed
+    private String itemName;                    //Name of the item selected from the list
     private ArrayAdapter<String> arrayAdapter;  //arrayAdapter
     private ListView listView;                  //ListView
     private SearchLogic thisLogic;              //Logic
@@ -41,17 +47,28 @@ public class SearchActivity extends AppCompatActivity {
         Bundle b = i.getExtras();
 
         thisLogic = new SearchLogicImp();
-        title = "Search Common Conditions";
+        title = "Conditions";
+        isConditionsPage = false;
 
-        //Display the list of common conditions, unless the user
-        //came here from BodyPartsActivity, then display a different
-        //title and list items based on info in Bundle b
-        if(b == null) {
+        //This page can display either conditions or symptoms.
+        if(b == null) {                                 //display a list of common conditions
             name = thisLogic.getCommonConditions();
-        } else {
+            isConditionsPage = true;
+            title = "Common Conditions";
+        } else if(b.getString("Name") != null) {    //display symptoms associated with a body part
             name = b.getStringArray("ID");
             bodyPart = b.getString("Name");
             title = bodyPart.substring(0,1).toUpperCase() + bodyPart.substring(1) + " Symptoms";
+            isConditionsPage = false;
+        } else if(b.getStringArray("ID") == null){  //No conditions found
+            isConditionsPage = true;
+            name = new String[] {"Unknown condition"};
+            title = "No conditions";
+        }
+         else {                                         //display conditions based on selected symptoms
+            name = b.getStringArray("ID");
+            isConditionsPage = true;
+            title = "Conditions that you might have";
         }
         setTitle(title);
 
@@ -60,19 +77,55 @@ public class SearchActivity extends AppCompatActivity {
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, name);
         listView.setAdapter(arrayAdapter);
 
+        selectedItems = new ArrayList<>();
+
         /**
          * Once the list is displayed, wherever the user clicks, according to the position,
-         * the user will get the specific result on another activity
+         * the user will get the specific result on another activity or will come back to this activity
+         * if this activity is displaying symptoms.
          * */
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Intent i = new Intent(SearchActivity.this, ResultsActivity.class);
-                String symptomName = name[position];
-                i.putExtra("Name", symptomName);
-                startActivity(i);
+                itemName = name[position];
+                if(isConditionsPage){
+                    goToResultsPage(itemName);
+                }
+                if(!selectedItems.contains(itemName)) {
+                    selectedItems.add(itemName);
+                }
+                listView.setItemChecked(position, true);
             }
         });
+    }
+
+    /**
+     * This is the submit button, the user clicks it after
+     * they have finished selecting symptoms. It leads to the
+     * results page, where the user can view information about which condition
+     * they might have based on the symptoms they selected.
+     **/
+    public void submit(View v){
+        conditionNames = thisLogic.getConditionResult(selectedItems, bodyPart);
+        goToConditionsPage(conditionNames);
+    }
+
+    /**
+     * This method starts a new search activity
+     **/
+    public void goToConditionsPage(String[] names){
+        Intent i = new Intent(SearchActivity.this, SearchActivity.class);
+        i.putExtra("ID", names);
+        startActivity(i);
+    }
+
+    /**
+     * This method starts the results activity
+     **/
+    public void goToResultsPage(String name){
+        Intent i = new Intent(SearchActivity.this, ResultsActivity.class);
+        i.putExtra("Name", name);
+        startActivity(i);
     }
 
     /**
