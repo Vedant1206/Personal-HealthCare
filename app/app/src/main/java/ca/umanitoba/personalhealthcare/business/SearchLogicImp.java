@@ -3,6 +3,7 @@ package ca.umanitoba.personalhealthcare.business;
 import java.util.ArrayList;
 
 import ca.umanitoba.personalhealthcare.objects.Condition;
+import ca.umanitoba.personalhealthcare.objects.Symptom;
 import ca.umanitoba.personalhealthcare.persistence.DiseasePersistence;
 import ca.umanitoba.personalhealthcare.persistence.fakeDb.FakeDiseasePersistence;
 import ca.umanitoba.personalhealthcare.persistence.hsqldb.DiseasePersistenceHSQLDB;
@@ -49,5 +50,11 @@ public class SearchLogicImp implements SearchLogic {
      * @return String[]
      */
     public String[] getCommonConditions(){ return conditionStrings; }
+
+    public Condition getConditionResult(ArrayList<Symptom> selectedItems){
+
+        return thisPersistence.getConditionBySymptoms(selectedItems);
+
+    }
 
 }
