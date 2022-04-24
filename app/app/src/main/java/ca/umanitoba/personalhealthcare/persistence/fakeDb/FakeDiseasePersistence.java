@@ -159,7 +159,7 @@ public class FakeDiseasePersistence implements DiseasePersistence {
      */
     @Override
     public ArrayList<Condition> getConditionBySymptoms(ArrayList<Symptom> symptoms) {
-        ArrayList<Condition> result = null;
+        ArrayList<Condition> result = new ArrayList<>();
 
         //traversing the db by looking at each ConditionSymptom object
         for(ConditionSymptoms c : conditionsDB){
@@ -176,7 +176,8 @@ public class FakeDiseasePersistence implements DiseasePersistence {
             }
         }
 
-        return result;    }
+        return result;
+    }
 
     /**
      * Returns the Condition object by its input name
