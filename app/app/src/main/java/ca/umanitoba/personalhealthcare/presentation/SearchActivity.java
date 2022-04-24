@@ -13,9 +13,13 @@ import android.widget.ListView;
 
 import androidx.appcompat.widget.SearchView;
 
+import java.util.ArrayList;
+
 import ca.umanitoba.personalhealthcare.R;
 import ca.umanitoba.personalhealthcare.business.SearchLogic;
 import ca.umanitoba.personalhealthcare.business.SearchLogicImp;
+import ca.umanitoba.personalhealthcare.objects.Condition;
+import ca.umanitoba.personalhealthcare.objects.Symptom;
 
 /**
  * SearchActivity has a list of symptoms
@@ -25,6 +29,10 @@ import ca.umanitoba.personalhealthcare.business.SearchLogicImp;
  * */
 public class SearchActivity extends AppCompatActivity {
 
+    private ArrayList<Symptom> sympList;        //List of selected symptoms as objects
+    private Boolean isCommonConditions;         //Is the list showing conditions
+    private ArrayList<String> selectedItems;    //Items selected from the list by the user
+    private Condition conditionResult;          //Condition to be shown on results page
     private String[] name;                      //List items
     private ArrayAdapter<String> arrayAdapter;  //arrayAdapter
     private ListView listView;                  //ListView
@@ -42,16 +50,19 @@ public class SearchActivity extends AppCompatActivity {
 
         thisLogic = new SearchLogicImp();
         title = "Search Common Conditions";
+        isCommonConditions = false;
 
         //Display the list of common conditions, unless the user
         //came here from BodyPartsActivity, then display a different
         //title and list items based on info in Bundle b
         if(b == null) {
             name = thisLogic.getCommonConditions();
+            isCommonConditions = true;
         } else {
             name = b.getStringArray("ID");
             bodyPart = b.getString("Name");
             title = bodyPart.substring(0,1).toUpperCase() + bodyPart.substring(1) + " Symptoms";
+            isCommonConditions = false;
         }
         setTitle(title);
 
@@ -60,6 +71,9 @@ public class SearchActivity extends AppCompatActivity {
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, name);
         listView.setAdapter(arrayAdapter);
 
+        selectedItems = new ArrayList<>();
+        sympList = new ArrayList<>();
+
         /**
          * Once the list is displayed, wherever the user clicks, according to the position,
          * the user will get the specific result on another activity
@@ -67,12 +81,30 @@ public class SearchActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Intent i = new Intent(SearchActivity.this, ResultsActivity.class);
-                String symptomName = name[position];
-                i.putExtra("Name", symptomName);
-                startActivity(i);
+                String itemName = name[position];
+                if(isCommonConditions){
+                    goToResultsPage(itemName);
+                }
+                if(!selectedItems.contains(itemName)) {
+                    selectedItems.add(itemName);
+                    sympList.add(new Symptom(itemName, bodyPart));
+                }
+                listView.setItemChecked(position, true);
             }
         });
+    }
+
+    public void submit(View v){
+
+        conditionResult = thisLogic.getConditionResult(sympList);
+
+        goToResultsPage(conditionResult.getName());
+    }
+
+    public void goToResultsPage(String name){
+        Intent i = new Intent(SearchActivity.this, ResultsActivity.class);
+        i.putExtra("Name", name);
+        startActivity(i);
     }
 
     /**
