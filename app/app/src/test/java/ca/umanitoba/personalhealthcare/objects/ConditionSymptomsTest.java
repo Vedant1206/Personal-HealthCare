@@ -14,7 +14,7 @@ public class ConditionSymptomsTest {
     public void testCreation(){
         System.out.println("\nStarting ConditionSymptom object creation test");
 
-        Condition condition = new Condition("Cancer", "Wikipedia", "https://en.wikipedia.org/wiki/Cancer");
+        Condition condition = new Condition("Cancer", "Wikipedia", "https://en.wikipedia.org/wiki/Cancer", "Sample Cancer description");
         Symptom symptom1 = new Symptom("Blurry vision", "Head");
         Symptom symptom2 = new Symptom("Hairy chest", "Chest");
         ArrayList<Symptom> symptomList = new ArrayList<>();
@@ -26,9 +26,11 @@ public class ConditionSymptomsTest {
 
         assertNotNull(conditionSymptom);
 
+        // The code uses Assert true in conjuction with String object's equals method because we know how the method works, we have not checked whether AssertEquals will work as expected
         assertTrue("Condition name should be Cancer", "Cancer".equals(conditionSymptom.getCondition().getName()) );
         assertTrue("Condition sourceName should be Wikipedia", "Wikipedia".equals(conditionSymptom.getCondition().getSourceName()) );
         assertTrue("Condition Link should be wikipedia link", "https://en.wikipedia.org/wiki/Cancer".equals(conditionSymptom.getCondition().getSourceLink()) );
+        assertTrue("Condition Description should be Sample Cancer description", "Sample Cancer description".equals(conditionSymptom.getCondition().getDescription()) );
         assertFalse("isCommonDisease should be False", conditionSymptom.isCommonDisease());
         assertTrue("Symptom1 name should be Blurry vision", "Blurry vision".equals(conditionSymptom.getSymptoms().get(0).getSymptomName()) );
         assertTrue("Symptom1 BodyPart should be Head", "Head".equals(conditionSymptom.getSymptoms().get(0).getBodyPart()) );
