@@ -10,6 +10,7 @@
         android:id="@+id/listview"
         android:layout_width="310dp"
         android:layout_height="342dp"
+        android:choiceMode="multipleChoice"
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

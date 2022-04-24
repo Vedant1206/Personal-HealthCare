@@ -5,25 +5,24 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-import ca.umanitoba.personalhealthcare.objects.Condition;
-
 public class ResultsLogicTest {
 
     ResultsLogic resultsLogic;
-    Condition returnedCondition;
 
     @Before
     public void setup() {
 
         resultsLogic = new ResultsLogicImp();
-        returnedCondition = resultsLogic.getCondition();
 
     }
 
     @Test
     public void testCondition() {
 
-        assertNotNull(returnedCondition);
+        assertNotNull(resultsLogic.getConditionName());
+        assertNotNull(resultsLogic.getConditionSourceName());
+        assertNotNull(resultsLogic.getConditionSourceLink());
+        assertNotNull(resultsLogic.getConditionDescription());
 
     }
 

@@ -8,11 +8,16 @@ import ca.umanitoba.personalhealthcare.persistence.hsqldb.DiseasePersistenceHSQL
 public class ResultsLogicImp implements ResultsLogic {
 
     private DiseasePersistence thisPersistence;     //DiseasePersistence
-    private Condition thisCondition;                //Condition
+    private Condition thisCondition;                //Condition object
+    private String conditionName;                   //Name of the condition
+    private String conditionSourceName;             //Condition source name
+    private String conditionSourceLink;             //Condition source link
+    private String conditionDescription;            //Description of the condition
 
     public ResultsLogicImp(){
         thisPersistence = new FakeDiseasePersistence();
         thisCondition = null;
+        setConditionInfo();
     }
 
     public ResultsLogicImp(String conditionToShow) {
@@ -22,11 +27,13 @@ public class ResultsLogicImp implements ResultsLogic {
         } catch(RuntimeException e) {
             thisCondition = null;
         }
+        setConditionInfo();
     }
 
     public ResultsLogicImp(DiseasePersistence injectedDB){
         thisPersistence = injectedDB;
         thisCondition = null;
+        setConditionInfo();
     }
 
     public ResultsLogicImp(DiseasePersistence injectedDB, String conditionToShow) {
@@ -36,21 +43,37 @@ public class ResultsLogicImp implements ResultsLogic {
         } catch(RuntimeException e) {
             thisCondition = null;
         }
+        setConditionInfo();
     }
 
-    /**
-     * Get the Condition object
-     *
-     * @return Condition
-     */
-    public Condition getCondition(){
-        Condition c = null;
+    private void setConditionInfo(){
         if(thisCondition != null) {
-            c = thisCondition;
+            conditionName = thisCondition.getName();
+            conditionDescription = thisCondition.getDescription();
+            conditionSourceLink = thisCondition.getSourceLink();
+            conditionSourceName = thisCondition.getSourceName();
         } else {
-            c = new Condition("Unkown", "", "", "This is an unknown condition");
+            conditionName = "Unknown";
+            conditionDescription = "This is an unknown condition";
+            conditionSourceLink = "";
+            conditionSourceName = "";
         }
-        return c;
+    }
+
+    public String getConditionName(){
+        return conditionName;
+    }
+
+    public String getConditionSourceName(){
+        return conditionSourceName;
+    }
+
+    public String getConditionSourceLink(){
+        return conditionSourceLink;
+    }
+
+    public String getConditionDescription(){
+        return conditionDescription;
     }
 
 }
