@@ -57,7 +57,7 @@ public class ProfileManagerImp implements ProfileManager{
     }
 
     @Override
-    public Profile updateProfileName(Profile profile, String initName) {
+    public Profile updateProfileName(Profile profile, String initName) throws NameExistsException {
         return profilePersistence.updateProfileName(profile, initName);
     }
 }

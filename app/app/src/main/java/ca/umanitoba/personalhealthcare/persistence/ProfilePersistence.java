@@ -39,6 +39,6 @@ public interface ProfilePersistence{
 
     Profile getProfile (String email, String profileName);
 
-    Profile updateProfileName (Profile profile, String initName);
+    Profile updateProfileName (Profile profile, String initName) throws NameExistsException;
 
 }
