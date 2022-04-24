@@ -17,8 +17,15 @@ public class Symptom {
         return name;
     }
 
-    public boolean equals(@NonNull Symptom other){
-        return other.getSymptomName().equalsIgnoreCase(name) && other.getBodyPart().equalsIgnoreCase(bodyPart);
+    @Override
+    public boolean equals(Object other) {
+        boolean result = false;
+
+        if (other instanceof Symptom) {
+            result = ((Symptom) other).getSymptomName().equalsIgnoreCase(name) && ((Symptom) other).getBodyPart().equalsIgnoreCase(bodyPart);
+        }
+
+        return result;
     }
 
     public String toString() {return name;}
