@@ -20,7 +20,7 @@ public interface DiseasePersistence {
     // check if bodypart needs to be an Object
     public ArrayList<Symptom> getSymptomsByBodyPart(String bodyPart);
 
-    public Condition getConditionBySymptoms(ArrayList<Symptom> symptoms);
+    public ArrayList<Condition> getConditionBySymptoms(ArrayList<Symptom> symptoms);
 
     public Condition getConditionByName(String condName);
 }
