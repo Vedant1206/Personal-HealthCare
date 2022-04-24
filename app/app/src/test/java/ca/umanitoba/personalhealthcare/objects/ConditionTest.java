@@ -12,7 +12,7 @@ public class ConditionTest {
     public void testCreation(){
         System.out.println("\nStarting Condition object creation test");
 
-        Condition con = new Condition("Cancer", "Wikipedia", "https://en.wikipedia.org/wiki/Cancer");
+        Condition con = new Condition("Cancer", "Wikipedia", "https://en.wikipedia.org/wiki/Cancer", "");
 
         assertNotNull(con);
 

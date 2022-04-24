@@ -14,7 +14,7 @@ public class ConditionSymptomsTest {
     public void testCreation(){
         System.out.println("\nStarting ConditionSymptom object creation test");
 
-        Condition condition = new Condition("Cancer", "Wikipedia", "https://en.wikipedia.org/wiki/Cancer");
+        Condition condition =new Condition("Cancer", "Wikipedia", "https://en.wikipedia.org/wiki/Cancer", "");
         Symptom symptom1 = new Symptom("Blurry vision", "Head");
         Symptom symptom2 = new Symptom("Hairy chest", "Chest");
         ArrayList<Symptom> symptomList = new ArrayList<>();
