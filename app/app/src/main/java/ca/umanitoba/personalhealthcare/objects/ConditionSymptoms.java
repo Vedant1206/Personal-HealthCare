@@ -13,7 +13,7 @@ import java.util.ArrayList;
  within the Condition because there might be many symptom repeats. So for now, we are just
  linking them both under a superclass.
 
-    This is Aggregation of Condition and relating Symptom objects!
+ This is Aggregation of Condition and relating Symptom objects!
 
  */
 public class ConditionSymptoms {

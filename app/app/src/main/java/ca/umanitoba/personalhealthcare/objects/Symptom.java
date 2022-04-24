@@ -1,7 +1,8 @@
 package ca.umanitoba.personalhealthcare.objects;
 
-import androidx.annotation.NonNull;
-
+/**
+ * This DSO class holds Symptom details within the object
+ */
 public class Symptom {
     String name;
     String bodyPart;
@@ -10,12 +11,11 @@ public class Symptom {
         this.name = name;
         this.bodyPart = bodyPart;
     }
+
     public String getBodyPart() {
         return bodyPart;
     }
-    public String getSymptomName() {
-        return name;
-    }
+    public String getSymptomName() { return name; }
 
     @Override
     public boolean equals(Object other) {

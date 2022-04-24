@@ -1,5 +1,8 @@
 package ca.umanitoba.personalhealthcare.objects;
 
+/**
+ * This DSO class holds Condition details within the object
+ */
 public class Condition {
     private String name;
     private String sourceName;
@@ -22,6 +25,7 @@ public class Condition {
     public boolean equals(Object other) {
         boolean result = false;
 
+        //we dont check description to decide whether objects are equal to each other
         if(other instanceof Condition) {
             result = ((Condition) other).getName().equalsIgnoreCase(name) &&
                     ((Condition) other).getSourceName().equalsIgnoreCase(sourceName) &&
