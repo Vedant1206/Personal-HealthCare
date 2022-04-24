@@ -134,4 +134,20 @@ public class FakeDiseasePersistence implements DiseasePersistence {
         return null;
     }
 
+
+    //  WILL THIS METHOD THROW SPECIFIC CONDITION_DNE EXCEPTION? ALSO SOUNDS LIKE THIS METHOD SHOULD NOT EXIST
+    @Override
+    public Condition getConditionByName(String condName) throws RuntimeException {
+        Condition result = null;
+
+        for(ConditionSymptoms c : conditionsDB){
+            if(c.getCondition().getName().equalsIgnoreCase(condName)){
+                result = c.getCondition();
+                break;
+            }
+        }
+
+        return result;
+    }
+
 }

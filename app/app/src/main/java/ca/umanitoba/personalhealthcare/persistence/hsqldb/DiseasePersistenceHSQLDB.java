@@ -70,6 +70,11 @@ public class DiseasePersistenceHSQLDB implements DiseasePersistence {
         return null;
     }
 
+    @Override
+    public Condition getConditionByName(String condName) {
+        return null;
+    }
+
     private Condition getConditionFromResultSet(final ResultSet rs) throws SQLException {
         final String name = rs.getString("name");
         final String sourceName = rs.getString("srcName");
