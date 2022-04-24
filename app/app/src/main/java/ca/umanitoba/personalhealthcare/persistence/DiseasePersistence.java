@@ -22,4 +22,5 @@ public interface DiseasePersistence {
 
     public Condition getConditionBySymptoms(ArrayList<Symptom> symptoms);
 
+    public Condition getConditionByName(String condName);
 }
