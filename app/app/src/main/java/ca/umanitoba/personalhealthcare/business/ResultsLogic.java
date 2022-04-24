@@ -1,13 +1,17 @@
 package ca.umanitoba.personalhealthcare.business;
 
-import ca.umanitoba.personalhealthcare.objects.Condition;
-
 public interface ResultsLogic {
 
     /**
-     * Get the Condition object to be displayed in the results page
-     * @return  Condition
+     * Get the Condition name to be displayed in the results page
+     * @return  String
      */
-    Condition getCondition();
+    String getConditionName();
+
+    String getConditionSourceName();
+
+    String getConditionSourceLink();
+
+    String getConditionDescription();
 
 }
