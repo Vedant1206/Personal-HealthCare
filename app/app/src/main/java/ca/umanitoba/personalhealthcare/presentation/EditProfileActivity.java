@@ -22,6 +22,7 @@ import ca.umanitoba.personalhealthcare.business.ProfileManager;
 import ca.umanitoba.personalhealthcare.business.ProfileManagerImp;
 import ca.umanitoba.personalhealthcare.business.SessionManager;
 import ca.umanitoba.personalhealthcare.business.SessionManagerImp;
+import ca.umanitoba.personalhealthcare.objects.NameExistsException;
 import ca.umanitoba.personalhealthcare.objects.Profile;
 import ca.umanitoba.personalhealthcare.persistence.fakeDb.FakeProfilePersistence;
 
@@ -126,7 +127,11 @@ public class EditProfileActivity extends AppCompatActivity {
     }
 
     private void saveProfile(Profile profile) {
-        profileManager.updateProfileName(profile, initProfileName);
+        try {
+            profileManager.updateProfileName(profile, initProfileName);
+        } catch (NameExistsException e) {
+            //TODO: notify error
+        }
         profileManager.updateProfile(profile);
         backToSelectProfiles();
     }

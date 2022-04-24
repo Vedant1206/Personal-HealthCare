@@ -48,7 +48,7 @@ public class FakeProfilePersistence implements ProfilePersistence {
                 throw new NameExistsException();
             }
         }
-        profiles.add(currentProfile);
+        profiles.add(copy(currentProfile));
         return currentProfile;
     }
 
@@ -80,7 +80,17 @@ public class FakeProfilePersistence implements ProfilePersistence {
     }
 
     @Override
-    public Profile updateProfileName (Profile newProfile, String initName) {
+    public Profile updateProfileName (Profile newProfile, String initName) throws NameExistsException {
+        if (!newProfile.getName().equals(initName)) {
+            Profile profile = getProfile(newProfile.getEmail(), newProfile.getName());
+            System.out.println(newProfile.getName());
+            if (profile != null) {
+                throw new NameExistsException();
+            }
+        } else {
+            return newProfile;
+        }
+
         for(Profile profile: profiles){
             if(profile.getName().equals(initName) && profile.getEmail().equals(newProfile.getEmail())){
                 profile.setName(newProfile.getName());
@@ -98,5 +108,9 @@ public class FakeProfilePersistence implements ProfilePersistence {
             }
         }
         return null;
+    }
+
+    private Profile copy (Profile profile) {
+        return new Profile(profile.getEmail(), profile.getName(), profile.getAddress(), profile.getHeight(), profile.getWeight(), profile.getYear(), profile.getMonth(), profile.getDay(), profile.getSex());
     }
 }
