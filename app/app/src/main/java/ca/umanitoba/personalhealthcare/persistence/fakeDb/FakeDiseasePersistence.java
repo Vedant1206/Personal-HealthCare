@@ -159,8 +159,24 @@ public class FakeDiseasePersistence implements DiseasePersistence {
      */
     @Override
     public ArrayList<Condition> getConditionBySymptoms(ArrayList<Symptom> symptoms) {
+        ArrayList<Condition> result = null;
 
-        return null;
+        //traversing the db by looking at each ConditionSymptom object
+        for(ConditionSymptoms c : conditionsDB){
+
+            //traversing the input list by looking at each Symptom object
+            for(Symptom s : symptoms){
+
+                //if the input symptom object is present in the Condition's symptom list,
+                // then we add the Condition to the result and move onto the next ConditionSymptom object
+                if(c.getSymptoms().contains(s)){
+                    result.add(c.getCondition());
+                    break;
+                }
+            }
+        }
+        
+        return result;
     }
 
     /**
