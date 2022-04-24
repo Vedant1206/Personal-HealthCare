@@ -18,10 +18,7 @@ public interface DiseasePersistence {
         This method fetches a list of Symptoms from Database based on bodyPart input
      */
     public ArrayList<Symptom> getSymptomsByBodyPart(String bodyPart);
-
-    /**
-        This method returns the Conditions that contain the User input symptoms
-     */
+    
     public ArrayList<Condition> getConditionBySymptoms(ArrayList<Symptom> symptoms);
 
     /**
