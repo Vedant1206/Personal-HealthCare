@@ -31,6 +31,7 @@ public class SearchActivity extends AppCompatActivity {
     private ArrayList<String> selectedItems;    //Items selected from the list by the user
     private String[] name;                      //List items
     private String[] conditionNames;            //List of condition names to be displayed
+    private String itemName;                    //Name of the item selected from the list
     private ArrayAdapter<String> arrayAdapter;  //arrayAdapter
     private ListView listView;                  //ListView
     private SearchLogic thisLogic;              //Logic
@@ -86,7 +87,7 @@ public class SearchActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                String itemName = name[position];
+                itemName = name[position];
                 if(isConditionsPage){
                     goToResultsPage(itemName);
                 }

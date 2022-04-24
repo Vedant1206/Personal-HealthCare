@@ -36,7 +36,7 @@ public class ResultsActivity extends AppCompatActivity {
         TextView descriptionText = (TextView) findViewById(R.id.textView10);
         TextView linkNameText = (TextView) findViewById(R.id.textView);
 
-        //Set the text based on the Condition object coming from the persistence layer
+        //Set the text based on the information from the logic layer
         nameText.setText(thisLogic.getConditionName());
         linkText.setText(thisLogic.getConditionSourceLink());
         descriptionText.setText(thisLogic.getConditionDescription());
