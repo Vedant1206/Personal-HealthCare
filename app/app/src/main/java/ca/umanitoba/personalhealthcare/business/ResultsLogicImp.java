@@ -46,6 +46,10 @@ public class ResultsLogicImp implements ResultsLogic {
         setConditionInfo();
     }
 
+
+    /**
+     * This method just sets all the variables
+     */
     private void setConditionInfo(){
         if(thisCondition != null) {
             conditionName = thisCondition.getName();
@@ -60,18 +64,34 @@ public class ResultsLogicImp implements ResultsLogic {
         }
     }
 
+    /**
+     * Returns the name of the condition
+     * @return String
+     */
     public String getConditionName(){
         return conditionName;
     }
 
+    /**
+     * Returns the name of the source
+     * @return String
+     */
     public String getConditionSourceName(){
         return conditionSourceName;
     }
 
+    /**
+     * Returns the source link
+     * @return String
+     */
     public String getConditionSourceLink(){
         return conditionSourceLink;
     }
 
+    /**
+     * Returns the description of the condition
+     * @return String
+     */
     public String getConditionDescription(){
         return conditionDescription;
     }
