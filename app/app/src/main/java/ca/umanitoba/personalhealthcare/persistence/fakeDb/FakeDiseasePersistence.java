@@ -118,9 +118,14 @@ public class FakeDiseasePersistence implements DiseasePersistence {
         for (ConditionSymptoms c : conditionsDB) {
             for(Symptom symp : c.getSymptoms()){
                 if(symp.getBodyPart().equalsIgnoreCase(bodyPart))
-                    symptoms.add(symp);
+
+                    //ensuring repeated symptoms are not returned in the list
+                    if(!symptoms.contains(symp))
+                        symptoms.add(symp);
             }
         }
+
+
         return symptoms;
     }
 
