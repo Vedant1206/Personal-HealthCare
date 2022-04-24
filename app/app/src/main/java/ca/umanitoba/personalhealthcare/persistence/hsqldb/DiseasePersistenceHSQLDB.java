@@ -71,7 +71,7 @@ public class DiseasePersistenceHSQLDB implements DiseasePersistence {
     }
 
     @Override
-    public Condition getConditionByName(String condName) {
+    public Condition getConditionByName(String condName) throws IllegalArgumentException{
         return null;
     }
 
