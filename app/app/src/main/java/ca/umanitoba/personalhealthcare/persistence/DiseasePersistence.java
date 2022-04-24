@@ -18,5 +18,5 @@ public interface DiseasePersistence {
     
     public ArrayList<Condition> getConditionBySymptoms(ArrayList<Symptom> symptoms);
 
-    public Condition getConditionByName(String condName) throws RuntimeException;
+    public Condition getConditionByName(String condName);
 }
