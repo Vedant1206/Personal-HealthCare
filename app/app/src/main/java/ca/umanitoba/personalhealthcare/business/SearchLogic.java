@@ -3,7 +3,6 @@ package ca.umanitoba.personalhealthcare.business;
 import java.util.ArrayList;
 
 import ca.umanitoba.personalhealthcare.objects.Condition;
-import ca.umanitoba.personalhealthcare.objects.Symptom;
 
 public interface SearchLogic {
 
