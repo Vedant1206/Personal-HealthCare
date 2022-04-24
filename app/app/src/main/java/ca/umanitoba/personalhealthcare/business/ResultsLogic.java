@@ -5,10 +5,9 @@ import ca.umanitoba.personalhealthcare.objects.Condition;
 public interface ResultsLogic {
 
     /**
-     * Get the list of conditions to be displayed
-     * @return  String array
+     * Get the Condition object to be displayed in the results page
+     * @return  Condition
      */
-    public Condition getCondition();
-
+    Condition getCondition();
 
 }
