@@ -14,15 +14,9 @@ public interface DiseasePersistence {
     // maybe allow input on how many common conditions do they want
     public ArrayList<Condition> getCommonConditions();
 
-    /**
-        This method fetches a list of Symptoms from Database based on bodyPart input
-     */
     public ArrayList<Symptom> getSymptomsByBodyPart(String bodyPart);
     
     public ArrayList<Condition> getConditionBySymptoms(ArrayList<Symptom> symptoms);
 
-    /**
-        This method fetches the Condition object from the Database based on its name
-     */
     public Condition getConditionByName(String condName) throws RuntimeException;
 }
