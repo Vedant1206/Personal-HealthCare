@@ -29,7 +29,6 @@ import ca.umanitoba.personalhealthcare.objects.Symptom;
  * */
 public class SearchActivity extends AppCompatActivity {
 
-    private ArrayList<Symptom> sympList;        //List of selected symptoms as objects
     private Boolean isCommonConditions;         //Is the list showing conditions
     private ArrayList<String> selectedItems;    //Items selected from the list by the user
     private Condition conditionResult;          //Condition to be shown on results page
@@ -72,7 +71,6 @@ public class SearchActivity extends AppCompatActivity {
         listView.setAdapter(arrayAdapter);
 
         selectedItems = new ArrayList<>();
-        sympList = new ArrayList<>();
 
         /**
          * Once the list is displayed, wherever the user clicks, according to the position,
@@ -87,20 +85,32 @@ public class SearchActivity extends AppCompatActivity {
                 }
                 if(!selectedItems.contains(itemName)) {
                     selectedItems.add(itemName);
-                    sympList.add(new Symptom(itemName, bodyPart));
                 }
                 listView.setItemChecked(position, true);
             }
         });
     }
 
+    /**
+     * This is the submit button, the user clicks it after
+     * they have finished selecting symptoms. It leads to the
+     * results page, where the user can view information about which condition
+     * they might have based on the symptoms they selected.
+     **/
     public void submit(View v){
-
-        conditionResult = thisLogic.getConditionResult(sympList);
-
-        goToResultsPage(conditionResult.getName());
+        String conditionName;
+        conditionResult = thisLogic.getConditionResult(selectedItems, bodyPart);
+        if(conditionResult != null){
+            conditionName = conditionResult.getName();
+        } else {
+            conditionName = "";
+        }
+        goToResultsPage(conditionName);
     }
 
+    /**
+     * This method starts the results activity
+     **/
     public void goToResultsPage(String name){
         Intent i = new Intent(SearchActivity.this, ResultsActivity.class);
         i.putExtra("Name", name);

@@ -13,6 +13,11 @@ public interface SearchLogic {
      */
     String[] getCommonConditions();
 
-    Condition getConditionResult(ArrayList<Symptom> selectedItems);
+    /**
+     * Get the Condition object to be shown on the results page,
+     * based on the symptoms selected on the search page.
+     * @return Condition
+     */
+    Condition getConditionResult(ArrayList<String> selectedItems, String bodyPart);
 
 }

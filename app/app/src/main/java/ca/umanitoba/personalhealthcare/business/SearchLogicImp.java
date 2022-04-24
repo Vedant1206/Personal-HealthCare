@@ -10,6 +10,7 @@ import ca.umanitoba.personalhealthcare.persistence.hsqldb.DiseasePersistenceHSQL
 
 public class SearchLogicImp implements SearchLogic {
 
+    private ArrayList<Symptom> symptomsArray;       //List of selected symptoms
     private DiseasePersistence thisPersistence;     //DiseasePersistence
     private ArrayList<Condition> commonConditions;  //List of common conditions
     private String[] conditionStrings;              //String array to hold the
@@ -51,10 +52,29 @@ public class SearchLogicImp implements SearchLogic {
      */
     public String[] getCommonConditions(){ return conditionStrings; }
 
-    public Condition getConditionResult(ArrayList<Symptom> selectedItems){
+    /**
+     * Get the Condition object to be shown on the results page,
+     * based on the symptoms selected on the search page.
+     * @return Condition
+     */
+    public Condition getConditionResult(ArrayList<String> selectedItems, String bodyPart){
 
-        return thisPersistence.getConditionBySymptoms(selectedItems);
+        symptomsArray = createSympList(selectedItems, bodyPart);
 
+        return thisPersistence.getConditionBySymptoms(symptomsArray);
+
+    }
+
+    /**
+     * Create an ArrayList of Symptom objects from an ArrayList of Strings and
+     * a String specifying the bodyPart.
+     */
+    private ArrayList<Symptom> createSympList(ArrayList<String> selection, String bodyPart){
+        symptomsArray = new ArrayList<>();
+        for(int i = 0; i < selection.size(); i++){
+            symptomsArray.add(new Symptom(selection.get(i), bodyPart));
+        }
+        return symptomsArray;
     }
 
 }
