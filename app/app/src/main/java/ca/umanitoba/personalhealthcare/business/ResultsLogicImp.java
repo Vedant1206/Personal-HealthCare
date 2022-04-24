@@ -17,7 +17,11 @@ public class ResultsLogicImp implements ResultsLogic {
 
     public ResultsLogicImp(String conditionToShow) {
         thisPersistence = new FakeDiseasePersistence();
-        thisCondition = thisPersistence.getConditionByName(conditionToShow);
+        try {
+            thisCondition = thisPersistence.getConditionByName(conditionToShow);
+        } catch(RuntimeException e) {
+            thisCondition = null;
+        }
     }
 
     public ResultsLogicImp(DiseasePersistence injectedDB){
@@ -27,7 +31,11 @@ public class ResultsLogicImp implements ResultsLogic {
 
     public ResultsLogicImp(DiseasePersistence injectedDB, String conditionToShow) {
         thisPersistence = injectedDB;
-        thisCondition = thisPersistence.getConditionByName(conditionToShow);
+        try {
+            thisCondition = thisPersistence.getConditionByName(conditionToShow);
+        } catch(RuntimeException e) {
+            thisCondition = null;
+        }
     }
 
     /**
