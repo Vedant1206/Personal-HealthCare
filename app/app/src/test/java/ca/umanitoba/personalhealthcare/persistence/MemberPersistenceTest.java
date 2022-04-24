@@ -1,5 +1,6 @@
 package ca.umanitoba.personalhealthcare.persistence;
 
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
@@ -13,6 +14,7 @@ import ca.umanitoba.personalhealthcare.objects.Member;
 import ca.umanitoba.personalhealthcare.objects.PasswordInvalidException;
 import ca.umanitoba.personalhealthcare.objects.Patient;
 import ca.umanitoba.personalhealthcare.persistence.fakeDb.FakeMemberPersistence;
+import ca.umanitoba.personalhealthcare.persistence.hsqldb.HsqldbMemberPersistence;
 
 public class MemberPersistenceTest {
     private static final int SAMPLE_SIZE = 10;
@@ -26,7 +28,7 @@ public class MemberPersistenceTest {
         email = "random@email.com";
         password = "P@ssword123!";
 
-        persistence = FakeMemberPersistence.getMemberPersistence();
+        persistence = new HsqldbMemberPersistence();
 
         sampleMembers = new Member[SAMPLE_SIZE];
         for (int i = 0; i < SAMPLE_SIZE; i++) {
@@ -55,7 +57,9 @@ public class MemberPersistenceTest {
 
     @Test
     public void testGetMember () {
-
+//        Member member = persistence.getMember(1+email, password);
+//        System.out.println(member.getEmail());
+//        assertNotNull(member);
         for (int i = 0; i < SAMPLE_SIZE; i++) {
             String emailToGet = sampleMembers[i].getEmail();
             Member member = persistence.getMember(emailToGet, password);

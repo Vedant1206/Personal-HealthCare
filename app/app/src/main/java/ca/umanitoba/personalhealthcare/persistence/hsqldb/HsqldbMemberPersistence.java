@@ -17,19 +17,22 @@ public class HsqldbMemberPersistence implements MemberPersistence {
         Connection dbConnection = HsqldbConnection.getInstance().getConnection();
         PreparedStatement statement;
         ResultSet resultSet;
+        Member member = null;
         try {
-            statement = dbConnection.prepareStatement("SELECT email, password FROM Member WHERE email = ? AND password = ?");
+            statement = dbConnection.prepareStatement("SELECT * FROM PUBLIC.MEMBER WHERE email = ? AND password = ?");
             statement.setString(1, email);
             statement.setString(2, password);
             resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
+                int id = resultSet.getInt("id");
                 String returnedEmail = resultSet.getString("email");
                 String returnedPassword = resultSet.getString("password");
-                boolean isPatient = resultSet.getBoolean("isPatience");
+                boolean isPatient = resultSet.getBoolean("is_patience");
                 if (isPatient) {
-                    //TODO: id
-                    Member patient = new Patient("1", returnedEmail, returnedPassword);
+                    member = new Patient(id + "", returnedEmail, returnedPassword);
+
+                    return  member;
                 } else {
                     return null;
                 }
@@ -40,13 +43,39 @@ public class HsqldbMemberPersistence implements MemberPersistence {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            return null;
+            return member;
         }
+
+
 
     }
 
     @Override
     public Member createMember(Member member) throws EmailExistException {
-        return null;
+        Connection dbConnection = HsqldbConnection.getInstance().getConnection();
+        PreparedStatement statement;
+        ResultSet resultSet;
+        String sql = "INSERT INTO PUBLIC.MEMBER (EMAIL, PASSWORD) VALUES ( ?, ?)";
+        int result = 0;
+        try {
+            statement = dbConnection.prepareStatement(sql);
+            statement.setString(1, member.getEmail());
+            statement.setString(2, member.getPassword());
+            result = statement.executeUpdate();
+
+            if (result == 0) {
+                member = null;
+                return member;
+            } else {
+                return member;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            member = null;
+        } finally {
+            return member;
+        }
+
     }
 }
