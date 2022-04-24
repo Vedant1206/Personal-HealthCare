@@ -18,9 +18,16 @@ public class Condition {
     public String getSourceName() {return sourceName;}
     public String getDescription() {return description;}
 
-    public boolean equals(Condition other) {
-        return other.getName().equalsIgnoreCase(name) &&
-                other.getSourceName().equalsIgnoreCase(sourceName) &&
-                other.sourceLink.equals(sourceLink);
+    @Override
+    public boolean equals(Object other) {
+        boolean result = false;
+
+        if(other instanceof Condition) {
+            result = ((Condition) other).getName().equalsIgnoreCase(name) &&
+                    ((Condition) other).getSourceName().equalsIgnoreCase(sourceName) &&
+                    ((Condition) other).sourceLink.equals(sourceLink);
+        }
+
+        return result;
     }
 }
