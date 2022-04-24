@@ -130,7 +130,7 @@ public class FakeDiseasePersistence implements DiseasePersistence {
     }
 
     @Override
-    public Condition getConditionBySymptoms(ArrayList<Symptom> symptoms) {
+    public ArrayList<Condition> getConditionBySymptoms(ArrayList<Symptom> symptoms) {
         return null;
     }
 
