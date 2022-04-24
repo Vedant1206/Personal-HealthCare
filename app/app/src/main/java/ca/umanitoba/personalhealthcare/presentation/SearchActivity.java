@@ -29,7 +29,7 @@ import ca.umanitoba.personalhealthcare.objects.Symptom;
  * */
 public class SearchActivity extends AppCompatActivity {
 
-    private Boolean isCommonConditions;         //Is the list showing conditions
+    private Boolean isConditionsPage;           //Is the list showing conditions
     private ArrayList<String> selectedItems;    //Items selected from the list by the user
     private Condition conditionResult;          //Condition to be shown on results page
     private String[] name;                      //List items
@@ -48,20 +48,30 @@ public class SearchActivity extends AppCompatActivity {
         Bundle b = i.getExtras();
 
         thisLogic = new SearchLogicImp();
-        title = "Search Common Conditions";
-        isCommonConditions = false;
+        title = "Conditions";
+        isConditionsPage = false;
 
         //Display the list of common conditions, unless the user
         //came here from BodyPartsActivity, then display a different
         //title and list items based on info in Bundle b
         if(b == null) {
             name = thisLogic.getCommonConditions();
-            isCommonConditions = true;
-        } else {
+            isConditionsPage = true;
+            title = "Common Conditions";
+        } else if(b.getString("Name") != null) {
             name = b.getStringArray("ID");
             bodyPart = b.getString("Name");
             title = bodyPart.substring(0,1).toUpperCase() + bodyPart.substring(1) + " Symptoms";
-            isCommonConditions = false;
+            isConditionsPage = false;
+        } else if(b.getStringArray("ID") == null){
+            isConditionsPage = true;
+            name = new String[] {"Unknown condition"};
+            title = "No conditions";
+        }
+         else {
+            name = b.getStringArray("ID");
+            isConditionsPage = true;
+            title = "Conditions that you might have";
         }
         setTitle(title);
 
@@ -80,7 +90,7 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 String itemName = name[position];
-                if(isCommonConditions){
+                if(isConditionsPage){
                     goToResultsPage(itemName);
                 }
                 if(!selectedItems.contains(itemName)) {
@@ -98,14 +108,17 @@ public class SearchActivity extends AppCompatActivity {
      * they might have based on the symptoms they selected.
      **/
     public void submit(View v){
-        String conditionName;
-        conditionResult = thisLogic.getConditionResult(selectedItems, bodyPart);
-        if(conditionResult != null){
-            conditionName = conditionResult.getName();
-        } else {
-            conditionName = "";
-        }
-        goToResultsPage(conditionName);
+        String[] conditionNames;
+
+        conditionNames = thisLogic.getConditionResult(selectedItems, bodyPart);
+
+        goToConditionsPage(conditionNames);
+    }
+
+    public void goToConditionsPage(String[] names){
+        Intent i = new Intent(SearchActivity.this, SearchActivity.class);
+        i.putExtra("ID", names);
+        startActivity(i);
     }
 
     /**

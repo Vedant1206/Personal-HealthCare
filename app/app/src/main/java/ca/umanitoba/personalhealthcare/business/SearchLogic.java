@@ -17,6 +17,6 @@ public interface SearchLogic {
      * based on the symptoms selected on the search page.
      * @return Condition
      */
-    Condition getConditionResult(ArrayList<String> selectedItems, String bodyPart);
+    String[] getConditionResult(ArrayList<String> selectedItems, String bodyPart);
 
 }
