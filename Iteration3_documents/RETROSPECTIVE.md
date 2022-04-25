@@ -1,19 +1,3 @@
-# Retrospective Activity (~ 500 words)
+# Retrospective Activity
 
-## What part of our project has not been as successful as we would have liked?
-
-We have not completed as many features as we would have liked.
-
-## How can it be improved in this iteration (Iteration 3)?
-
-We can increase the amount of time we spend working on features
-
-## What are some concrete and realistic ways of improvement?
-
-We can each commit to spending more time on each feature, maybe each team member can complete one feature
-
-## How will its success be evaluated at the end of the iteration (Iteration 3) in a measurable and objective way?
-
-We will keep track of how much time each of us spend on the different features in gitlab.
-
-## Include a chart (as an image) showing the 2 data points of project velocity from the last two iterations
+We have not completed as many features as we would have liked. When we first started the project, we had many ideas for features that we were looking forward to implementing but due to time constraints and the amount of work involved we were not able to implement all of them. This can be improved this iteration by increasing the amount of time we spend working on features and implement as many as possible. We can each commit to spending more time on each feature, maybe each team member can commit to completing at least one user story. We will keep track of how much time each of us spend on the different features in GitLab. At the end of the iteration, we will look at how much time each of us spent working on features and how many features we were able to complete. If we each spend at least 3 days working on features, and we each complete at least one user story, it will be considered a success.
