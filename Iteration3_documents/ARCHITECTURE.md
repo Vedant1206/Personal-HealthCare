@@ -20,14 +20,19 @@ personalhealthcare
 │   ├── BodyPartsLogicImp.java
 │   ├── ProfileManager.java
 │   ├── ProfileManagerImp.java
+│   ├── ResultLogic.java
+│   ├── ResultLogicImp.java
 │   ├── SearchLogic.java
-│   └── SearchLogicLogicImp.java
+│   ├── SearchLogicLogicImp.java
+│   ├── SessionManager.java
+│   └── SessionManagerImp.java
 ├── objects                                     -- Domain-specific layer
 │   ├── Condition.java
 │   ├── ConditionSymptoms.java
 │   ├── EmailExistException.java
 │   ├── EmailInvalidException.java
 │   ├── Guest.java
+│   ├── LoginSession.java
 │   ├── Member.java
 │   ├── NameExistsException.java
 │   ├── PasswordInvalidException.java
@@ -39,18 +44,31 @@ personalhealthcare
 │   ├── fakeDB
 │   |   ├── FakeDiseasePersistence.java
 │   |   ├── FakeMemberPersistence.java
-│   |   └── FakeProfilePersistence.java
+│   |   ├── FakeProfilePersistence.java
 │   ├── hsqldb
+│   |   ├── DatabaseException.java
+│   |   ├── DiseasePersistenceHSQLDB.java
 │   |   ├── HsqldbConnection.java
-│   |   └── ProfilePersistenceHSQLDB.java
+│   |   ├── HsqldbMemberPersistence.java
+│   |   ├── ProfilePersistenceHSQLDB.java
 │   ├── DiseasePersistence.java
+│   ├── LoginSessionPersistence.java
+│   ├── LoginSessionPersistenceImp.java
 │   ├── MemberPersistence.java
 │   └── ProfilePersistence.java
-└── presentation                                -- UI layer
-    ├── AddSymptomActivity.java
-    ├── BodyPartsActivity.java
-    ├── CreateAccountActivity.java
-    ├── LogInActivity.java
-    ├── ResultsActivity.java
-    └── SearchActivity.java
+├── presentation                                -- UI layer
+│   ├── AddSymptomActivity.java
+│   ├── BodyPartsActivity.java
+│   ├── CreateAccountActivity.java
+│   ├── EditProfileActivity.java
+│   ├── LogInActivity.java
+│   ├── ResultsActivity.java
+│   ├── SearchActivity.java
+│   ├── SelectProfileActivity.java
+│   |   ├── ProfileItemViewList.java
+│   |   ├── ProfilesAdapter.java
+│   |   └── SelectProfileActivity.java
 ```
+# Iteration 3 Diagram
+
+[Diagram link](Iteration3_documents/ArchitectureDiagram.png)
