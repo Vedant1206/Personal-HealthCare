@@ -12,7 +12,6 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.Calendar;
 
@@ -20,29 +19,27 @@ import ca.umanitoba.personalhealthcare.R;
 import ca.umanitoba.personalhealthcare.application.MainActivity;
 import ca.umanitoba.personalhealthcare.business.ProfileManager;
 import ca.umanitoba.personalhealthcare.business.ProfileManagerImp;
-import ca.umanitoba.personalhealthcare.business.SessionManager;
-import ca.umanitoba.personalhealthcare.business.SessionManagerImp;
 import ca.umanitoba.personalhealthcare.objects.NameExistsException;
 import ca.umanitoba.personalhealthcare.objects.Profile;
 import ca.umanitoba.personalhealthcare.persistence.fakeDb.FakeProfilePersistence;
 
 public class EditProfileActivity extends AppCompatActivity {
-    Profile profile;
-    ProfileManager profileManager;
+    Profile profile;                        //profile
+    ProfileManager profileManager;          //profile manager
 
-    TextInputEditText profileNameInput;
-    TextInputEditText addressInput;
-    TextInputEditText weightInput;
-    TextInputEditText heightInput;
-    EditText birthdayInput;
-    TextInputEditText sexInput;
+    TextInputEditText profileNameInput;     //profile name text input
+    TextInputEditText addressInput;         //address text input
+    TextInputEditText weightInput;          //weight text input
+    TextInputEditText heightInput;          //height text input
+    EditText birthdayInput;                 //birthday text input
+    TextInputEditText sexInput;             //sex text input
 
-    AppCompatButton saveButton;
-    AppCompatButton cancelButton;
+    AppCompatButton saveButton;             //save button
+    AppCompatButton cancelButton;           //cancel button
 
-    DatePickerDialog picker;
+    DatePickerDialog picker;                //date picker
 
-    String initProfileName;
+    String initProfileName;                 //initial profile name
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

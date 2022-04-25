@@ -12,11 +12,20 @@ public class SessionManagerImp implements SessionManager{
     public SessionManagerImp () {
         persistence = LoginSessionPersistenceImp.getLoginSessionPersistence();
     }
+
+    /**
+     * retrieveSession
+     * @return LoginSession
+     */
     @Override
     public LoginSession retrieveSession() {
         return persistence.getLoginSession();
     }
 
+    /**
+     * saveSessionMember
+     * @param member Member object
+     */
     @Override
     public void saveSessionMember(Member member) {
         LoginSession session = retrieveSession();
@@ -24,6 +33,10 @@ public class SessionManagerImp implements SessionManager{
         persistence.saveLoginSession(session);
     }
 
+    /**
+     * saveSessionProfile
+     * @param selectedProfile Profile object
+     */
     @Override
     public void saveSessionProfile(Profile selectedProfile) {
         LoginSession session = retrieveSession();
@@ -36,7 +49,10 @@ public class SessionManagerImp implements SessionManager{
         //TODO: to be implemented
     }
 
-
+    /**
+     * logout
+     * @return boolean
+     */
     @Override
     public boolean logout() {
         LoginSession session = persistence.getLoginSession();

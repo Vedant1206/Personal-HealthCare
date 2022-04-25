@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import ca.umanitoba.personalhealthcare.R;
 import ca.umanitoba.personalhealthcare.business.AccountManager;
@@ -20,12 +19,12 @@ import ca.umanitoba.personalhealthcare.objects.PasswordInvalidException;
 
 public class CreateAccountActivity extends AppCompatActivity {
 
-    AccountManager accountManager;
+    AccountManager accountManager;      //Account manager
 
-    EditText emailInput;
-    EditText passwordInput;
+    EditText emailInput;                //email input
+    EditText passwordInput;             //password input
 
-    TextView createFeedback;
+    TextView createFeedback;            //create feedback
 
 
     @Override
