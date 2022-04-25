@@ -6,7 +6,7 @@ The purpose of this project is to create an app that can help users find out wha
 
 ## How to run the app
 
-Simply download the source file, extract its contents, and run it.
+To run the app, you can install android studio and git. Use git to clone the project, and use android studio to open the project. Use the emulator in android studio to run the app.
 
 ## Links
 
