@@ -7,7 +7,6 @@ import ca.umanitoba.personalhealthcare.objects.Member;
 import ca.umanitoba.personalhealthcare.objects.NameExistsException;
 import ca.umanitoba.personalhealthcare.objects.PasswordInvalidException;
 import ca.umanitoba.personalhealthcare.objects.Patient;
-import ca.umanitoba.personalhealthcare.objects.Profile;
 import ca.umanitoba.personalhealthcare.persistence.LoginSessionPersistence;
 import ca.umanitoba.personalhealthcare.persistence.LoginSessionPersistenceImp;
 import ca.umanitoba.personalhealthcare.persistence.MemberPersistence;
@@ -15,9 +14,9 @@ import ca.umanitoba.personalhealthcare.persistence.fakeDb.FakeMemberPersistence;
 import ca.umanitoba.personalhealthcare.persistence.fakeDb.FakeProfilePersistence;
 
 public class AccountManagerImp implements  AccountManager {
-    MemberPersistence memberPersistence;
-    ProfileManager profileManager;
-    LoginSessionPersistence loginSessionPersistence;
+    MemberPersistence memberPersistence;                //Member persistence
+    ProfileManager profileManager;                      //Profile manager
+    LoginSessionPersistence loginSessionPersistence;    //Login session persistence
 
     public AccountManagerImp() {
         memberPersistence = FakeMemberPersistence.getMemberPersistence(); //TODO: create a fake persistence
@@ -29,6 +28,13 @@ public class AccountManagerImp implements  AccountManager {
         this.memberPersistence = memberPersistence;
     }
 
+    /**
+     * authMemberLogin method
+     *
+     * @param username username as a String
+     * @param password password as a String
+     * @return LoginSession
+     */
     @Override
     public LoginSession authMemberLogin(String username, String password) {
         Member member = memberPersistence.getMember(username, password);
@@ -40,6 +46,13 @@ public class AccountManagerImp implements  AccountManager {
         return session;
     }
 
+    /**
+     * createAccount method
+     *
+     * @param email email as a String
+     * @param password password as a String
+     * @return Member
+     */
     @Override
     public Member createAccount(String email, String password) throws PasswordInvalidException, EmailInvalidException, EmailExistException {
         Member newMember = new Patient(null, email, password);

@@ -6,7 +6,6 @@ import androidx.appcompat.widget.AppCompatButton;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.se.omapi.Session;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -18,17 +17,16 @@ import ca.umanitoba.personalhealthcare.business.AccountManagerImp;
 import ca.umanitoba.personalhealthcare.business.SessionManager;
 import ca.umanitoba.personalhealthcare.business.SessionManagerImp;
 import ca.umanitoba.personalhealthcare.objects.LoginSession;
-import ca.umanitoba.personalhealthcare.persistence.LoginSessionPersistenceImp;
 
 public class LogInActivity extends AppCompatActivity {
 
-    private EditText username;
-    private EditText password;
-    private AppCompatButton loginBtn;
-    private TextView feedbackTextView;
+    private EditText username;                  //username text box
+    private EditText password;                  //password text box
+    private AppCompatButton loginBtn;           //login button
+    private TextView feedbackTextView;          //feedback text
 
-    private AccountManager accountManager;
-    private SessionManager sessionManager;
+    private AccountManager accountManager;      //account manager
+    private SessionManager sessionManager;      //session manager
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

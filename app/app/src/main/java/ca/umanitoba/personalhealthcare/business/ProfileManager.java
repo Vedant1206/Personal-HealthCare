@@ -4,11 +4,10 @@ package ca.umanitoba.personalhealthcare.business;
  * The input of this class method can be change in next iteration.
  */
 
-import ca.umanitoba.personalhealthcare.objects.Member;
 import ca.umanitoba.personalhealthcare.objects.NameExistsException;
 import ca.umanitoba.personalhealthcare.objects.Profile;
 import java.util.List;
-import java.util.ArrayList;
+
 public interface ProfileManager {
 
     /**
@@ -36,14 +35,27 @@ public interface ProfileManager {
      */
     public List<Profile> getProfiles(String email);
 
+    /**
+     * getProfile
+     * @param email String
+     * @param profileName String
+     * @return Profile
+     */
     public Profile getProfile (String email, String profileName);
 
     /**
-     *
-     *
+     * updateProfile
+     * @param newProfile Profile object
+     * @return Profile
      */
     public Profile updateProfile(Profile newProfile);
 
+    /**
+     * updateProfileName
+     * @param profile Profile object
+     * @param newName String
+     * @return Profile
+     */
     public Profile updateProfileName (Profile profile, String newName) throws NameExistsException;
 
 }
