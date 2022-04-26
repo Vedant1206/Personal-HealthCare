@@ -14,7 +14,7 @@ import ca.umanitoba.personalhealthcare.objects.Symptom;
 import ca.umanitoba.personalhealthcare.objects.Condition;
 import ca.umanitoba.personalhealthcare.persistence.fakeDb.FakeDiseasePersistence;
 
-public class FakeDiseasePersistenceTest {
+public class DiseasePersistenceTest {
     private DiseasePersistence fakeDb;
 
     @Before
