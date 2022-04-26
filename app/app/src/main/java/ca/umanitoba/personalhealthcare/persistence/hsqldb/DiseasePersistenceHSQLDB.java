@@ -15,11 +15,15 @@ public class DiseasePersistenceHSQLDB implements DiseasePersistence {
     private final String dbPath;
     private final String commonConditionsQuery;
     private final String symptomsByBodypartQuery;
+    private final String conditionBySymptoms;
+    private final String conditionByName;
 
     public DiseasePersistenceHSQLDB(){
         this.dbPath = "jdbc:hsqldb:file:" + System.getProperty("user.dir") + "/src/main/assets/db/data.db";
         commonConditionsQuery = "SELECT * FROM CONDITION WHERE commonness > 0";
         symptomsByBodypartQuery = "SELECT * FROM SYMPTOM WHERE bodyPart = ?";
+        conditionBySymptoms = "";
+        conditionByName = "SELECT * FROM CONDITION WHERE name = ?";
     }
 
     private Connection connection() throws SQLException{
@@ -67,12 +71,34 @@ public class DiseasePersistenceHSQLDB implements DiseasePersistence {
 
     @Override
     public ArrayList<Condition> getConditionBySymptoms(ArrayList<Symptom> symptoms) {
+
+
         return null;
     }
 
     @Override
     public Condition getConditionByName(String condName) throws IllegalArgumentException{
-        return null;
+        Condition cond = null;
+
+        try(final Connection c = connection();){
+
+            final PreparedStatement preparedStatement = c.prepareStatement(conditionByName);
+            preparedStatement.setString(1, condName);
+            ResultSet resultSet = preparedStatement.executeQuery(); // executeQuery will close the preparedStatement.
+
+            cond = getConditionFromResultSet(resultSet);
+
+            resultSet.close();
+
+        } catch(SQLException exception){
+            System.err.println(exception.getMessage());
+        }
+
+        if(cond == null){
+            throw new IllegalArgumentException();
+        }
+
+        return cond;
     }
 
     private Condition getConditionFromResultSet(final ResultSet rs) throws SQLException {
