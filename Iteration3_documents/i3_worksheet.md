@@ -4,7 +4,7 @@ What technical debt has been cleaned up
 Show links to a commit where you paid off technical debt. Write 2-5 sentences
 that explain what debt was paid, and what its classification is.
 
-We have a log in button in the iteration 2 that's not working well. In this iteration, we implemented the features and adding new features around it. 
+We had a log-in button in Iteration 2 that was not working properly. In this iteration, we implemented the features and adding new features around it. 
 Now the login button is working fine and well. 
 Link: https://code.cs.umanitoba.ca/winter-2022-a01/group-1/personal_healthcare/-/merge_requests/121
 
@@ -12,8 +12,8 @@ What technical debt did you leave?
 ==================================
 
 
-Right now, we leave a small action of adding new profile in the profile list. 
-We allow each user have one profile for now. In the feature, we can extend it that users can add new profiles.
+Right now, we left the small action of adding new profile in the profile list. 
+We allow each user have one profile for now. In the future, we can extend it so that users can add new profiles.
 
 
 Discuss a Feature or User Story that was cut/re-prioritized
@@ -21,8 +21,8 @@ Discuss a Feature or User Story that was cut/re-prioritized
 
 Link: https://code.cs.umanitoba.ca/winter-2022-a01/group-1/personal_healthcare/-/issues/8
 
-We decided to cut the feature at hhe begining of the iteration 3 as we expect this feature would take too much time and resource than what we can do in 1 iteraiton.
-Instead, we want to focus on other features for the iteration 3.
+We decided to cut the feature at the begining of Iteration 3 as we expect this feature would take too much time and resources for us to complete in one iteraiton.
+Instead, we want to focus on other features for Iteration 3.
 
 Acceptance test/end-to-end
 ==========================
@@ -39,5 +39,5 @@ or impossible to test?
 Velocity/teamwork
 =================
 
-We know about estimating better than beginning now. Since we know how fast we can do and how much a task would take actually. 
+We know about estimating better now than we did in the beginning. Since we know how fast we can work and how much work a task would actually take.
 So for the features of editing profiles, we could assume it takes about 4 hours to make and we took like 5 hours. Though, it is more than what we expected, our estimation was pretty close.
