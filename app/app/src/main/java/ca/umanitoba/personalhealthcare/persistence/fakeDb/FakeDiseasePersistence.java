@@ -197,6 +197,10 @@ public class FakeDiseasePersistence implements DiseasePersistence {
             }
         }
 
+        if(result == null){
+            throw new IllegalArgumentException();
+        }
+
         return result;
     }
 
