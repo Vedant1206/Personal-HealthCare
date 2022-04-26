@@ -1,6 +1,5 @@
 package ca.umanitoba.personalhealthcare.persistence;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import ca.umanitoba.personalhealthcare.objects.Condition;
