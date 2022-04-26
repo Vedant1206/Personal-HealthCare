@@ -15,7 +15,7 @@ import ca.umanitoba.personalhealthcare.business.SearchLogicTest;
 import ca.umanitoba.personalhealthcare.objects.ConditionSymptomsTest;
 import ca.umanitoba.personalhealthcare.objects.ConditionTest;
 import ca.umanitoba.personalhealthcare.objects.SymptomTest;
-import ca.umanitoba.personalhealthcare.persistence.FakeDiseasePersistenceTest;
+import ca.umanitoba.personalhealthcare.persistence.DiseasePersistenceTest;
 import ca.umanitoba.personalhealthcare.persistence.database.ConnectionTest;
 
 @RunWith(Suite.class)
@@ -28,7 +28,7 @@ import ca.umanitoba.personalhealthcare.persistence.database.ConnectionTest;
         ConditionSymptomsTest.class,
         ConditionTest.class,
         SymptomTest.class,
-        FakeDiseasePersistenceTest.class
+        DiseasePersistenceTest.class
 })
 public class AllTests
 {
